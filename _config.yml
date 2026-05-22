@@ -1,0 +1,135 @@
+title: blank
+first_name: Seungwoo
+middle_name:
+last_name: Keum
+email: seungwoo.kum@gmail.com
+description: Personal homepage of Seungwoo Keum, Director of AI Data & Security Research Center, KETI.
+footer_text: Powered by Jekyll with al-folio theme.
+keywords: AI, data security, edge AI, machine learning, KETI
+
+lang: en
+icon: ⚡️
+
+url: https://seungwooketi.github.io
+baseurl:
+last_updated: false
+
+github_username: seungwooketi
+linkedin_username:
+scholar_userid:
+orcid_id:
+
+google_analytics:
+enable_google_analytics: false
+
+blog_name: Notes
+blog_nav_title: blog
+blog_description: Research notes and thoughts
+permalink: /blog/:year/:title/
+lsi: false
+paginate: 5
+paginate_path: /blog/page:num/
+
+collections:
+  news:
+    defaults:
+      layout: post
+    output: false
+    permalink: /news/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+announcements:
+  enabled: true
+  scrollable: true
+  limit: 5
+
+latest_posts:
+  enabled: false
+  scrollable: true
+  limit: 3
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
+
+include:
+  - _pages
+exclude:
+  - bin/
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+keep_files:
+  - CNAME
+  - .nojekyll
+  - .git
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-archives
+  - jekyll-diagrams
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate
+  - jekyll-regex-replace
+  - jekyll-scholar
+  - jekyll-sitemap
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jekyll/tagging
+
+defaults:
+  - scope:
+      path: assets
+    values:
+      sitemap: false
+
+scholar:
+  last_name: [Keum]
+  first_name: [Seungwoo, S.]
+  style: apa
+  locale: en
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+  bibtex_filters:
+    - superscript
+    - tex
+  replace_strings: true
+  join_strings: true
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
+  query: "@*"
+  group_by: year
+  group_order: descending
+
+img_lazy_loading: true
+imagemagick:
+  enabled: false
+
+enable_tooltips: false
+enable_darkmode: true
+enable_navbar_social: false
+enable_project_categories: true
+enable_medium_zoom: true
+enable_progressbar: true
+enable_video_embedding: false
