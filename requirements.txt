@@ -1,0 +1,3 @@
+# Python dependencies for GitHub Actions (al-folio).
+# Used by the Jekyll deploy workflow's pip cache and the Scholar citation workflow.
+nbconvert
