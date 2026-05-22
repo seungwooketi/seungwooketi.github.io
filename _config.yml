@@ -5,14 +5,14 @@
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Seungwoo
 middle_name:
-last_name: Keum
+last_name: Kum
 github_username: seungwooketi
 linkedin_username: seung-woo-kum-80907980
 scholar_userid: 8DEsYMsAAAAJ
 contact_note: >
   The best way to reach me is by email.
 description: >
-  Personal homepage of Seungwoo Keum, Director of the AI Data & Security Research Center at the Korea Electronics Technology Institute (KETI).
+  Personal homepage of Seungwoo Kum, Director of the AI Data & Security Research Center at the Korea Electronics Technology Institute (KETI).
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -272,7 +272,7 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Keum]
+  last_name: [Kum]
   first_name: [Seungwoo, S.]
 
   style: apa

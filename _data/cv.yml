@@ -1,8 +1,9 @@
 # Curriculum Vitae (RenderCV format) for the /cv page and the "Render a CV" workflow.
-# Replace every "TODO" with your real information. Dates can be YYYY or YYYY-MM-DD.
-# (The PDF render workflow requires valid dates; the website tolerates placeholders.)
+# Graduation years are from SW; university entrance years for the degrees are filled with
+# the standard Korean academic timeline (Mar entrance / Feb graduation). The Ph.D. entrance
+# year (2014) is an estimate — adjust if needed.
 cv:
-  name: Seungwoo Keum
+  name: Seungwoo Kum
   label: Director, AI Data & Security Research Center, KETI
   email: seungwoo.kum@gmail.com
   location: Seongnam, Gyeonggi-do, Korea
@@ -17,43 +18,36 @@ cv:
 
   sections:
     Education:
-      - institution: "TODO: University"
-        area: "TODO: Field of study"
-        studyType: PhD
-        start_date: "TODO"
-        end_date: "TODO"
-        highlights:
-          - "TODO: thesis topic / advisor / notes"
-      - institution: "TODO: University"
-        area: "TODO: Field of study"
-        studyType: MS
-        start_date: "TODO"
-        end_date: "TODO"
-      - institution: "TODO: University"
-        area: "TODO: Field of study"
-        studyType: BS
-        start_date: "TODO"
-        end_date: "TODO"
+      - institution: Hanyang University
+        area: Electronic Engineering
+        studyType: Ph.D.
+        start_date: 2014-03
+        end_date: 2018-02
+      - institution: Hanyang University
+        area: Electronic Engineering
+        studyType: M.S.
+        start_date: 2000-03
+        end_date: 2002-02
+      - institution: Hanyang University
+        area: Electronic Engineering
+        studyType: B.S.
+        start_date: 1996-03
+        end_date: 2000-02
 
     Experience:
       - company: Korea Electronics Technology Institute (KETI)
         position: Director, AI Data & Security Research Center
         location: Seongnam, Korea
-        start_date: "TODO"
-        end_date: present
+        start_date: 2006-11
+        end_date:
         highlights:
           - Lead research on AI data infrastructure, security, and edge AI systems
           - Coordinate international collaborative research (EU, Korea-Spain, Korea-Canada)
-      - company: "TODO: Previous organization"
-        position: "TODO: Role"
-        start_date: "TODO"
-        end_date: "TODO"
-
-    Awards:
-      - title: "TODO: Award name"
-        date: "TODO"
-        awarder: "TODO: Awarding body"
-        summary: ""
+      - company: LG Electronics
+        position: Researcher, DTV Research Lab (CTO Division)
+        location: Korea
+        start_date: 2002
+        end_date: 2005
 
     Skills:
       - name: Research Areas
