@@ -1,85 +1,70 @@
-# ---------------------------------------------------------------------------
-# Curriculum Vitae data for the /cv page.
-# Replace every "TODO" with your real information. Add or remove entries freely.
-# ---------------------------------------------------------------------------
+# Curriculum Vitae (RenderCV format) for the /cv page and the "Render a CV" workflow.
+# Replace every "TODO" with your real information. Dates can be YYYY or YYYY-MM-DD.
+# (The PDF render workflow requires valid dates; the website tolerates placeholders.)
+cv:
+  name: Seungwoo Keum
+  label: Director, AI Data & Security Research Center, KETI
+  email: seungwoo.kum@gmail.com
+  location: Seongnam, Gyeonggi-do, Korea
+  image: ""
+  summary: Director of the AI Data & Security Research Center at the Korea Electronics Technology Institute (KETI), leading research on AI data infrastructure, security, and edge AI systems.
 
-- title: General Information
-  type: map
-  contents:
-    - name: Full Name
-      value: Seungwoo Keum
-    - name: Position
-      value: Director, AI Data & Security Research Center, KETI
-    - name: Affiliation
-      value: Korea Electronics Technology Institute (KETI)
-    - name: Location
-      value: Seongnam, Gyeonggi-do, Korea
-    - name: Email
-      value: seungwoo.kum@gmail.com
-    - name: Languages
-      value: Korean (native), English
+  social_networks:
+    - network: GitHub
+      username: seungwooketi
+    - network: LinkedIn
+      username: seung-woo-kum-80907980
 
-- title: Education
-  type: time_table
-  contents:
-    - title: "TODO: Ph.D. in <field>"
-      institution: "TODO: University"
-      year: "TODO"
-      description:
-        - "TODO: thesis topic / advisor / notes"
-    - title: "TODO: M.S. in <field>"
-      institution: "TODO: University"
-      year: "TODO"
-    - title: "TODO: B.S. in <field>"
-      institution: "TODO: University"
-      year: "TODO"
+  sections:
+    Education:
+      - institution: "TODO: University"
+        area: "TODO: Field of study"
+        studyType: PhD
+        start_date: "TODO"
+        end_date: "TODO"
+        highlights:
+          - "TODO: thesis topic / advisor / notes"
+      - institution: "TODO: University"
+        area: "TODO: Field of study"
+        studyType: MS
+        start_date: "TODO"
+        end_date: "TODO"
+      - institution: "TODO: University"
+        area: "TODO: Field of study"
+        studyType: BS
+        start_date: "TODO"
+        end_date: "TODO"
 
-- title: Experience
-  type: time_table
-  contents:
-    - title: Director, AI Data & Security Research Center
-      institution: Korea Electronics Technology Institute (KETI)
-      year: "TODO-present"
-      description:
-        - Lead research on AI data infrastructure, security, and edge AI systems
-        - Coordinate international collaborative research (EU, Korea-Spain, Korea-Canada)
-    - title: "TODO: Previous role"
-      institution: "TODO: Organization"
-      year: "TODO-TODO"
-      description:
-        - "TODO"
+    Experience:
+      - company: Korea Electronics Technology Institute (KETI)
+        position: Director, AI Data & Security Research Center
+        location: Seongnam, Korea
+        start_date: "TODO"
+        end_date: present
+        highlights:
+          - Lead research on AI data infrastructure, security, and edge AI systems
+          - Coordinate international collaborative research (EU, Korea-Spain, Korea-Canada)
+      - company: "TODO: Previous organization"
+        position: "TODO: Role"
+        start_date: "TODO"
+        end_date: "TODO"
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: "TODO"
-      items:
-        - "TODO: award name and awarding body"
+    Awards:
+      - title: "TODO: Award name"
+        date: "TODO"
+        awarder: "TODO: Awarding body"
+        summary: ""
 
-- title: Research Interests
-  type: nested_list
-  contents:
-    - title: AI Systems
-      items:
-        - AI Data Platforms & Data Quality
-        - Security for AI Systems
-        - Edge AI & On-device Intelligence
-    - title: Applications
-      items:
-        - Industrial AI Agents
-        - International AI Collaboration (EU, Korea-Spain, Korea-Canada)
+    Skills:
+      - name: Research Areas
+        keywords: "AI Data Platforms, Data Quality, AI Security, Edge AI, On-device Intelligence, Industrial AI Agents"
 
-- title: Selected Projects
-  type: time_table
-  contents:
-    - title: Industrial AI Agent Technology
-      year: "2026-"
-      description: Principal Investigator (MOTIE)
-    - title: Korea-Spain AI Research Collaboration (KRESIP)
-      year: "2019-2022"
-      description: Korean PI (NRF / KIAT)
+    Languages:
+      - name: Korean
+        summary: "Native speaker"
+      - name: English
+        summary: "Fluent"
 
-- title: Academic Service
-  type: list
-  contents:
-    - "TODO: reviewing, committees, editorial roles, etc."
+    Interests:
+      - name: Research Interests
+        keywords: "AI data platforms, security for AI systems, edge AI, industrial AI agents, international AI collaboration"
