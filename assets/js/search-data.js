@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-uncertainty-quantification-meets-inverse-dynamics",
+        },{id: "post-a-study-roadmap-for-uncertainty-quantification-inverse-dynamics",
+        
+          title: "A Study Roadmap for Uncertainty Quantification + Inverse Dynamics",
+        
+        description: "A leveled reading list and a 10-week curriculum for getting from Bayesian basics to physics-informed, uncertainty-aware inverse dynamic models.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/uq-idm-study-roadmap/";
+          
+        },
+      },{id: "post-uncertainty-quantification-meets-inverse-dynamics",
         
           title: "Uncertainty Quantification Meets Inverse Dynamics",
         
