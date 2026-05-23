@@ -73,10 +73,7 @@ ninja.data = [{
             window.location.href = "/blog/2026/uncertainty-quantification-review/";
           
         },
-      },{id: "news-successfully-completed-three-major-national-projects-edgeai-edgecar-and-agridata-delivering-open-datasets-edge-deployment-frameworks-and-technology-transfer-to-industry-partners",
-          title: 'Successfully completed three major national projects: EdgeAI, EdgeCar, and AGRIDATA — delivering open...',
-          description: "",
-          section: "News",},{id: "news-continued-leadership-of-the-national-ai-talent-development-program-hosted-annual-research-workshop-with-80-participants-from-academia-and-industry",
+      },{id: "news-continued-leadership-of-the-national-ai-talent-development-program-hosted-annual-research-workshop-with-80-participants-from-academia-and-industry",
           title: 'Continued leadership of the National AI Talent Development Program — hosted annual research...',
           description: "",
           section: "News",},{id: "news-preparing-new-korea-spain-bilateral-ai-research-proposal-in-collaboration-with-spanish-research-institutions-through-kiat",
