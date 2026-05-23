@@ -73,10 +73,7 @@ ninja.data = [{
             window.location.href = "/blog/2026/uncertainty-quantification-review/";
           
         },
-      },{id: "news-preparing-new-korea-spain-bilateral-ai-research-proposal-in-collaboration-with-spanish-research-institutions-through-kiat",
-          title: 'Preparing new Korea–Spain bilateral AI research proposal in collaboration with Spanish research institutions...',
-          description: "",
-          section: "News",},{id: "news-launched-a-new-national-r-amp-amp-d-project-on-industrial-ai-agent-technology-developing-autonomous-ai-agents-for-real-world-industrial-problem-solving",
+      },{id: "news-launched-a-new-national-r-amp-amp-d-project-on-industrial-ai-agent-technology-developing-autonomous-ai-agents-for-real-world-industrial-problem-solving",
           title: 'Launched a new national R&amp;amp;amp;D project on Industrial AI Agent Technology — developing...',
           description: "",
           section: "News",},{id: "news-posted-a-new-update-on-linkedin",
