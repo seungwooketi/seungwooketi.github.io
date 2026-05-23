@@ -31,6 +31,6 @@ My work bridges fundamental AI research and practical deployment — from design
 
 **Current Focus**
 
-I am currently leading new initiatives in **industrial AI agent technology** (2026–) and **Korea-Spain AI collaboration**, while continuing to develop AI talent through the national AI workforce development program.
+I am currently working on new initiatives in **industrial AI agent technology** (2026–) and **Korea-Spain AI collaboration**, while continuing to develop AI talent through the national AI workforce development program.
 
 Feel free to reach out if you are interested in collaboration or joint research.
