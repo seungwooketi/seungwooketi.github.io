@@ -44,6 +44,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/collaborations/";
           },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
         },{id: "news-successfully-completed-three-major-national-projects-edgeai-edgecar-and-agridata-delivering-open-datasets-edge-deployment-frameworks-and-technology-transfer-to-industry-partners",
           title: 'Successfully completed three major national projects: EdgeAI, EdgeCar, and AGRIDATA — delivering open...',
           description: "",
