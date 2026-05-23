@@ -105,9 +105,9 @@ ninja.data = [{
           description: "Hierarchical cloud–edge platform and embedded intelligent services for smart livestock farming (Korea–Czech joint R&amp;D)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/06_vibes/";
-            },},{id: "projects-national-ai-talent-development-program",
-          title: 'National AI Talent Development Program',
-          description: "Training next-generation AI researchers and engineers",
+            },},{id: "projects-generative-ai-talent-development-program",
+          title: 'Generative AI Talent Development Program',
+          description: "Workforce program for generative AI; KETI&#39;s research develops Vision-Language-Action (VLA) models for robot manipulation",
           section: "Projects",handler: () => {
               window.location.href = "/projects/07_ai_talent/";
             },},{
