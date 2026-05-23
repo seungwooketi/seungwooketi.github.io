@@ -15,6 +15,6 @@ category: completed
 - Cross-border dataset sharing framework
 - Co-authored publications and technology transfer
 
-**Funding:** NRF / KIAT  
+**Funding:** KIAT  
 **Period:** 2019 – 2022  
 **Role:** Korean PI
