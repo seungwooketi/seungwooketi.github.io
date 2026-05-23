@@ -90,11 +90,6 @@ ninja.data = [{
           description: "Development of AI agent systems for solving real-world industrial problems (2026–)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/01_industrial_ai_agent/";
-            },},{id: "projects-edge-ai-platform",
-          title: 'Edge AI Platform',
-          description: "Lightweight AI inference and learning framework for resource-constrained edge devices",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/02_edge_ai/";
             },},{id: "projects-edgecar-edge-ai-for-autonomous-vehicles",
           title: 'EdgeCar — Edge AI for Autonomous Vehicles',
           description: "Edge AI computing platform for real-time perception and decision-making in connected vehicles",
