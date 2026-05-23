@@ -85,19 +85,14 @@ ninja.data = [{
           section: "News",},{id: "news-launched-a-new-national-r-amp-amp-d-project-on-industrial-ai-agent-technology-developing-autonomous-ai-agents-for-real-world-industrial-problem-solving",
           title: 'Launched a new national R&amp;amp;amp;D project on Industrial AI Agent Technology — developing...',
           description: "",
-          section: "News",},{id: "projects-industrial-ai-agent-technology",
-          title: 'Industrial AI Agent Technology',
-          description: "Development of AI agent systems for solving real-world industrial problems (2026–)",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/01_industrial_ai_agent/";
-            },},{id: "projects-edgecar-edge-ai-for-autonomous-vehicles",
+          section: "News",},{id: "projects-edgecar-edge-ai-for-autonomous-vehicles",
           title: 'EdgeCar — Edge AI for Autonomous Vehicles',
           description: "Edge AI computing platform for real-time perception and decision-making in connected vehicles",
           section: "Projects",handler: () => {
               window.location.href = "/projects/03_edgecar/";
-            },},{id: "projects-agridata-agricultural-ai-data-platform",
-          title: 'AGRIDATA — Agricultural AI Data Platform',
-          description: "AI-powered data collection, curation, and analytics platform for smart agriculture",
+            },},{id: "projects-agridata-smart-greenhouse-ai-data-platform",
+          title: 'AGRIDATA — Smart-Greenhouse AI Data Platform',
+          description: "Big-data platform for smart-greenhouse production-environment management — data curation, quality, and AI analytics",
           section: "Projects",handler: () => {
               window.location.href = "/projects/04_agridata/";
             },},{id: "projects-kresip-korea-spain-smart-farm-ai-platform",
