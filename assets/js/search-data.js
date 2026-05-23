@@ -73,10 +73,7 @@ ninja.data = [{
             window.location.href = "/blog/2026/uncertainty-quantification-review/";
           
         },
-      },{id: "news-continued-leadership-of-the-national-ai-talent-development-program-hosted-annual-research-workshop-with-80-participants-from-academia-and-industry",
-          title: 'Continued leadership of the National AI Talent Development Program — hosted annual research...',
-          description: "",
-          section: "News",},{id: "news-preparing-new-korea-spain-bilateral-ai-research-proposal-in-collaboration-with-spanish-research-institutions-through-kiat",
+      },{id: "news-preparing-new-korea-spain-bilateral-ai-research-proposal-in-collaboration-with-spanish-research-institutions-through-kiat",
           title: 'Preparing new Korea–Spain bilateral AI research proposal in collaboration with Spanish research institutions...',
           description: "",
           section: "News",},{id: "news-launched-a-new-national-r-amp-amp-d-project-on-industrial-ai-agent-technology-developing-autonomous-ai-agents-for-real-world-industrial-problem-solving",
