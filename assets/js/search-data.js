@@ -73,10 +73,7 @@ ninja.data = [{
             window.location.href = "/blog/2026/uncertainty-quantification-review/";
           
         },
-      },{id: "news-launched-a-new-national-r-amp-amp-d-project-on-industrial-ai-agent-technology-developing-autonomous-ai-agents-for-real-world-industrial-problem-solving",
-          title: 'Launched a new national R&amp;amp;amp;D project on Industrial AI Agent Technology — developing...',
-          description: "",
-          section: "News",},{id: "news-posted-a-new-update-on-linkedin",
+      },{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
           section: "News",},{id: "projects-edgecar-edge-ai-for-autonomous-vehicles",
