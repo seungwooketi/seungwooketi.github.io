@@ -100,9 +100,9 @@ ninja.data = [{
           description: "AI-powered data collection, curation, and analytics platform for smart agriculture",
           section: "Projects",handler: () => {
               window.location.href = "/projects/04_agridata/";
-            },},{id: "projects-kresip-korea-spain-ai-research-collaboration",
-          title: 'KRESIP — Korea-Spain AI Research Collaboration',
-          description: "Bilateral AI research program between Korea and Spain",
+            },},{id: "projects-kresip-korea-spain-smart-farm-ai-platform",
+          title: 'KRESIP — Korea–Spain Smart-Farm AI Platform',
+          description: "AI-based precision-agriculture platform jointly developed by Korea and Spain",
           section: "Projects",handler: () => {
               window.location.href = "/projects/05_kresip/";
             },},{id: "projects-vibes",
