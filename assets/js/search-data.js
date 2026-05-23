@@ -100,9 +100,9 @@ ninja.data = [{
           description: "AI-based precision-agriculture platform jointly developed by Korea and Spain",
           section: "Projects",handler: () => {
               window.location.href = "/projects/05_kresip/";
-            },},{id: "projects-vibes",
-          title: 'VIBES',
-          description: "AI-based video intelligence and behavior analysis system",
+            },},{id: "projects-vibes-smart-livestock-cloud-edge-ai-platform",
+          title: 'VIBES — Smart-Livestock Cloud–Edge AI Platform',
+          description: "Hierarchical cloud–edge platform and embedded intelligent services for smart livestock farming (Korea–Czech joint R&amp;D)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/06_vibes/";
             },},{id: "projects-national-ai-talent-development-program",
