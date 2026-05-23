@@ -17,4 +17,4 @@ category: completed
 
 **Funding:** IITP  
 **Period:** 2020 – 2023  
-**Role:** Principal Investigator
+**Role:** Partner lead
