@@ -10,6 +10,7 @@ category: completed
 The **Edge AI** project developed an optimized AI platform for deploying machine learning models on edge devices with limited compute resources.
 
 **Key Contributions**
+
 - Model compression and quantization pipelines for edge deployment
 - On-device federated learning to preserve data privacy
 - Edge–cloud collaborative inference architecture

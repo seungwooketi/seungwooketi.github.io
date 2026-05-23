@@ -10,6 +10,7 @@ category: ongoing
 This project focuses on developing **AI agent technology** capable of understanding and resolving complex industrial site challenges through autonomous reasoning and action.
 
 **Goals**
+
 - Design multi-agent frameworks for industrial problem-solving
 - Integrate domain-specific knowledge into AI reasoning pipelines
 - Validate agents in real manufacturing and logistics environments

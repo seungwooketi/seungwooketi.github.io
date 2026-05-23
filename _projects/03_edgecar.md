@@ -10,6 +10,7 @@ category: completed
 **EdgeCar** explored edge AI architectures for connected and autonomous vehicle environments.
 
 **Key Contributions**
+
 - Real-time object detection and tracking optimized for in-vehicle hardware
 - Secure V2X (vehicle-to-everything) data communication
 - Edge–cloud offloading strategies for dynamic driving scenarios

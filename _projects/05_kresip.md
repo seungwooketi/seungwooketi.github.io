@@ -10,6 +10,7 @@ category: completed
 **KRESIP** established collaborative AI research between Korea and Spain.
 
 **Key Contributions**
+
 - Joint research on privacy-preserving AI and federated learning
 - Cross-border dataset sharing framework
 - Co-authored publications and technology transfer

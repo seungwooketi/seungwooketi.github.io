@@ -10,6 +10,7 @@ category: ongoing
 KETI's AI Data & Security Research Center leads AI talent development through national workforce programs.
 
 **Key Activities**
+
 - Curriculum development for AI data engineering and security
 - Research internship programs for graduate students
 - Industry–academia joint workshops and seminars

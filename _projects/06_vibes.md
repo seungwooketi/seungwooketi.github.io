@@ -10,6 +10,7 @@ category: completed
 **VIBES** developed an AI-driven video analytics platform for behavior detection in safety-critical scenarios.
 
 **Key Contributions**
+
 - Deep learning models for multi-person behavior recognition
 - Anomaly detection in public space video streams
 - Lightweight deployment for edge camera systems

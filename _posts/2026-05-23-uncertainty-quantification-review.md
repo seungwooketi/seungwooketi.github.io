@@ -24,18 +24,18 @@ math and the code.
 
 UQ is the umbrella term for measuring and managing the uncertainty attached to a
 model's prediction. Instead of returning a point estimate, a UQ-aware model
-returns the prediction *together with* a confidence or error range, which is what
+returns the prediction _together with_ a confidence or error range, which is what
 lets a downstream system make a safe decision rather than a blind one.
 
 The first distinction that matters is between two kinds of uncertainty:
 
-| Type | What it is | Cause | Reducible? |
-| :-- | :-- | :-- | :-- |
-| **Epistemic** | The model doesn't know | Too little training data, model misspecification | Yes — more data, better model |
+| Type          | What it is                   | Cause                                                  | Reducible?                       |
+| :------------ | :--------------------------- | :----------------------------------------------------- | :------------------------------- |
+| **Epistemic** | The model doesn't know       | Too little training data, model misspecification       | Yes — more data, better model    |
 | **Aleatoric** | The data is inherently noisy | Sensor error, measurement limits, intrinsic randomness | No — it's a property of the data |
 
 Keeping these apart is practically important: epistemic uncertainty tells you
-*where to collect more data*, while aleatoric uncertainty tells you the *floor*
+_where to collect more data_, while aleatoric uncertainty tells you the _floor_
 below which no amount of data will help.
 
 A useful working principle for estimating uncertainty without labels is the
@@ -50,22 +50,22 @@ models, where ground-truth labels for "confidence" don't exist.
 Several methods operationalize these ideas, each trading off fidelity against
 cost:
 
-| Method | Core idea | Strength | Limitation |
-| :-- | :-- | :-- | :-- |
-| **MC Dropout** | Keep dropout on at inference, do N forward passes; the spread is the uncertainty | Trivial to implement | Approximation quality is sensitive |
-| **Deep Ensembles** | Train K models from different seeds; their disagreement is the uncertainty | High-quality epistemic estimates | K× the storage and compute |
-| **Gaussian Process** | A kernel-defined process that outputs mean *and* variance | Variance grows automatically where data is sparse | O(N³) in the number of points |
-| **Conformal Prediction** | Returns a set with a coverage guarantee: P(truth ∈ set) ≥ 1−α | Distribution-free statistical guarantee | Needs a calibration set |
+| Method                   | Core idea                                                                        | Strength                                          | Limitation                         |
+| :----------------------- | :------------------------------------------------------------------------------- | :------------------------------------------------ | :--------------------------------- |
+| **MC Dropout**           | Keep dropout on at inference, do N forward passes; the spread is the uncertainty | Trivial to implement                              | Approximation quality is sensitive |
+| **Deep Ensembles**       | Train K models from different seeds; their disagreement is the uncertainty       | High-quality epistemic estimates                  | K× the storage and compute         |
+| **Gaussian Process**     | A kernel-defined process that outputs mean _and_ variance                        | Variance grows automatically where data is sparse | O(N³) in the number of points      |
+| **Conformal Prediction** | Returns a set with a coverage guarantee: P(truth ∈ set) ≥ 1−α                    | Distribution-free statistical guarantee           | Needs a calibration set            |
 
 MC Dropout has a clean theoretical grounding — Gal & Ghahramani showed that a
 dropout network approximates a Gaussian process, with each dropout mask acting
 like a sample from the weight posterior. Conformal prediction is attractive for
 safety-critical settings (clinical decisions, autonomous driving) precisely
-because its guarantee holds for *any* underlying model.
+because its guarantee holds for _any_ underlying model.
 
 UQ also drives **active learning**: if the question is "which sample, once
 labeled, teaches the model the most?", the answer is the one with the highest
-*epistemic* uncertainty. BALD (Bayesian Active Learning by Disagreement) targets
+_epistemic_ uncertainty. BALD (Bayesian Active Learning by Disagreement) targets
 exactly that — samples where each model is individually confident but the models
 disagree with each other are the most valuable to label.
 
@@ -141,7 +141,7 @@ into a Bayesian network (e.g. a Hamiltonian neural network with MC Dropout) so i
 extrapolates better and stays physically plausible with less data.
 
 **Safety-constrained active learning for IDM** — instead of just maximizing
-information gain, choose trajectories that are *both* informative *and* safe,
+information gain, choose trajectories that are _both_ informative _and_ safe,
 optimizing something like $$P(\text{safe} \mid \text{traj}) \times I(\tau;\theta
 \mid \text{traj})$$. Useful for quickly calibrating a new robot platform and for
 human-robot collaboration.
@@ -161,11 +161,11 @@ property I want in any system that touches the physical world.
 
 ## References
 
-- Abdar et al., *A Review of Uncertainty Quantification in Deep Learning* (2021) — [arXiv:2011.06225](https://arxiv.org/abs/2011.06225)
-- Gal & Ghahramani, *Dropout as a Bayesian Approximation* (ICML 2016) — [arXiv:1506.02142](https://arxiv.org/abs/1506.02142)
-- Angelopoulos & Bates, *A Gentle Introduction to Conformal Prediction* (2021) — [arXiv:2107.07511](https://arxiv.org/abs/2107.07511)
-- Rasmussen & Williams, *Gaussian Processes for Machine Learning* (MIT Press, 2006) — [gaussianprocess.org/gpml](https://gaussianprocess.org/gpml/)
-- Deisenroth & Rasmussen, *PILCO: Data-Efficient Learning in Robotics and Control* (PAMI 2015)
-- Giacomuzzo et al., *A Black-Box Physics-Informed Estimator based on GP Regression for Robot Inverse Dynamics* (2023) — [arXiv:2310.06585](https://arxiv.org/abs/2310.06585)
-- Kirsch et al., *BatchBALD: Efficient and Diverse Batch Acquisition for Deep Bayesian Active Learning* (NeurIPS 2019) — [arXiv:1906.08158](https://arxiv.org/abs/1906.08158)
-- Baker et al., *Video PreTraining (VPT)* (OpenAI, 2022)
+- Abdar et al., _A Review of Uncertainty Quantification in Deep Learning_ (2021) — [arXiv:2011.06225](https://arxiv.org/abs/2011.06225)
+- Gal & Ghahramani, _Dropout as a Bayesian Approximation_ (ICML 2016) — [arXiv:1506.02142](https://arxiv.org/abs/1506.02142)
+- Angelopoulos & Bates, _A Gentle Introduction to Conformal Prediction_ (2021) — [arXiv:2107.07511](https://arxiv.org/abs/2107.07511)
+- Rasmussen & Williams, _Gaussian Processes for Machine Learning_ (MIT Press, 2006) — [gaussianprocess.org/gpml](https://gaussianprocess.org/gpml/)
+- Deisenroth & Rasmussen, _PILCO: Data-Efficient Learning in Robotics and Control_ (PAMI 2015)
+- Giacomuzzo et al., _A Black-Box Physics-Informed Estimator based on GP Regression for Robot Inverse Dynamics_ (2023) — [arXiv:2310.06585](https://arxiv.org/abs/2310.06585)
+- Kirsch et al., _BatchBALD: Efficient and Diverse Batch Acquisition for Deep Bayesian Active Learning_ (NeurIPS 2019) — [arXiv:1906.08158](https://arxiv.org/abs/1906.08158)
+- Baker et al., _Video PreTraining (VPT)_ (OpenAI, 2022)
