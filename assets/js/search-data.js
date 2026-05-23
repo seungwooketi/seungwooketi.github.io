@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "news-successfully-completed-three-major-national-projects-edgeai-edgecar-and-agridata-delivering-open-datasets-edge-deployment-frameworks-and-technology-transfer-to-industry-partners",
+        },{id: "post-uncertainty-quantification-meets-inverse-dynamics",
+        
+          title: "Uncertainty Quantification Meets Inverse Dynamics",
+        
+        description: "A concept review of uncertainty quantification (UQ), inverse dynamic models (IDM), and why combining them matters for safe, data-efficient robot control.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/uncertainty-quantification-review/";
+          
+        },
+      },{id: "news-successfully-completed-three-major-national-projects-edgeai-edgecar-and-agridata-delivering-open-datasets-edge-deployment-frameworks-and-technology-transfer-to-industry-partners",
           title: 'Successfully completed three major national projects: EdgeAI, EdgeCar, and AGRIDATA — delivering open...',
           description: "",
           section: "News",},{id: "news-continued-leadership-of-the-national-ai-talent-development-program-hosted-annual-research-workshop-with-80-participants-from-academia-and-industry",
