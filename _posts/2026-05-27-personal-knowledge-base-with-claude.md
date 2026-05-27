@@ -38,7 +38,7 @@ trip report, not also a meeting note — and they survive being moved around
 with `mv` and `git`. Tags I reserved for cross-cutting attributes inside
 frontmatter: who attended, which project the work funded, what topic. The
 lesson from years of pure-tag systems is that without a strong default
-surface, a KB becomes a tag soup where nothing is *anywhere*.
+surface, a KB becomes a tag soup where nothing is _anywhere_.
 
 Slugs got the next bit of thought. Date-prefixed slugs sort correctly in a
 file listing, make name collisions almost impossible, and let me see "March
@@ -55,7 +55,7 @@ Keeping summaries to one line forces them to actually be informative.
 
 ## A chronological log and a topical index
 
-What I did not appreciate until late in the day was how much I needed *both*
+What I did not appreciate until late in the day was how much I needed _both_
 views. Trips and meetings want a chronological log — the natural question is
 "what happened in March?" Projects and people want a topical index — the
 natural question is "what do I know about X?" The two halves cross-reference
@@ -70,8 +70,11 @@ The most useful single move was packaging the update workflow into a small
 LLM skill — a bundle of instructions that knows my folder layout, my slug
 rules, and the frontmatter contract. After that, the protocol for adding new
 material became: hand the source to the model, let the skill route it. The
-friction of *adding* a new entry, which is what kills most personal KBs,
-dropped to roughly the cost of one paragraph of context.
+friction of _adding_ a new entry, which is what kills most personal KBs,
+dropped to roughly the cost of one paragraph of context. That, more than
+anything else, is what made today's bulk import tolerable. Without the
+skill I would have made it through trips, possibly projects, and given up
+halfway through admin.
 
 The whole pipeline, from a stray source to a cross-referenced page in the
 KB, looks like this:
@@ -107,13 +110,10 @@ flowchart LR
 
 The boxed middle is the part the skill encodes. Everything outside it is
 either me (handing in a source on the left) or me later (querying on the
-right). That, more than
-anything else, is what made today's bulk import tolerable. Without the skill
-I would have made it through trips, possibly projects, and given up halfway
-through admin.
+right).
 
 It also shifted what I have to remember. I no longer have to remember the
-conventions; I have to remember to *use the skill*. That is a much cheaper
+conventions; I have to remember to _use the skill_. That is a much cheaper
 kind of remembering.
 
 ## Completeness versus friction
@@ -129,8 +129,8 @@ give a future search anything to surface.
 
 The KB is private. This site is public. The two have to stay clearly
 separated, and the cheapest way to enforce that is to keep them in different
-repositories with different visibility, and to write *about* the KB on the
-public side rather than *from* it. This post is an example of what should
+repositories with different visibility, and to write _about_ the KB on the
+public side rather than _from_ it. This post is an example of what should
 cross the line: design decisions, methodology, things I would tell a friend.
 What should not cross it: names, numbers, anything that belongs to someone
 else.
@@ -141,7 +141,7 @@ Two things, mostly. I would write the skill before the content, not after.
 I built the skill once I noticed I was repeating myself, but by then I had
 done enough manual entries to introduce small inconsistencies that I will
 have to clean up later. And I would resist the urge to start with admin.
-Admin is the *broadest* category but the one with the loosest natural
+Admin is the _broadest_ category but the one with the loosest natural
 structure; starting with trips, which have a strong inherent shape, would
 have given me a template to push against everything else.
 
