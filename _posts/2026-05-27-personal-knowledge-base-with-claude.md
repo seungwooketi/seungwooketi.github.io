@@ -14,6 +14,11 @@ mermaid:
   zoomable: true
 ---
 
+<style>
+  .mermaid { width: 100%; overflow: visible; }
+  .mermaid svg { width: 100% !important; height: auto !important; min-height: 480px; }
+</style>
+
 For years I have been telling myself I should keep a real personal knowledge
 base. Not just a `~/notes/` folder, not just whatever lives in my email, but
 something I would actually consult — a place where past trips, projects, and
