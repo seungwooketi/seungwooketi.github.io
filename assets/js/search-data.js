@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-a-study-roadmap-for-uncertainty-quantification-inverse-dynamics",
+        },{id: "post-bootstrapping-a-personal-knowledge-base-in-an-afternoon",
+        
+          title: "Bootstrapping a Personal Knowledge Base in an Afternoon",
+        
+        description: "Notes from a day spent designing folders, slugs, and a small LLM skill so that future updates to a personal knowledge base only require pointing at the source material.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/personal-knowledge-base-with-claude/";
+          
+        },
+      },{id: "post-a-study-roadmap-for-uncertainty-quantification-inverse-dynamics",
         
           title: "A Study Roadmap for Uncertainty Quantification + Inverse Dynamics",
         
