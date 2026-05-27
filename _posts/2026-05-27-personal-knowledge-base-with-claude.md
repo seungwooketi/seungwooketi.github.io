@@ -9,6 +9,9 @@ related_posts: false
 published: true
 toc:
   sidebar: left
+mermaid:
+  enabled: true
+  zoomable: true
 ---
 
 For years I have been telling myself I should keep a real personal knowledge
@@ -68,7 +71,43 @@ LLM skill — a bundle of instructions that knows my folder layout, my slug
 rules, and the frontmatter contract. After that, the protocol for adding new
 material became: hand the source to the model, let the skill route it. The
 friction of *adding* a new entry, which is what kills most personal KBs,
-dropped to roughly the cost of one paragraph of context. That, more than
+dropped to roughly the cost of one paragraph of context.
+
+The whole pipeline, from a stray source to a cross-referenced page in the
+KB, looks like this:
+
+```mermaid
+flowchart LR
+    A["New source<br/>(trip note · meeting · doc)"] --> B{"Hand to Claude<br/>+ KB skill"}
+
+    subgraph SKILL["LLM skill"]
+        direction TB
+        C["Classify type"] --> D["Pick folder<br/>trips · projects · admin · people"]
+        D --> E["Generate slug<br/>(date-prefixed or topical)"]
+        E --> F["Write frontmatter<br/>date · type · summary · related"]
+        F --> G["Compose body from source"]
+    end
+
+    B --> C
+
+    G --> H1[("trips/")]
+    G --> H2[("projects/")]
+    G --> H3[("admin/")]
+    G --> H4[("people/")]
+
+    H1 -. cross-ref .-> H4
+    H2 -. cross-ref .-> H1
+    H3 -. cross-ref .-> H2
+
+    H1 --> I[["Queryable KB"]]
+    H2 --> I
+    H3 --> I
+    H4 --> I
+```
+
+The boxed middle is the part the skill encodes. Everything outside it is
+either me (handing in a source on the left) or me later (querying on the
+right). That, more than
 anything else, is what made today's bulk import tolerable. Without the skill
 I would have made it through trips, possibly projects, and given up halfway
 through admin.
