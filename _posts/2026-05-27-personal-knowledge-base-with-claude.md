@@ -108,6 +108,8 @@ flowchart LR
     H4 --> I
 ```
 
+<p class="text-center"><small><em>Drag to pan · scroll to zoom</em></small></p>
+
 The boxed middle is the part the skill encodes. Everything outside it is
 either me (handing in a source on the left) or me later (querying on the
 right).
