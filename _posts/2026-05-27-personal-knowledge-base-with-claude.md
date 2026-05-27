@@ -79,7 +79,10 @@ halfway through admin.
 The whole pipeline, from a stray source to a cross-referenced page in the
 KB, looks like this:
 
+<div style="width:100%;min-height:420px;overflow:auto;">
+
 ```mermaid
+%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["New source<br/>(trip note · meeting · doc)"] --> B{"Hand to Claude<br/>+ KB skill"}
 
@@ -107,6 +110,8 @@ flowchart LR
     H3 --> I
     H4 --> I
 ```
+
+</div>
 
 <p class="text-center"><small><em>Drag to pan · scroll to zoom</em></small></p>
 
