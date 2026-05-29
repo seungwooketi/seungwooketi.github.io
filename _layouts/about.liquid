@@ -2,14 +2,6 @@
 layout: default
 ---
 <div class="post">
-  <!-- News -->
-  {% if page.announcements and page.announcements.enabled %}
-    <h2>
-      <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-    </h2>
-    {% include news.liquid limit=true %}
-  {% endif %}
-
   <header class="post-header">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
@@ -48,7 +40,7 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- Selected projects (top 2 by importance) -->
+    <!-- Selected projects (featured / flagship works, top 2 by importance) -->
     {% assign featured_projects = site.projects | sort: 'importance' %}
     {% if page.selected_projects and featured_projects.size > 0 %}
       <h2>
@@ -77,6 +69,17 @@ layout: default
         <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
       </h2>
       {% include selected_papers.liquid %}
+      <div class="text-end mb-4">
+        <a href="{{ '/publications/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">see all publications →</a>
+      </div>
+    {% endif %}
+
+    <!-- News (moved below the works so identity + flagship work lead the page) -->
+    {% if page.announcements and page.announcements.enabled %}
+      <h2>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+      </h2>
+      {% include news.liquid limit=true %}
     {% endif %}
 
     <!-- Social -->
