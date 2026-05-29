@@ -85,7 +85,6 @@ The whole pipeline, from a stray source to a cross-referenced page in the
 KB, looks like this:
 
 ```mermaid
-%%{init: {'flowchart': {'useMaxWidth': true}}}%%
 flowchart LR
     A["New source<br/>(trip note · meeting · doc)"] --> B{"Hand to Claude<br/>+ KB skill"}
 
