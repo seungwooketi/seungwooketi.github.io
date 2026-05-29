@@ -8,6 +8,31 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  // Roboto handles Latin; Pretendard handles Hangul as fallback.
+  font-family:
+    "Roboto",
+    "Pretendard Variable",
+    "Pretendard",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  // Hangul has no native italic glyphs; em/i elements rendered as italic become
+  // ugly synthetic-italic skew. Render emphasis with weight + color instead.
+  em,
+  i {
+    font-style: italic; // keep for Latin (Roboto has proper italic)
+  }
+
+  :lang(ko) em,
+  :lang(ko) i {
+    font-style: normal;
+    font-weight: 500;
+  }
 
   h1,
   h2,
