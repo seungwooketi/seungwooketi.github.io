@@ -51,7 +51,29 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-bootstrapping-a-personal-knowledge-base-in-an-afternoon",
+        },{id: "post-지식-베이스가-그래프가-되고-싶을-때",
+        
+          title: "지식 베이스가 그래프가 되고 싶을 때",
+        
+        description: "마크다운으로 개인 지식 베이스를 만든 지 이틀 만에 한계가 드러났다. Apache Jena Fuseki 위에 RDF 그래프를 올리면서 마주한 네 가지 설계 결정, Claude / qwen2.5 / exaone3.5 모델 비교, 그리고 결국 문서 자체만이 유일하게 지속 가능한 SoT 라는 결론.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/markdown-to-knowledge-graph-ko/";
+          
+        },
+      },{id: "post-when-the-knowledge-base-wants-to-be-a-graph",
+        
+          title: "When the Knowledge Base Wants to Be a Graph",
+        
+        description: "Two days after building a markdown knowledge base, the cracks started showing. Notes on turning it into an RDF graph using Apache Jena Fuseki - the architectural calls, the model comparisons across Claude, qwen2.5, and exaone3.5, and why the documents themselves are the only sustainable source of truth.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/from-markdown-to-knowledge-graph/";
+          
+        },
+      },{id: "post-bootstrapping-a-personal-knowledge-base-in-an-afternoon",
         
           title: "Bootstrapping a Personal Knowledge Base in an Afternoon",
         
