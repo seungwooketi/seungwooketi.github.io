@@ -24,14 +24,19 @@ hr {
 }
 
 table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+
   td,
   th {
     font-size: 1rem;
-    padding: 1px 1rem 1px 0;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--global-divider-color);
   }
 
   th {
     font-weight: bold;
+    background-color: var(--global-bg-color);
   }
 }
 

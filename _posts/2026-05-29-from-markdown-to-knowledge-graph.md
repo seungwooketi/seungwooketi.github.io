@@ -3,7 +3,7 @@ layout: post
 title: "When the Knowledge Base Wants to Be a Graph"
 date: 2026-05-29 18:00:00+0900
 description: Two days after building a markdown knowledge base, the cracks started showing. Notes on turning it into an RDF graph using Apache Jena Fuseki - the architectural calls, the model comparisons across Claude, qwen2.5, and exaone3.5, and why the documents themselves are the only sustainable source of truth.
-tags: knowledge-base ontology rdf sparql llm claude qwen exaone fuseki ollama
+tags: knowledge-graph knowledge-base ontology rdf sparql llm claude qwen exaone fuseki ollama
 giscus_comments: false
 related_posts: false
 published: true
