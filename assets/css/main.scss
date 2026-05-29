@@ -37,3 +37,18 @@
 @use "font-awesome/brands";
 @use "font-awesome/solid";
 @use "font-awesome/regular";
+
+/* Site background image (subtle knowledge-graph mesh), per color scheme.
+   A translucent wash of the theme background colour is layered over the
+   image so body text stays readable; the image is fixed and covers. */
+body {
+  background-image: linear-gradient(rgba(250, 250, 250, 0.82), rgba(250, 250, 250, 0.82)), url("/assets/img/bg-light.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+html[data-theme="dark"] body {
+  background-image: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.8)), url("/assets/img/bg-dark.jpg");
+}
