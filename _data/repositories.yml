@@ -3,13 +3,9 @@ github_users:
 
 repo_description_lines_max: 2
 
+# Only PUBLIC repos render here — github-readme-stats cannot show private
+# repos (their cards break and the github.com link 404s for visitors).
 github_repos:
-  - seungwooketi/ai_interface
-  - seungwooketi/cloud-edge-framework
   - seungwooketi/ai-model-repository
   - seungwooketi/decenter-ai-package
-  - seungwooketi/knowledge-base
-  - seungwooketi/multi-camera-pig-tracking
-  - seungwooketi/trtcontainer
-  - seungwooketi/otadesign
-  - seungwooketi/llm-studies
+  - seungwooketi/vggsplit
