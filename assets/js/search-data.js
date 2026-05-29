@@ -37,13 +37,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-collaborations",
-          title: "collaborations",
-          description: "International collaborative research partnerships.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/collaborations/";
-          },
         },{id: "nav-blog",
           title: "blog",
           description: "",
