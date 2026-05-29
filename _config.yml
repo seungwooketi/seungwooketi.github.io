@@ -95,7 +95,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Notes and Thoughts
-blog_description: just a few thoughts
+blog_description: Notes on AI data platforms, edge intelligence, and the research tooling I build along the way.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
