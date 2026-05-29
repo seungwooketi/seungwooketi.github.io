@@ -235,15 +235,15 @@ I scored fifteen scalar fields (identifiers, dates, names, budgets, roles)
 plus the structured arrays (consortium membership, annual budgets). The
 table below summarizes the result.
 
-| Dimension | Claude (in-session) | `qwen2.5:32b` | `exaone3.5:32b` |
-|---|---|---|---|
-| Scalar fields matching ground truth (of 15) | 15 | 9 | 8 |
-| Wrong-value fields | 0 | 1 (institutional slot) | 3 (budget unit, lead org, program name) |
-| Followed schema instructions strictly | yes | mostly | only after a flag change |
-| Native `format=json` mode in Ollama | n/a | works | returns `{}` (empty) - needed a free-text fallback |
-| Wall-clock time per document | conversational | 4m 39s | 3m 30s |
-| Per-document cost | included in Pro subscription | zero | zero |
-| Pipeline-friendly (batch, repeatable) | no | yes | yes |
+| Dimension                                   | Claude (in-session)          | `qwen2.5:32b`          | `exaone3.5:32b`                                    |
+| ------------------------------------------- | ---------------------------- | ---------------------- | -------------------------------------------------- |
+| Scalar fields matching ground truth (of 15) | 15                           | 9                      | 8                                                  |
+| Wrong-value fields                          | 0                            | 1 (institutional slot) | 3 (budget unit, lead org, program name)            |
+| Followed schema instructions strictly       | yes                          | mostly                 | only after a flag change                           |
+| Native `format=json` mode in Ollama         | n/a                          | works                  | returns `{}` (empty) - needed a free-text fallback |
+| Wall-clock time per document                | conversational               | 4m 39s                 | 3m 30s                                             |
+| Per-document cost                           | included in Pro subscription | zero                   | zero                                               |
+| Pipeline-friendly (batch, repeatable)       | no                           | yes                    | yes                                                |
 
 A few things stood out.
 
