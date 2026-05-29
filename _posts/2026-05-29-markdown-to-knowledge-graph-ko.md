@@ -16,8 +16,8 @@ mermaid:
 ---
 
 <style>
-  .mermaid { width: 100%; overflow: visible; }
-  .mermaid svg { width: 100% !important; height: auto !important; min-height: 480px; }
+  .mermaid { width: 100%; overflow: visible; text-align: center; }
+  .mermaid svg { max-width: 480px; width: 100%; height: auto !important; margin: 0 auto; }
 </style>
 
 <p class="text-center">
@@ -125,7 +125,7 @@ LLM 한테 스키마랑 같이 던지면 된다. 짧게 말하면 그렇다. 무
 결과적으로 쓰게 된 파이프라인:
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["원본 문서<br/>(PDF · HWP)"] --> B["텍스트 추출<br/>(pypdf / OCR fallback)"]
     B --> C["LLM 추출<br/>+ JSON 스키마"]
     C --> D["결정적 후처리<br/>(이름 정규화,<br/>단위 sanity)"]
@@ -245,7 +245,7 @@ alias 떼어내고, 거기 묶여 있던 PI 를 다른 필드로 올린다. 그 
 이 두 번째 길이 스키마 진화 루프다. 정적인 그래프를 살아 있게 만드는 메커니즘:
 
 ```mermaid
-flowchart LR
+flowchart TD
     Q["사용자가 온톨로지에<br/>없는 개념을<br/>질문"] --> R["쿼리가 빈 결과,<br/>또는 LLM 이 기존<br/>술어와 매핑 못함"]
     R --> L["갭 로깅<br/>(키워드 + 빈도)"]
     L --> P["온톨로지 확장 제안<br/>(사람 검토)"]

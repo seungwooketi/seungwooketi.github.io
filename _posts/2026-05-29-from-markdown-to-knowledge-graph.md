@@ -15,8 +15,8 @@ mermaid:
 ---
 
 <style>
-  .mermaid { width: 100%; overflow: visible; }
-  .mermaid svg { width: 100% !important; height: auto !important; min-height: 480px; }
+  .mermaid { width: 100%; overflow: visible; text-align: center; }
+  .mermaid svg { max-width: 480px; width: 100%; height: auto !important; margin: 0 auto; }
 </style>
 
 <p class="text-center">
@@ -144,7 +144,7 @@ wrong things. Most of my time today went into the schema, not the prompt.
 The pipeline I ended up with looks like this:
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["Source document<br/>(PDF · HWP)"] --> B["Text extraction<br/>(pypdf / OCR fallback)"]
     B --> C["LLM extraction<br/>+ JSON schema"]
     C --> D["Deterministic post-rules<br/>(name normalization,<br/>unit sanity)"]
@@ -290,7 +290,7 @@ This second path is the **schema evolution loop**, and it is the thing
 that turns a static graph into a living one:
 
 ```mermaid
-flowchart LR
+flowchart TD
     Q["User asks a question<br/>about a concept the<br/>ontology does not model"] --> R["Query returns empty,<br/>or LLM cannot map<br/>to existing predicates"]
     R --> L["Log the gap<br/>(keyword + frequency)"]
     L --> P["Propose ontology<br/>extension<br/>(human-reviewed)"]
