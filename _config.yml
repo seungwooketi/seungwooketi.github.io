@@ -19,7 +19,7 @@ footer_text: >
   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 keywords: AI, data security, edge AI, machine learning, KETI
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚡️ # favicon emoji
+icon: favicon.png # gold shining moon (assets/img/favicon.png)
 
 url: https://seungwooketi.github.io
 baseurl: # served at domain root
