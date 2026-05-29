@@ -17,6 +17,7 @@ announcements:
   scrollable: true
   limit: 5
 selected_papers: true
+selected_projects: true
 social: true
 ---
 

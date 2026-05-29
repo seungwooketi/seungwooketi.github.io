@@ -3,7 +3,7 @@ layout: page
 title: Generative AI Talent Development Program
 description: Workforce program for generative AI; KETI's research develops Vision-Language-Action (VLA) models for robot manipulation
 img: assets/img/projects/ai_talent_vla.png
-importance: 7
+importance: 1
 category: ongoing
 ---
 

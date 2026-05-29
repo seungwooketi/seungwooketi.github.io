@@ -1,14 +1,15 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - seungwooketi
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - seungwooketi/ai_interface
+  - seungwooketi/cloud-edge-framework
+  - seungwooketi/ai-model-repository
+  - seungwooketi/decenter-ai-package
+  - seungwooketi/knowledge-base
+  - seungwooketi/multi-camera-pig-tracking
+  - seungwooketi/trtcontainer
+  - seungwooketi/otadesign
+  - seungwooketi/llm-studies

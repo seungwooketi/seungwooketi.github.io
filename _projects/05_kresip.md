@@ -3,7 +3,7 @@ layout: page
 title: KRESIP — Korea–Spain Smart-Farm AI Platform
 description: AI-based precision-agriculture platform jointly developed by Korea and Spain
 img: assets/img/projects/kresip_architecture.png
-importance: 5
+importance: 2
 category: completed
 ---
 
