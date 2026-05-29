@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "지식 베이스가 그래프가 되고 싶을 때"
-date: 2026-05-29 22:15:00+0900
+date: 2026-05-29 18:15:00+0900
 description: 마크다운으로 개인 지식 베이스를 만든 지 이틀 만에 한계가 드러났다. Apache Jena Fuseki 위에 RDF 그래프를 올리면서 마주한 네 가지 설계 결정, Claude / qwen2.5 / exaone3.5 모델 비교, 그리고 결국 문서 자체만이 유일하게 지속 가능한 SoT 라는 결론.
 tags: knowledge-base ontology rdf sparql llm claude qwen exaone fuseki ollama korean
 giscus_comments: false
