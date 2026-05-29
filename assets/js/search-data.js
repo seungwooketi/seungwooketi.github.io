@@ -55,7 +55,7 @@ ninja.data = [{
         
           title: "지식 베이스가 그래프가 되고 싶을 때",
         
-        description: "마크다운으로 개인 지식 베이스를 만든 지 이틀 만에 한계가 드러났다. Apache Jena Fuseki 위에 RDF 그래프를 올리면서 마주한 네 가지 설계 결정, Claude / qwen2.5 / exaone3.5 모델 비교, 그리고 결국 문서 자체만이 유일하게 지속 가능한 SoT 라는 결론.",
+        description: "마크다운으로 개인 지식 베이스를 만든 지 이틀 만에 한계가 보였다. Apache Jena Fuseki 위에 RDF 그래프를 올리면서 했던 결정들과 모델 비교, 그리고 결국 문서가 SoT 일 수밖에 없다는 결론.",
         section: "Posts",
         handler: () => {
           
