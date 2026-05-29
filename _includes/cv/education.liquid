@@ -28,6 +28,13 @@
 
           <table class="table-cv">
             <tbody>
+              {% if entry.logo %}
+                <tr>
+                  <td>
+                    <img class="cv-logo" src="{{ entry.logo | prepend: '/assets/img/cv/' | relative_url }}" alt="{{ entry.institution }} logo" loading="lazy" style="max-height: 40px; max-width: 100%; background: #fff; padding: 4px 6px; border-radius: 6px; box-sizing: border-box; margin-bottom: 8px;" />
+                  </td>
+                </tr>
+              {% endif %}
               <tr>
                 <td>
                   {% if date %}

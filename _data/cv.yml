@@ -19,16 +19,19 @@ cv:
   sections:
     Education:
       - institution: Hanyang University
+        logo: hanyang.svg
         area: Electronic Engineering
         studyType: Ph.D.
         start_date: 2014-03
         end_date: 2018-02
       - institution: Hanyang University
+        logo: hanyang.svg
         area: Electronic Engineering
         studyType: M.S.
         start_date: 2000-03
         end_date: 2002-02
       - institution: Hanyang University
+        logo: hanyang.svg
         area: Electronic Engineering
         studyType: B.S.
         start_date: 1996-03
@@ -36,6 +39,7 @@ cv:
 
     Experience:
       - company: Korea Electronics Technology Institute (KETI)
+        logo: keti.png
         position: Director, AI Data & Security Research Center
         location: Seongnam, Korea
         start_date: 2006-11
@@ -44,6 +48,7 @@ cv:
           - Lead research on AI data infrastructure, security, and edge AI systems
           - Coordinate international collaborative research (EU, Korea-Spain, Korea-Canada)
       - company: LG Electronics
+        logo: lg.svg
         position: Researcher, DTV Research Lab (CTO Division)
         location: Korea
         start_date: 2002
