@@ -71,6 +71,8 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history so we can diff for newly added posts
       - name: Setup Ruby 💎
         uses: ruby/setup-ruby@v1
         with:
@@ -103,3 +105,40 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
+      - name: Detect newly added posts 📝
+        if: github.event_name == 'push'
+        id: new_posts
+        run: |
+          before='${{ github.event.before }}'
+          if [ -z "$before" ] || [ "$before" = "0000000000000000000000000000000000000000" ]; then
+            base="${{ github.sha }}^"
+          else
+            base="$before"
+          fi
+          added=$(git diff --diff-filter=A --name-only "$base" "${{ github.sha }}" -- '_posts/' 2>/dev/null || true)
+          if [ -n "$added" ]; then
+            count=$(printf '%s\n' "$added" | grep -c .)
+            echo "has_new=true" >> "$GITHUB_OUTPUT"
+            echo "count=$count" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_new=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Notify Slack 💬
+        if: steps.new_posts.outputs.has_new == 'true'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+          AUTHOR: ${{ github.event.head_commit.author.name }}
+          COMMIT_URL: ${{ github.event.head_commit.url }}
+          POST_COUNT: ${{ steps.new_posts.outputs.count }}
+        run: |
+          if [ -z "$SLACK_WEBHOOK_URL" ]; then
+            echo "::warning::SLACK_WEBHOOK_URL secret not set; skipping Slack notification."
+            exit 0
+          fi
+          subject=$(printf '%s' "$COMMIT_MSG" | head -1)
+          noun="post"; [ "$POST_COUNT" -gt 1 ] 2>/dev/null && noun="posts"
+          text=$(printf '📝 *%s new blog %s published*\n> %s\nby %s · <%s|commit> · <https://seungwooketi.github.io|view site>' \
+            "$POST_COUNT" "$noun" "$subject" "$AUTHOR" "$COMMIT_URL")
+          payload=$(jq -n --arg text "$text" '{text: $text}')
+          curl -sf -X POST -H 'Content-type: application/json' --data "$payload" "$SLACK_WEBHOOK_URL"

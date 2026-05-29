@@ -1,6 +1,10 @@
 <div class="news">
-  {% if site.news != blank %}
-    {% assign news_size = site.news | size %}
+  {% comment %} Pin manual announcements (_news) on top, then fill remaining slots with recent blog posts {% endcomment %}
+  {% assign manual_news = site.news | sort: 'date' | reverse %}
+  {% assign blog_posts = site.posts | sort: 'date' | reverse %}
+  {% assign combined = manual_news | concat: blog_posts %}
+  {% if combined != blank %}
+    {% assign news_size = combined | size %}
     <div
       class="table-responsive"
       {% if include.limit and page.announcements.scrollable and news_size > 3 %}
@@ -8,7 +12,7 @@
       {% endif %}
     >
       <table class="table table-sm table-borderless">
-        {% assign news = site.news | reverse %}
+        {% assign news = combined %}
         {% if include.limit and page.announcements.limit %}
           {% assign news_limit = page.announcements.limit %}
         {% else %}
@@ -22,6 +26,9 @@
                 {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
               {% else %}
                 <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                {% if item.collection == 'posts' %}
+                  <span class="badge text-bg-light ms-1">new post</span>
+                {% endif %}
               {% endif %}
             </td>
           </tr>
