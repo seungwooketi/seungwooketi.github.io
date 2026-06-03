@@ -16,29 +16,7 @@ nav_order: 7
 
   {% assign ko_posts = site.ko | where_exp: "post", "post.published != false" | sort: "date" | reverse %}
 
-  {% comment %} Collect the set of tags used by Korean posts {% endcomment %}
-  {% assign ko_tags = "" | split: "" %}
-  {% for post in ko_posts %}
-    {% for tag in post.tags %}
-      {% assign ko_tags = ko_tags | push: tag %}
-    {% endfor %}
-  {% endfor %}
-  {% assign ko_tags = ko_tags | uniq | sort %}
-
-  {% if ko_tags.size > 0 %}
-  <div class="tag-category-list">
-    <ul class="p-0 m-0">
-      {% for tag in ko_tags %}
-      <li>
-        <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/ko/tag/' | relative_url }}">{{ tag }}</a>
-      </li>
-      {% unless forloop.last %}
-      <p>&bull;</p>
-      {% endunless %}
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
+  {% include blog_tags.liquid posts=ko_posts base='/blog/ko/tag/' %}
 
   <ul class="post-list">
     {% for post in ko_posts %}
