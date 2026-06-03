@@ -19,6 +19,8 @@ toc:
        style="max-width:100%; height:auto;">
 </p>
 
+<p class="text-center"><small><em>English version: <a href="{{ '/blog/2026/foundation-ai-for-industry/' | relative_url }}">What an Industrial Foundation Model Should Be</a></em></small></p>
+
 AI 기술의 발전은 다양한 분야로의 AI 적용을 빠르게 진행시키고 있다. 특히 국내의
 경우 산업 파운데이션 모델에 대한 연구개발 투자가 정부를 비롯한 여러 분야에서
 이뤄지고 있다. 산업부, 과기부 등 다양한 정부기구들은 최근 공개되는 R&D 사업들에서
