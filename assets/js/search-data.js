@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-when-the-knowledge-base-wants-to-be-a-graph",
+        },{id: "post-what-an-industrial-foundation-model-should-be",
+        
+          title: "What an Industrial Foundation Model Should Be",
+        
+        description: "The phrase &#39;industrial foundation model&#39; turns up in every R&amp;D program now. But to earn the word &#39;foundation,&#39; such a model shouldn&#39;t be an omniscient know-it-all — it should be the bedrock that domain knowledge gets built on.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/foundation-ai-for-industry/";
+          
+        },
+      },{id: "post-when-the-knowledge-base-wants-to-be-a-graph",
         
           title: "When the Knowledge Base Wants to Be a Graph",
         
