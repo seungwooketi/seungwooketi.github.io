@@ -100,6 +100,11 @@ ninja.data = [{
           description: "마크다운으로 개인 지식 베이스를 만든 지 이틀 만에 한계가 보였다. Apache Jena Fuseki 위에 RDF 그래프를 올리면서 했던 결정들과 모델 비교, 그리고 결국 문서가 SoT 일 수밖에 없다는 결론.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/markdown-to-knowledge-graph-ko/";
+            },},{id: "ko-산업-파운데이션-모델은-무엇이어야-하는가",
+          title: '산업 파운데이션 모델은 무엇이어야 하는가',
+          description: "산업 파운데이션 모델이라는 말이 R&amp;D 사업마다 등장한다. 그런데 &#39;파운데이션&#39;이라는 이름에 걸맞으려면 그 모델은 모든 걸 아는 전지(全知)한 모델이 아니라, 그 위에 도메인 지식을 쌓을 수 있는 반석이어야 하지 않을까.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/foundation-ai-for-industry/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
