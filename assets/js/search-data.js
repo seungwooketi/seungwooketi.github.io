@@ -44,18 +44,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-지식-베이스가-그래프가-되고-싶을-때",
-        
-          title: "지식 베이스가 그래프가 되고 싶을 때",
-        
-        description: "마크다운으로 개인 지식 베이스를 만든 지 이틀 만에 한계가 보였다. Apache Jena Fuseki 위에 RDF 그래프를 올리면서 했던 결정들과 모델 비교, 그리고 결국 문서가 SoT 일 수밖에 없다는 결론.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2026/markdown-to-knowledge-graph-ko/";
-          
-        },
-      },{id: "post-when-the-knowledge-base-wants-to-be-a-graph",
+        },{id: "nav-blog-kr",
+          title: "Blog(KR)",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "post-when-the-knowledge-base-wants-to-be-a-graph",
         
           title: "When the Knowledge Base Wants to Be a Graph",
         
@@ -99,7 +95,12 @@ ninja.data = [{
             window.location.href = "/blog/2026/uncertainty-quantification-review/";
           
         },
-      },{id: "news-posted-a-new-update-on-linkedin",
+      },{id: "ko-지식-베이스가-그래프가-되고-싶을-때",
+          title: '지식 베이스가 그래프가 되고 싶을 때',
+          description: "마크다운으로 개인 지식 베이스를 만든 지 이틀 만에 한계가 보였다. Apache Jena Fuseki 위에 RDF 그래프를 올리면서 했던 결정들과 모델 비교, 그리고 결국 문서가 SoT 일 수밖에 없다는 결론.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/markdown-to-knowledge-graph-ko/";
+            },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
           section: "News",},{id: "projects-edgecar-edge-ai-for-autonomous-vehicles",
