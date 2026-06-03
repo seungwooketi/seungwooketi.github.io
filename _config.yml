@@ -273,8 +273,9 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-display_tags: ["UQ", "IDM", "robotics", "bayesian-deep-learning", "trustworthy-AI", "knowledge-graph", "llm"] # these tags will be displayed on the front page of your blog
-display_categories: [] # these categories will be displayed on the front page of your blog
+# Note: blog index tag lists are now selected automatically by
+# _includes/blog_tags.liquid (top tags by frequency), so the old
+# display_tags / display_categories settings are no longer used.
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
