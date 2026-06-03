@@ -11,15 +11,13 @@ related_posts: false
 published: false
 toc:
   sidebar: left
-mermaid:
-  enabled: true
-  zoomable: true
 ---
 
-<style>
-  .mermaid { width: 100%; overflow: visible; text-align: center; }
-  .mermaid svg { max-width: 560px; width: 100%; height: auto !important; margin: 0 auto; }
-</style>
+<p class="text-center">
+  <img src="{{ '/assets/img/foundation-ai-hero.png' | relative_url }}"
+       alt="공통 산업 파운데이션 모델이라는 반석 위에 제조·서비스 등 여러 산업이 올라서 있는 모습"
+       style="max-width:100%; height:auto;">
+</p>
 
 AI 기술의 발전은 다양한 분야로의 AI 적용을 빠르게 진행시키고 있다. 특히 국내의
 경우 산업 파운데이션 모델에 대한 연구개발 투자가 정부를 비롯한 여러 분야에서
@@ -63,18 +61,13 @@ CRFM 의 보고서는 파운데이션 모델을 "넓은 데이터로 학습되�
 통해 제조 공정, 서비스 관리, 품질 관리 등 다양한 도메인 특화 산업 모델로 확산될
 수 있어야 비로소 '기반'이라는 이름에 어울리는 역할을 한다고 볼 수 있다.
 
-```mermaid
-flowchart BT
-    F["산업 파운데이션 모델<br/>(도메인 언어 이해 · 지식 연계 기반)"]
-    F --> D1["제조 공정<br/>도메인 지식"]
-    F --> D2["서비스 관리<br/>도메인 지식"]
-    F --> D3["품질 관리<br/>도메인 지식"]
-    D1 --> M1["제조 특화<br/>산업 모델"]
-    D2 --> M2["서비스 특화<br/>산업 모델"]
-    D3 --> M3["품질 특화<br/>산업 모델"]
-```
+<p class="text-center">
+  <img src="{{ '/assets/img/foundation-ai-stack.png' | relative_url }}"
+       alt="산업 파운데이션 모델을 기반으로 제조·서비스·품질 도메인 지식이 쌓여 각 도메인 특화 모델로 발전하는 구조"
+       style="max-width:100%; height:auto;">
+</p>
 
-<p class="text-center"><small><em>가장 아래의 산업 파운데이션 모델 위에 도메인 지식이 쌓여, 여러 도메인 특화 모델로 발전한다. (드래그로 이동 · 스크롤로 확대)</em></small></p>
+<p class="text-center"><small><em>가장 아래의 산업 파운데이션 모델 위에 도메인 지식이 쌓여, 여러 도메인 특화 모델로 발전한다.</em></small></p>
 
 ## 그래서 무엇이 중요해지는가
 
