@@ -3,6 +3,7 @@ layout: post
 lang: ko
 title: "산업 파운데이션 모델은 무엇이어야 하는가"
 date: 2026-06-03 09:00:00+0900
+permalink: /blog/ko/foundation-ai-for-industry/
 description: 산업 파운데이션 모델이라는 말이 R&D 사업마다 등장한다. 그런데 '파운데이션'이라는 이름에 걸맞으려면 그 모델은 모든 걸 아는 전지(全知)한 모델이 아니라, 그 위에 도메인 지식을 쌓을 수 있는 반석이어야 하지 않을까.
 tags: foundation-models industrial-ai manufacturing domain-knowledge ai-policy ipcei eu-ai-act open-source korean
 giscus_comments: false

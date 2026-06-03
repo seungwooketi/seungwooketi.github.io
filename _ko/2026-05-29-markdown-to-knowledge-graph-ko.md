@@ -3,6 +3,7 @@ layout: post
 lang: ko
 title: "지식 베이스가 그래프가 되고 싶을 때"
 date: 2026-05-29 18:15:00+0900
+permalink: /blog/ko/markdown-to-knowledge-graph-ko/
 description: 마크다운으로 개인 지식 베이스를 만든 지 이틀 만에 한계가 보였다. Apache Jena Fuseki 위에 RDF 그래프를 올리면서 했던 결정들과 모델 비교, 그리고 결국 문서가 SoT 일 수밖에 없다는 결론.
 tags: knowledge-graph knowledge-base ontology rdf sparql llm claude qwen exaone fuseki ollama korean
 giscus_comments: false

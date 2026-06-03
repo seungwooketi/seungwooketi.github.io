@@ -147,6 +147,9 @@ newsletter:
 # -----------------------------------------------------------------------------
 
 collections:
+  ko:
+    output: true
+    permalink: /blog/ko/:title/
   books:
     output: true
   news:
@@ -261,6 +264,12 @@ jekyll-archives:
       year: "/blog/:year/"
       tags: "/blog/:type/:name/"
       categories: "/blog/:type/:name/"
+  ko: # Korean posts archives, namespaced under /blog/ko/
+    enabled: [year, tags, categories]
+    permalinks:
+      year: "/blog/ko/:year/"
+      tags: "/blog/ko/:type/:name/"
+      categories: "/blog/ko/:type/:name/"
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
