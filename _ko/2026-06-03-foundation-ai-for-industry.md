@@ -8,7 +8,7 @@ description: 산업 파운데이션 모델이라는 말이 R&D 사업마다 등�
 tags: foundation-models industrial-ai manufacturing domain-knowledge ai-policy ipcei eu-ai-act open-source korean
 giscus_comments: false
 related_posts: false
-published: false
+published: true
 toc:
   sidebar: left
 ---
