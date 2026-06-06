@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-what-an-industrial-foundation-model-should-be",
+        },{id: "post-industrial-ai-lives-or-dies-on-visibility",
+        
+          title: "Industrial AI Lives or Dies on Visibility",
+        
+        description: "Commercial AI is already astonishingly good — so do we even need a separate industrial AI model? A look at three constraints (protecting information, cost, and sustainability) and why the thing that ultimately holds it all together is AI visibility.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/industrial-ai-visibility/";
+          
+        },
+      },{id: "post-what-an-industrial-foundation-model-should-be",
         
           title: "What an Industrial Foundation Model Should Be",
         
@@ -116,6 +127,11 @@ ninja.data = [{
           description: "산업 파운데이션 모델이라는 말이 R&amp;D 사업마다 등장한다. 그런데 &#39;파운데이션&#39;이라는 이름에 걸맞으려면 그 모델은 모든 걸 아는 전지(全知)한 모델이 아니라, 그 위에 도메인 지식을 쌓을 수 있는 반석이어야 하지 않을까.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/foundation-ai-for-industry/";
+            },},{id: "ko-산업-ai의-지속가능성은-결국-39-ai-가시성-39-에서-온다",
+          title: '산업 AI의 지속가능성은 결국 &amp;#39;AI 가시성&amp;#39;에서 온다',
+          description: "상용 AI는 이미 놀랍도록 잘 한다. 그렇다면 산업 AI 모델은 따로 필요할까? 정보 보호·비용·지속가능성이라는 세 제약을 짚고, 그 모든 걸 지속가능하게 만드는 핵심이 왜 &#39;AI 가시성(visibility)&#39;인지 이야기한다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/industrial-ai-visibility/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
