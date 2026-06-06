@@ -20,7 +20,7 @@ toc:
        style="max-width:100%; height:auto;">
 </p>
 
-<p class="text-center"><small><em>English version: <a href="{{ '/blog/2026/industrial-ai-visibility/' | relative_url }}">Industrial AI Lives or Dies on Visibility</a></em></small></p>
+<p class="text-center"><small><em>English version: <a href="{{ '/blog/2026/industrial-ai-visibility/' | relative_url }}">Industrial AI and its visibility</a></em></small></p>
 
 앞선 글에서 [산업 파운데이션 모델은 무엇이어야 하는가]({{ '/blog/ko/foundation-ai-for-industry/' | relative_url }}) 이야기를 꺼낸 김에, 이번에는 조금 더 현실적인 질문을 함께 들여다보고 싶다. 그리고 미리 살짝 말해두면, 이 글이 결국 닿는 곳은 **AI 가시성(visibility)** 이다. 산업 AI가 한 번 만들고 끝나는 물건이 아니라 계속 살아 있는 시스템이 되려면, 아무래도 이 가시성이 열쇠가 아닐까 싶다.
 
