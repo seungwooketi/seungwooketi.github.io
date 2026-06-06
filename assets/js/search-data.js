@@ -51,9 +51,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-industrial-ai-lives-or-dies-on-visibility",
+        },{id: "post-industrial-ai-and-its-visibility",
         
-          title: "Industrial AI Lives or Dies on Visibility",
+          title: "Industrial AI and its visibility",
         
         description: "Commercial AI is already astonishingly good — so do we even need a separate industrial AI model? A look at three constraints (protecting information, cost, and sustainability) and why the thing that ultimately holds it all together is AI visibility.",
         section: "Posts",
