@@ -139,7 +139,7 @@ chain without handing over its whole asset — data or software.
 </style>
 
 ```mermaid
-flowchart LR
+flowchart TB
   RD["Raw data"] -- "Processing SW · container" --> PD["Processed data"]
   PD -- "Training module · container" --> SFM["Sector foundation model"]
   SFM -- "Optimization module · container" --> CFM["Company-specific model"]

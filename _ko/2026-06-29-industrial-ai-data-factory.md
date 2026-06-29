@@ -127,7 +127,7 @@ Industrial Data Lake를 움직이는 주체는 네 부류로 나뉘고, 각자 �
 </style>
 
 ```mermaid
-flowchart LR
+flowchart TB
   RD["원 데이터"] -- "데이터 가공 SW · 컨테이너" --> PD["가공 데이터"]
   PD -- "학습 모듈 · 컨테이너" --> SFM["섹터 파운데이션 모델"]
   SFM -- "최적화 모듈 · 컨테이너" --> CFM["기업 특화 모델"]
