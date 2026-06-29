@@ -1,144 +1,223 @@
 ---
 layout: post
-lang: ko
-title: "산업 AI를 위한 Data Factory 구상"
+title: "An Industrial Data Lake for Industrial AI"
 date: 2026-06-29 14:00:00+0900
-description: 데이터와 모델을 기업의 자산으로 보호하면서도 산업 AI 모델을 개발할 수 있게 하는 Data Factory 구상. 섹터 파운데이션 모델, 이해관계자 구조와 비즈니스 모델, 독일·유럽 IPCEI-AI의 시사점, 그리고 시스템 안에 넣어야 할 데이터 보안 기능을 정리했다.
-tags: industrial-AI data-factory foundation-model data-security AI-BOM trustworthy-AI korean
+description: A sketch of an Industrial Data Lake — a way to build industrial AI while keeping data and models protected as corporate assets. It covers the conflicting requirements industry faces, agentic AI as an answer, a stakeholder-and-business-model structure, what Germany and Europe's IPCEI-AI suggests, and the security functions the system has to carry.
+tags: industrial-AI industrial-data-lake foundation-model agentic-AI multi-agent data-security AI-BOM trustworthy-AI
+thumbnail: assets/img/industrial-ai-data-factory-thumb.png
+og_image: /assets/img/industrial-ai-data-factory-thumb.png
 giscus_comments: false
 related_posts: false
 published: false
 toc:
   sidebar: left
+mermaid:
+  enabled: true
+  zoomable: true
 ---
 
-산업 현장의 AI는 일반 AI와 출발점이 다르다. 일반 AI에서 데이터는 많을수록
-좋은 연료지만, 산업 현장에서 데이터는 곧 기업의 경쟁력 그 자체다. "300℃ 체임버
-안에서 2시간 보관한 뒤 90% 출력, 12mm/s, 에어 블로잉으로 레이저 절단해 형상을
-가공한다" — 이 한 줄 같은 공정 파라미터가 그 회사가 수년에 걸쳐 쌓아 온 지식
-자산이다. 그래서 산업 AI에서 진짜 질문은 "데이터를 어떻게 더 모을까"가 아니라
-"이 자산을 **공개하지 않으면서** 어떻게 AI 모델과 서비스를 만들게 할까"가 된다.
+<p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/industrial-ai-data-factory/' | relative_url }}">산업 AI를 위한 Industrial Data Lake 구상</a></em></small></p>
 
-이 글은 그 질문에 대한 하나의 답으로 정리한 **Data Factory** 구상이다. 아직
-사업 기획 단계의 아이디어 묶음이라, 확정된 설계라기보다는 "이런 모양이면 풀릴
-것 같다"에 가깝다.
+## The problem
 
-## 무엇을 만들려는가
+The appetite for industrial foundation models keeps growing. Every shop floor
+has the same quiet wish — "if only there were a good base model tuned to *our*
+process." But the moment you try to build one, industry runs straight into a
+pair of **conflicting requirements**.
 
-목적은 단순하게 잡으면 이렇다 — 12대 산업에 로봇/AI를 적용하기 위한 데이터를
-확보하고, 그것을 학습에 바로 쓸 수 있는 형태까지 갖춰 주는 것. 시스템이 제공하는
-범위는 크게 세 가지다.
+On one side is the fear of leaking a data asset. In consumer AI, data is fuel:
+the more you have, the better. On a factory floor, data *is* the competitive
+edge. "Hold it in a 300°C chamber for two hours, then laser-cut at 90% power,
+12 mm/s, with air blowing" — a single line of process parameters like that is
+knowledge a company spent years accumulating. On the other side is a [**floor-
+lifting**]({{ '/blog/2026/foundation-ai-for-industry/' | relative_url }}) effect I
+noted in an earlier post. Once a good foundation model is out, the performance
+floor for the whole sector rises with it, and the lead a company bought with its
+own data gets shaved down. The conclusion sounds like a contradiction: everyone wants a
+good foundation model, yet nobody wants to share the data and models it would
+take to build one.
 
-- **데이터 확보** — 12대 산업에서 나오는 원 데이터를 모은다.
-- **AI-Ready Data 구성** — 원 데이터를 학습에 바로 투입할 수 있는 형태로 가공한다.
-- **모델 학습 인프라** — GPU 등 학습에 필요한 컴퓨팅을 함께 제공한다.
+A third pressure stacks on top. As AI gets more capable, it also gets more
+complex to assemble and run — which makes it steadily harder for an industrial
+company to develop and operate AI on its own. So the real question becomes: **how
+should data and AI models actually be operated?** That is where this sketch
+starts.
 
-여기서 한 가지 열어 둔 질문은, AI 모델 학습 도구까지 시스템이 품을지 아니면
-수요자가 자체적으로 들고 들어올지다. 시스템의 경계를 어디까지로 그을지를 가르는
-지점이라 따로 적어 둔다.
+## Agentic AI as an answer
 
-## 이해관계자와 비즈니스 모델
+Agentic AI offers one way out of the bind. The key move is to *give up* on the
+"model that does everything." Instead you place a **generative AI that
+understands context** at the center. The agent knows the context of the
+industrial data, and for a given situation it works out **which tools to call**.
+It is less an all-knowing brain than a coordinator that reads context and routes
+to the right instrument.
 
-Data Factory를 움직이는 주체는 네 부류로 나뉘고, 각자 무언가를 내놓고 그 대가로
-사용료를 받는 구조다.
+{% include figure.liquid loading="eager" path="assets/img/industrial-ai-data-factory-fig.png" class="img-fluid rounded z-depth-1" alt="An agent at the center that understands industrial context and orchestrates tools, with two activation paths: fine-tuning the foundation model and connecting external tools" %}
 
-| 주체 | 내놓는 것 | 과금 |
+The foundation model can then be put to work in two ways.
+
+- **Internalize it through fine-tuning** — fine-tune a specific industry's
+  context directly into the foundation model, so the knowledge is baked into the
+  weights.
+- **Attach it as a tool** — connect interpretation tools grounded in specific
+  industrial knowledge, and pull that knowledge in from the outside as needed.
+
+A consumer picks between the two depending on the situation, and the trade-off is
+clear. Internalizing knowledge in the model costs a lot to train and keeps
+costing to maintain afterward. Bolting tools onto an existing foundation model,
+by contrast, allows flexible responses through those tools — but demands a much
+wider set of management techniques to keep them in order.
+
+| Approach | Strength | Cost to weigh |
 | --- | --- | --- |
-| 데이터 제공자 | 원 데이터 | 데이터 사용료 수취 |
-| 데이터 가공자 | 원 데이터를 유효한 AI-Ready Data로 바꾸는 소프트웨어·변환기 (품질 관리 포함) | 소프트웨어 사용료 수취 |
-| 모델 개발자 | 데이터로 학습한 파운데이션 모델(base model) | 데이터 사용료 지불, 모델 사용료 수취 |
-| 데이터 수요자 | (AI 기반으로 자사 제조 환경을 개선하려는 곳) | 데이터·가공 비용 지불, 튜닝된 특화 모델 확보 |
+| Fine-tuning the foundation model (internalize) | Knowledge fused into the model, consistent answers | High training cost + ongoing maintenance |
+| Tool connection (external knowledge) | Flexible responses, easy to refresh knowledge | Broad management techniques for tools and calls |
 
-여기에 데이터 보안 기술을 보유한 주체가 시스템 전반을 떠받친다. 가치 사슬을
-한 줄로 보면 데이터 제공자 → 데이터 가공자 → 모델 개발자 → AI 수요자로 흐르고,
-각 화살표마다 "데이터/소프트웨어/모델"이 넘어가고 반대 방향으로 "사용료"가
-흐른다. 수요자 쪽에서는 자신의 private data를 (사용료를 내고) 넣어 피드백을 받아
-특화 모델을 얻는다.
+So the answer is probably not a fixed choice between the two but a
+**multi-agent** arrangement rather than a single agent. When several agents each
+own a slice of context and a set of tools, the system can compose the right
+technique for the moment on the fly.
 
-핵심은, 이 사슬 어디에서도 데이터나 모델 **원본이 그대로 공개되지 않는다**는
-점이다. 거래되는 것은 사용 권한과 결과물이지, 자산 자체가 아니다.
+Now put that agent and foundation model on top of a system that makes data and
+models *tradable without ever disclosing them*. What follows is that system,
+organized under the name **Industrial Data Lake**. It is still a bundle of ideas
+at the planning stage — closer to "this shape might work" than a settled design.
 
-## 처리 플로우
+## What we're building
 
-데이터가 특화 모델이 되기까지의 흐름은 컨테이너 단위로 끊어 둔다. 각 단계가
-독립된 컨테이너이기 때문에, 공급자는 자기 자산(데이터든 소프트웨어든)을 통째로
-내주지 않고도 사슬에 참여할 수 있다.
+Stated plainly, the goal is this: secure the data needed to apply robots and AI
+across the twelve major industries, and bring it all the way to a form you can
+train on directly. The system provides roughly three things.
 
-```
-원 데이터
-   │  [데이터 가공 소프트웨어 (컨테이너)]
-   ▼
-가공 데이터
-   │  [학습 모듈 (컨테이너)]
-   ▼
-학습된 모델  ──▶ 섹터 파운데이션 모델
-   │  [최적화 모듈 (컨테이너)]
-   ▼
-기업 특화 모델
-```
+- **Data acquisition** — collect raw data coming off the twelve industries.
+- **AI-ready data** — process raw data into a form you can feed into training
+  right away.
+- **Training infrastructure** — provide the compute (GPUs and so on) needed to
+  train.
 
-이 흐름 위에 세 명의 플레이어가 각자의 동기를 가지고 만난다. 데이터 공급자는
-"데이터를 팔아줄게", 소프트웨어 공급자는 "내 소프트웨어를 팔아줄게", AI
-수요자는 "나는 AI 모델이 필요해". Data Factory는 이 세 동기가 서로의 자산을
-노출하지 않고도 거래로 연결되는 자리를 만들어 주는 셈이다.
+One question left open here is whether the system should also own the model-
+training tooling, or whether consumers bring their own. It decides where the
+system's boundary gets drawn, so it is worth flagging on its own.
 
-## 독일·유럽 IPCEI-AI에서 얻은 시사점
+## Stakeholders and the business model
 
-이 구상은 독일/유럽의 IPCEI-AI 전략, 특히 산업 파운데이션 모델 전략을 참고했다.
-거기서 끌어낸 시사점은 세 가지로 압축된다.
+Four kinds of actors move the Industrial Data Lake, each putting something in and
+taking a fee in return.
 
-첫째, **아무도 자사의 경쟁력을 공개하고 싶어 하지 않는다.** 일반 AI와 달리
-산업 AI는 기업의 존폐와 직결되는 문제라, 데이터 공유를 전제로 한 비즈니스 모델은
-애초에 성립하지 않는다. 그러니 비즈니스 모델 자체가 일반 AI와 달라야 한다.
-
-둘째, **정부의 역할은 "섹터 파운데이션 모델까지"로 한정된다.** 섹터의 맥락을
-이해하는 섹터별 파운데이션 모델 개발에는 공공이 투자하되, 그 위에 특정 회사의
-특화 모델을 올리는 일은 개별 기업의 영역으로 남긴다.
-
-셋째, 그래서 **섹터 파운데이션 모델**이라는 개념이 흥미롭다. 모든 걸 다 할 수
-있는 만능 모델을 만들겠다는 게 아니라, 그 위에 각자 무언가를 쌓아 올릴 수 있는
-**기반(파운데이션)까지만** 공공이 제공하겠다는 발상이다. 공공이 어디까지
-관여하고 어디서부터 민간에 넘길지를 가르는 선이 바로 여기에 그어진다.
-
-## 공공이 지원할 영역과 민간의 영역
-
-위 시사점을 시스템 설계로 옮기면, 자산을 두 층으로 나누는 그림이 된다.
-
-| 구분 | 무엇 | 어디에 있나 |
+| Actor | What they offer | Charging |
 | --- | --- | --- |
-| **공공 지원 영역** | 데이터, 가공 소프트웨어, 섹터 파운데이션 모델 | 시스템 *안*에 존재하되 공개되지 않음. 과금의 대상이 된다. |
-| **민간 영역** (공공 지원 X) | 민간 데이터, 학습 모듈, 민간 특화 모델 | 시스템 *밖*에 존재. 시스템 안에서도 공개되지 않으며, 보안성을 보장받는다. |
+| Data provider | Raw data | Earns a data usage fee |
+| Data processor | Software/converters that turn raw data into valid AI-ready data (quality control included) | Earns a software usage fee |
+| Model developer | A foundation (base) model trained on the data | Pays for data, earns a model usage fee |
+| Data consumer | (A site that wants to improve its own manufacturing with AI) | Pays for data and processing, gets a tuned specialized model |
 
-요점은 "시스템 안에 있다"와 "공개된다"가 서로 다른 말이라는 것이다. 공공이
-지원한 자산조차 시스템 안에서 보호된 채 과금만 이뤄지고, 민간 자산은 아예
-시스템 밖에 두면서도 보안을 보장받는다.
+Underneath it all, an actor holding data-security technology props up the whole
+system. Seen as one line, the value chain flows data provider → data processor →
+model developer → AI consumer, with "data / software / model" handed forward at
+each arrow and "usage fees" flowing back the other way. On the consumer end, they
+feed in their own private data (for a fee), get feedback, and walk away with a
+specialized model.
 
-## 시스템 안에 넣어야 할 데이터 보안 기능
+The crux is that **nowhere along this chain is the original data or model
+disclosed as-is**. What gets traded is usage rights and outputs — never the asset
+itself.
 
-자산을 공개하지 않는다는 원칙이 성립하려면, 그걸 기술로 받쳐 줘야 한다. 시스템
-내부 기능으로 두 갈래를 생각하고 있다.
+## The processing flow
 
-**데이터·모델 안전 명세.** 데이터 쪽으로는 불확실성 정량화(uncertainty
-quantification)나 jailbreak 대응 안전성 같은 메트릭을, 모델 쪽으로는 모델 증류
-방지를 위한 워터마킹과 비가역 학습 기술 등을 명세 항목으로 둔다. 자산이 사슬을
-따라 흐르는 동안 "이것이 얼마나 안전한가"를 정량적으로 따라붙게 하는 셈이다.
+The path from data to a specialized model is cut into container-sized stages.
+Because each stage is an independent container, a supplier can take part in the
+chain without handing over its whole asset — data or software.
 
-**AI 명세서 기반 학습 파이프라인 관리(AI Manifest / AI-BOM).** 각 단계에서 어떤
-기술이 적용됐고 데이터/모델 품질이 어땠는지를 명세로 남겨, **이 모델이 어느
-데이터로부터 어떻게 가공되어 나왔는지**를 추적할 수 있게 한다. 이때 불완전성,
-프롬프트 안전성 같은 다양한 메트릭을 함께 반영하고, 모델 버전이 바뀌면 그 변경
-이력까지 추적·관리한다. 소프트웨어 공급망에서 쓰는 S-BOM 개념을 어디까지 끌어올지는
-더 따져 볼 문제로 남겨 둔다.
+<style>
+  .mermaid { width: 100%; overflow: visible; }
+  .mermaid svg { width: 100% !important; height: auto !important; }
+</style>
 
-## 정리
+```mermaid
+flowchart LR
+  RD["Raw data"] -- "Processing SW · container" --> PD["Processed data"]
+  PD -- "Training module · container" --> SFM["Sector foundation model"]
+  SFM -- "Optimization module · container" --> CFM["Company-specific model"]
+  ED["Company data"] --> CFM
+  DP["Data supplier<br/>'I'll sell you data'"] -. provides .-> RD
+  SP["Software supplier<br/>'I'll sell you my software'"] -. provides .-> PD
+  SP -. provides .-> SFM
+  AIC["AI consumer<br/>'I need an AI model'"] -. company data .-> ED
+  CFM -- "specialized model" --> AIC
+```
 
-Data Factory 구상을 한 문장으로 줄이면, **데이터와 모델을 자산으로 보호하는
-것을 전제로 산업 AI 개발을 가능하게 하는 거래·보안 시스템**이다. 공개를 전제로
-한 일반 AI의 문법을 산업 현장에 그대로 가져오면 깨지기 때문에, 비즈니스 모델은
-거래되는 것을 원본이 아니라 사용 권한과 결과물로 바꾸고, 공공의 역할은 섹터
-파운데이션 모델까지로 긋고, 자산의 출처와 안전성을 AI-BOM으로 끝까지 추적한다.
+Three players meet on this flow, each with their own motive. The data supplier
+says "I'll sell you data," the software supplier says "I'll sell you my
+software," and the AI consumer says "I need an AI model." The Industrial Data
+Lake is, in effect, the place where those three motives connect through trade
+without exposing one another's assets.
 
-아직 물음표가 여럿 남아 있다 — 학습 도구를 시스템이 품을지, S-BOM을 어디까지
-포함할지, 12대 산업과 로봇 AI 적용의 범위를 어떻게 확정할지. 그래도 "자산을
-지키면서 AI를 만든다"는 한 축은 분명해서, 그 위에 나머지를 쌓아 갈 수 있을 것
-같다.
+## What Germany and Europe's IPCEI-AI suggests
+
+This sketch borrows from Germany and Europe's IPCEI-AI strategy, and its
+industrial foundation-model strategy in particular. Three takeaways compress out
+of it.
+
+First, **nobody wants to disclose their own competitive edge.** Unlike consumer
+AI, industrial AI is tied to a company's survival, so any business model that
+presumes data sharing fails from the start. The business model itself has to be
+different from consumer AI.
+
+Second, **the government's role stops at "up to the sector foundation model."**
+Public money invests in sector-level foundation models that understand a sector's
+context, but building a particular company's specialized model on top of that is
+left to the individual firm.
+
+Third, and this is what makes the idea interesting, the **sector foundation
+model**. The point is not to build an omnipotent model that does everything, but
+to have the public provide only the **foundation** on which each player can stack
+something of their own. The line between where the public is involved and where
+it hands off to the private sector is drawn right here.
+
+## Public domain vs. private domain
+
+Translate those takeaways into a system design and you get a picture that splits
+assets into two layers.
+
+| Layer | What | Where it lives |
+| --- | --- | --- |
+| **Public-supported domain** | Data, processing software, sector foundation model | Lives *inside* the system but is not disclosed. It is what gets charged for. |
+| **Private domain** (no public support) | Private data, training module, private specialized model | Lives *outside* the system. Not disclosed even inside it, and its security is guaranteed. |
+
+The point is that "inside the system" and "disclosed" are two different things.
+Even publicly supported assets stay protected inside the system with only the
+billing exposed, while private assets sit entirely outside the system and are
+still guaranteed security.
+
+## Security functions the system has to carry
+
+For the no-disclosure principle to hold, technology has to back it up. Two
+strands are on the table as functions inside the system.
+
+**Data and model safety specs.** On the data side, metrics like uncertainty
+quantification and resistance to jailbreaks; on the model side, watermarking
+against distillation and irreversible-training techniques. The idea is to keep a
+quantitative "how safe is this" attached to an asset as it flows down the chain.
+
+**Manifest-based training-pipeline management (AI Manifest / AI-BOM).** Record,
+as a spec, which techniques were applied at each stage and what the data/model
+quality was, so you can **trace which data a model came from and how it was
+processed.** Various metrics — incompleteness, prompt safety, and so on — get
+folded in, and when a model version changes, that change history is tracked and
+managed too. How far to pull in the S-BOM concept from software supply chains is
+left as a question to weigh further.
+
+## Wrap-up
+
+Compressed to a sentence, the Industrial Data Lake is a **trade-and-security
+system that makes industrial AI development possible on the premise of protecting
+data and models as assets.** Because the consumer-AI grammar of disclose-by-
+default breaks when you carry it onto a factory floor, the business model trades
+usage rights and outputs instead of originals, the public role is drawn at the
+sector foundation model, and the provenance and safety of assets are traced
+end-to-end with an AI-BOM.
+
+Plenty of question marks remain — whether the system should own the training
+tools, how far to fold in S-BOM, how to pin down the scope of the twelve
+industries and robot-AI deployment. Even so, the one axis is clear — *make AI
+while keeping the assets protected* — and the rest can be stacked on top of that.
