@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-industrial-ai-and-its-visibility",
+        },{id: "post-an-industrial-data-lake-for-industrial-ai",
+        
+          title: "An Industrial Data Lake for Industrial AI",
+        
+        description: "A sketch of an Industrial Data Lake — a way to build industrial AI while keeping data and models protected as corporate assets. It covers the conflicting requirements industry faces, agentic AI as an answer, a stakeholder-and-business-model structure, what Germany and Europe&#39;s IPCEI-AI suggests, and the security functions the system has to carry.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/industrial-ai-data-factory/";
+          
+        },
+      },{id: "post-industrial-ai-and-its-visibility",
         
           title: "Industrial AI and its visibility",
         
