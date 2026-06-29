@@ -129,8 +129,13 @@ Because each stage is an independent container, a supplier can take part in the
 chain without handing over its whole asset — data or software.
 
 <style>
-  .mermaid { width: 100%; overflow: visible; }
-  .mermaid svg { width: 100% !important; height: auto !important; }
+  .mermaid { width: 100%; overflow: visible; text-align: center; }
+  .mermaid svg {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 520px;
+  }
 </style>
 
 ```mermaid

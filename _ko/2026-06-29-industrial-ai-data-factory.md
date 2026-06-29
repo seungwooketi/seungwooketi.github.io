@@ -117,8 +117,13 @@ Industrial Data Lake를 움직이는 주체는 네 부류로 나뉘고, 각자 �
 내주지 않고도 사슬에 참여할 수 있다.
 
 <style>
-  .mermaid { width: 100%; overflow: visible; }
-  .mermaid svg { width: 100% !important; height: auto !important; }
+  .mermaid { width: 100%; overflow: visible; text-align: center; }
+  .mermaid svg {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 520px;
+  }
 </style>
 
 ```mermaid
