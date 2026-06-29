@@ -132,6 +132,11 @@ ninja.data = [{
           description: "상용 AI는 이미 놀랍도록 잘 한다. 그렇다면 산업 AI 모델은 따로 필요할까? 정보 보호·비용·지속가능성이라는 세 제약을 짚고, 그 모든 걸 지속가능하게 만드는 핵심이 왜 &#39;AI 가시성(visibility)&#39;인지 이야기한다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/industrial-ai-visibility/";
+            },},{id: "ko-산업-ai를-위한-industrial-data-lake-구상",
+          title: '산업 AI를 위한 Industrial Data Lake 구상',
+          description: "데이터와 모델을 기업의 자산으로 보호하면서도 산업 AI 모델을 개발할 수 있게 하는 Industrial Data Lake 구상. 섹터 파운데이션 모델, 이해관계자 구조와 비즈니스 모델, 독일·유럽 IPCEI-AI의 시사점, 그리고 시스템 안에 넣어야 할 데이터 보안 기능을 정리했다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/industrial-ai-data-factory/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
