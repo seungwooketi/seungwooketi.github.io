@@ -86,10 +86,10 @@ at the planning stage — closer to "this shape might work" than a settled desig
 ## What we're building
 
 Stated plainly, the goal is this: secure the data needed to apply robots and AI
-across the twelve major industries, and bring it all the way to a form you can
+across the industries, and bring it all the way to a form you can
 train on directly. The system provides roughly three things.
 
-- **Data acquisition** — collect raw data coming off the twelve industries.
+- **Data acquisition** — collect raw data coming off the industries.
 - **AI-ready data** — process raw data into a form you can feed into training
   right away.
 - **Training infrastructure** — provide the compute (GPUs and so on) needed to
@@ -218,6 +218,6 @@ sector foundation model, and the provenance and safety of assets are traced
 end-to-end with an AI-BOM.
 
 Plenty of question marks remain — whether the system should own the training
-tools, how far to fold in S-BOM, how to pin down the scope of the twelve
+tools, how far to fold in S-BOM, how to pin down the scope of the 
 industries and robot-AI deployment. Even so, the one axis is clear — *make AI
 while keeping the assets protected* — and the rest can be stacked on top of that.
