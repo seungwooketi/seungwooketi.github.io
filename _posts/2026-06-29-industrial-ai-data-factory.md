@@ -13,7 +13,7 @@ toc:
   sidebar: left
 mermaid:
   enabled: true
-  zoomable: true
+  zoomable: false
 ---
 
 <p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/industrial-ai-data-factory/' | relative_url }}">산업 AI를 위한 Industrial Data Lake 구상</a></em></small></p>
@@ -130,25 +130,19 @@ chain without handing over its whole asset — data or software.
 
 <style>
   .mermaid { width: 100%; overflow: visible; text-align: center; }
-  .mermaid svg {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 520px;
-  }
+  .mermaid svg { width: 100% !important; max-width: 620px !important; height: auto !important; }
 </style>
 
 ```mermaid
+%%{init: {'flowchart': {'rankSpacing': 60, 'nodeSpacing': 38}}}%%
 flowchart TB
-  RD["Raw data"] -- "Processing SW · container" --> PD["Processed data"]
-  PD -- "Training module · container" --> SFM["Sector foundation model"]
-  SFM -- "Optimization module · container" --> CFM["Company-specific model"]
-  ED["Company data"] --> CFM
-  DP["Data supplier<br/>'I'll sell you data'"] -. provides .-> RD
-  SP["Software supplier<br/>'I'll sell you my software'"] -. provides .-> PD
-  SP -. provides .-> SFM
-  AIC["AI consumer<br/>'I need an AI model'"] -. company data .-> ED
-  CFM -- "specialized model" --> AIC
+  DP["Data supplier<br/>'I'll sell you data'"] -->|provides| RD["Raw data"]
+  RD -->|Processing SW · container| PD["Processed data"]
+  PD -->|Training module · container| SFM["Sector foundation model"]
+  SFM -->|Optimization module · container| CFM["Company-specific model"]
+  CFM -->|specialized model| AIC["AI consumer<br/>'I need an AI model'"]
+  SP["Software supplier<br/>'I'll sell you my software'"] -. provides containers .-> PD
+  AIC -. company data .-> CFM
 ```
 
 Three players meet on this flow, each with their own motive. The data supplier

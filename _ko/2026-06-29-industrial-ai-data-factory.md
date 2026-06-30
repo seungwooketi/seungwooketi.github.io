@@ -15,7 +15,7 @@ toc:
   sidebar: left
 mermaid:
   enabled: true
-  zoomable: true
+  zoomable: false
 ---
 
 <p class="text-center"><small><em>English version: <a href="{{ '/blog/2026/industrial-ai-data-factory/' | relative_url }}">An Industrial Data Lake for Industrial AI</a></em></small></p>
@@ -118,25 +118,19 @@ Industrial Data Lake를 움직이는 주체는 네 부류로 나뉘고, 각자 �
 
 <style>
   .mermaid { width: 100%; overflow: visible; text-align: center; }
-  .mermaid svg {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 520px;
-  }
+  .mermaid svg { width: 100% !important; max-width: 620px !important; height: auto !important; }
 </style>
 
 ```mermaid
+%%{init: {'flowchart': {'rankSpacing': 60, 'nodeSpacing': 38}}}%%
 flowchart TB
-  RD["원 데이터"] -- "데이터 가공 SW · 컨테이너" --> PD["가공 데이터"]
-  PD -- "학습 모듈 · 컨테이너" --> SFM["섹터 파운데이션 모델"]
-  SFM -- "최적화 모듈 · 컨테이너" --> CFM["기업 특화 모델"]
-  ED["기업 데이터"] --> CFM
-  DP["데이터 공급자<br/>‘데이터를 팔아줄게’"] -. 제공 .-> RD
-  SP["소프트웨어 공급자<br/>‘내 소프트웨어를 팔아줄게’"] -. 제공 .-> PD
-  SP -. 제공 .-> SFM
-  AIC["AI 수요자<br/>‘나는 AI 모델이 필요해’"] -. 기업 데이터 .-> ED
-  CFM -- "특화 모델" --> AIC
+  DP["데이터 공급자<br/>‘데이터를 팔아줄게’"] -->|제공| RD["원 데이터"]
+  RD -->|데이터 가공 SW · 컨테이너| PD["가공 데이터"]
+  PD -->|학습 모듈 · 컨테이너| SFM["섹터 파운데이션 모델"]
+  SFM -->|최적화 모듈 · 컨테이너| CFM["기업 특화 모델"]
+  CFM -->|특화 모델| AIC["AI 수요자<br/>‘나는 AI 모델이 필요해’"]
+  SP["소프트웨어 공급자<br/>‘내 소프트웨어를 팔아줄게’"] -. 컨테이너 제공 .-> PD
+  AIC -. 기업 데이터 .-> CFM
 ```
 
 이 흐름 위에 세 명의 플레이어가 각자의 동기를 가지고 만난다. 데이터 공급자는
