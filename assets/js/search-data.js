@@ -148,6 +148,11 @@ ninja.data = [{
           description: "데이터와 모델을 기업의 자산으로 보호하면서도 산업 AI 모델을 개발할 수 있게 하는 Industrial Data Lake 구상. 섹터 파운데이션 모델, 이해관계자 구조와 비즈니스 모델, 독일·유럽 IPCEI-AI의 시사점, 그리고 시스템 안에 넣어야 할 데이터 보안 기능을 정리했다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/industrial-ai-data-factory/";
+            },},{id: "ko-허용된-통로로-접근하는-산업-정보-생성형-에이전틱-ai의-보안-문제",
+          title: '허용된 통로로 접근하는 산업 정보 — 생성형·에이전틱 AI의 보안 문제',
+          description: "산업 파운데이션 모델과 에이전틱 AI는 공정 관리를 바꿔 놓을 수 있지만, 정보 보호에는 기존과 다른 종류의 구멍을 낸다. 허용된 접근 루트로 들어와 자연스럽게 정보를 흘리는 문제, 생각해 볼 수 있는 공격 유형, 그리고 사이버 시큐리티에 AI의 관점을 더한 새로운 대응 패러다임을 정리했다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/industrial-ai-information-protection/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
