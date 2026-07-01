@@ -128,7 +128,10 @@ is the safety catch for the second attack (sabotage).
 
 This worry is not ours alone. Regulators and standards bodies have recently begun
 to address the same point. Here are a few references worth consulting when you
-design information protection for industrial AI, grouped by angle.
+design information protection for industrial AI, grouped by angle. Most are
+Korean-government materials written in Korean, and those links are flagged with
+"(Korean)" in the reference list at the end; the TTA CAT guide and the OWASP Top
+10 are available in English.
 
 **Privacy and data protection.** Korea's Personal Information Protection
 Commission published a [Guide to Personal Data Processing for the Development and
