@@ -2,6 +2,7 @@
 layout: default
 title: blog
 permalink: /
+home: true
 pagination:
   enabled: true
   collection: posts
