@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Leaking Through an Authorized Door — the Security Problem of Generative and Agentic AI"
-date: 2026-07-01 15:30:00+0900
+date: 2026-07-01 16:12:00+0900
 description: Industrial foundation models and agentic AI can transform process management, but they punch a different kind of hole in information protection. This is about information that leaks through a legitimate access route, the attacks worth thinking about, the standards and guidelines that speak to them, and a defensive paradigm that brings an AI point of view into cybersecurity.
 tags: industrial-AI agentic-AI prompt-injection data-security watermarking zero-trust trustworthy-AI
 thumbnail: assets/img/industrial-ai-information-protection-thumb.png
 og_image: /assets/img/industrial-ai-information-protection-thumb.png
 giscus_comments: false
 related_posts: false
-published: false
+published: true
 toc:
   sidebar: left
 ---
