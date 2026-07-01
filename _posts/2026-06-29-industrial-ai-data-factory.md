@@ -18,12 +18,12 @@ toc:
 ## The problem
 
 The appetite for industrial foundation models keeps growing. Every shop floor
-has the same quiet wish — "if only there were a good base model tuned to *our*
+has the same quiet wish — "if only there were a good base model tuned to _our_
 process." But the moment you try to build one, industry runs straight into a
 pair of **conflicting requirements**.
 
 On one side is the fear of leaking a data asset. In consumer AI, data is fuel:
-the more you have, the better. On a factory floor, data *is* the competitive
+the more you have, the better. On a factory floor, data _is_ the competitive
 edge. "Hold it in a 300°C chamber for two hours, then laser-cut at 90% power,
 12 mm/s, with air blowing" — a single line of process parameters like that is
 knowledge a company spent years accumulating. On the other side is a [**floor-
@@ -42,7 +42,7 @@ starts.
 
 ## Agentic AI as an answer
 
-Agentic AI offers one way out of the bind. The key move is to *give up* on the
+Agentic AI offers one way out of the bind. The key move is to _give up_ on the
 "model that does everything." Instead you place a **generative AI that
 understands context** at the center. The agent knows the context of the
 industrial data, and for a given situation it works out **which tools to call**.
@@ -65,10 +65,10 @@ costing to maintain afterward. Bolting tools onto an existing foundation model,
 by contrast, allows flexible responses through those tools — but demands a much
 wider set of management techniques to keep them in order.
 
-| Approach | Strength | Cost to weigh |
-| --- | --- | --- |
-| Fine-tuning the foundation model (internalize) | Knowledge fused into the model, consistent answers | High training cost + ongoing maintenance |
-| Tool connection (external knowledge) | Flexible responses, easy to refresh knowledge | Broad management techniques for tools and calls |
+| Approach                                       | Strength                                           | Cost to weigh                                   |
+| ---------------------------------------------- | -------------------------------------------------- | ----------------------------------------------- |
+| Fine-tuning the foundation model (internalize) | Knowledge fused into the model, consistent answers | High training cost + ongoing maintenance        |
+| Tool connection (external knowledge)           | Flexible responses, easy to refresh knowledge      | Broad management techniques for tools and calls |
 
 So the answer is probably not a fixed choice between the two but a
 **multi-agent** arrangement rather than a single agent. When several agents each
@@ -76,7 +76,7 @@ own a slice of context and a set of tools, the system can compose the right
 technique for the moment on the fly.
 
 Now put that agent and foundation model on top of a system that makes data and
-models *tradable without ever disclosing them*. What follows is that system,
+models _tradable without ever disclosing them_. What follows is that system,
 organized under the name **Industrial Data Lake**. It is still a bundle of ideas
 at the planning stage — closer to "this shape might work" than a settled design.
 
@@ -101,12 +101,12 @@ system's boundary gets drawn, so it is worth flagging on its own.
 Four kinds of actors move the Industrial Data Lake, each putting something in and
 taking a fee in return.
 
-| Actor | What they offer | Charging |
-| --- | --- | --- |
-| Data provider | Raw data | Earns a data usage fee |
-| Data processor | Software/converters that turn raw data into valid AI-ready data (quality control included) | Earns a software usage fee |
-| Model developer | A foundation (base) model trained on the data | Pays for data, earns a model usage fee |
-| Data consumer | (A site that wants to improve its own manufacturing with AI) | Pays for data and processing, gets a tuned specialized model |
+| Actor           | What they offer                                                                            | Charging                                                     |
+| --------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------ |
+| Data provider   | Raw data                                                                                   | Earns a data usage fee                                       |
+| Data processor  | Software/converters that turn raw data into valid AI-ready data (quality control included) | Earns a software usage fee                                   |
+| Model developer | A foundation (base) model trained on the data                                              | Pays for data, earns a model usage fee                       |
+| Data consumer   | (A site that wants to improve its own manufacturing with AI)                               | Pays for data and processing, gets a tuned specialized model |
 
 Underneath it all, an actor holding data-security technology props up the whole
 system. Seen as one line, the value chain flows data provider → data processor →
@@ -206,10 +206,10 @@ it hands off to the private sector is drawn right here.
 Translate those takeaways into a system design and you get a picture that splits
 assets into two layers.
 
-| Layer | What | Where it lives |
-| --- | --- | --- |
-| **Public-supported domain** | Data, processing software, sector foundation model | Lives *inside* the system but is not disclosed. It is what gets charged for. |
-| **Private domain** (no public support) | Private data, training module, private specialized model | Lives *outside* the system. Not disclosed even inside it, and its security is guaranteed. |
+| Layer                                  | What                                                     | Where it lives                                                                            |
+| -------------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Public-supported domain**            | Data, processing software, sector foundation model       | Lives _inside_ the system but is not disclosed. It is what gets charged for.              |
+| **Private domain** (no public support) | Private data, training module, private specialized model | Lives _outside_ the system. Not disclosed even inside it, and its security is guaranteed. |
 
 The point is that "inside the system" and "disclosed" are two different things.
 Even publicly supported assets stay protected inside the system with only the
@@ -245,6 +245,6 @@ sector foundation model, and the provenance and safety of assets are traced
 end-to-end with an AI-BOM.
 
 Plenty of question marks remain — whether the system should own the training
-tools, how far to fold in S-BOM, how to pin down the scope of the 
-industries and robot-AI deployment. Even so, the one axis is clear — *make AI
-while keeping the assets protected* — and the rest can be stacked on top of that.
+tools, how far to fold in S-BOM, how to pin down the scope of the
+industries and robot-AI deployment. Even so, the one axis is clear — _make AI
+while keeping the assets protected_ — and the rest can be stacked on top of that.
