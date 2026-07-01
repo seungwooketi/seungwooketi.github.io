@@ -152,7 +152,7 @@ prompt manipulation at the heart of this post.
 
 **Trustworthiness and governance.** To move past individual techniques toward a
 "systematic response," a management-system standard has to back it up. TTA's [AI
-trustworthiness certification (CAT)](https://www.tta.or.kr/tta/selectBbsNttView.do?key=76&bbsNo=107&nttNo=14058)
+trustworthiness certification (CAT)](https://tta-trustworthy-ai.gitbook.io/cat)
 verifies risk management and mitigation against international standards such as
 ISO/IEC 42001 (AI management systems), 23894 (AI risk management), and 24028
 (trustworthiness). Where physical control is in the loop, as with robots, TTA's
@@ -181,3 +181,13 @@ irreversible training, or an intelligence/control split — it is a **systematic
 response to this new paradigm.** Cybersecurity has to step out of the frame that
 sees AI only as an external threat, and take in the very way AI handles and leaks
 information as an object of security.
+
+## References
+
+1. Personal Information Protection Commission (PIPC), [Guide to Personal Data Processing for the Development and Use of Generative AI](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410), Aug 2025 (Korean).
+2. Personal Information Protection Commission (PIPC), [AI Privacy Risk Management Model](https://www.data.go.kr/data/15142410/fileData.do), Dec 2024 (Korean).
+3. National Intelligence Service & NSR, [Security Guidelines for Using Generative AI such as ChatGPT](https://nsp.nanet.go.kr/plan/subject/detail.do?nationalPlanControlNo=PLAN0000039282), Jun 2023 (Korean).
+4. Telecommunications Technology Association (TTA), [Certification of AI Trustworthiness (CAT) Guide](https://tta-trustworthy-ai.gitbook.io/cat) — based on ISO/IEC 42001, 23894, 24028.
+5. Telecommunications Technology Association (TTA), [Intelligent Robot Standardization Committee (PG413)](https://committee.tta.or.kr/standard/general.jsp?commit_code=PG413) (Korean).
+6. Korea Institute for Robot Industry Advancement (KIRIA), [Outdoor Mobile Robot Operation Safety Certification](https://www.kiria.org/portal/cert/portalCertEstiSafe.do) (Korean).
+7. OWASP, [Top 10 for LLM Applications (2025)](https://genai.owasp.org/llm-top-10/).

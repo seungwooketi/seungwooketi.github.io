@@ -103,7 +103,7 @@ toc:
 유출과 프롬프트 조작을 정면으로 다룬 국내 초기 문서다.
 
 **신뢰성·거버넌스 표준.** 개별 기법을 넘어 "체계적 대응"으로 가려면 관리체계
-표준이 받쳐 줘야 한다. TTA의 [AI 신뢰성 검·인증(CAT)](https://www.tta.or.kr/tta/selectBbsNttView.do?key=76&bbsNo=107&nttNo=14058)은
+표준이 받쳐 줘야 한다. TTA의 [AI 신뢰성 검·인증(CAT)](https://tta-trustworthy-ai.gitbook.io/cat)은
 ISO/IEC 42001(AI 경영시스템)·23894(AI 위험관리)·24028(신뢰성) 같은 국제표준을
 기준으로 위험관리·완화조치를 검증한다. 로봇처럼 물리 제어가 얽힌 영역에서는
 TTA [지능형 로봇 표준화(PG413)](https://committee.tta.or.kr/standard/general.jsp?commit_code=PG413)와
@@ -129,3 +129,13 @@ TTA [지능형 로봇 표준화(PG413)](https://committee.tta.or.kr/standard/gen
 **이 새로운 패러다임에 대한 체계적인 대응**이다. 사이버 시큐리티가 AI를 외부
 위협으로만 보던 시야에서 벗어나, AI가 정보를 다루고 흘리는 방식 자체를 보안의
 대상으로 끌어안아야 한다.
+
+## 참고 문헌
+
+1. 개인정보보호위원회, [「생성형 인공지능(AI) 개발·활용을 위한 개인정보 처리 안내서」](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410), 2025. 8.
+2. 개인정보보호위원회, [「AI 프라이버시 리스크 관리모델」](https://www.data.go.kr/data/15142410/fileData.do), 2024. 12.
+3. 국가정보원·국가보안기술연구소, [「챗GPT 등 생성형 AI 활용 보안 가이드라인」](https://nsp.nanet.go.kr/plan/subject/detail.do?nationalPlanControlNo=PLAN0000039282), 2023. 6.
+4. 한국정보통신기술협회(TTA), [「인공지능 신뢰성 검·인증(CAT) 가이드」](https://tta-trustworthy-ai.gitbook.io/cat) — ISO/IEC 42001·23894·24028 기반.
+5. 한국정보통신기술협회(TTA), [지능형 로봇 표준화 위원회(PG413)](https://committee.tta.or.kr/standard/general.jsp?commit_code=PG413).
+6. 한국로봇산업진흥원(KIRIA), [실외이동로봇 운행안전인증](https://www.kiria.org/portal/cert/portalCertEstiSafe.do).
+7. OWASP, [Top 10 for LLM Applications (2025)](https://genai.owasp.org/llm-top-10/).
