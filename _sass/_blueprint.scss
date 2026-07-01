@@ -197,3 +197,286 @@ blockquote {
   object-fit: cover;
   object-position: center 8%;
 }
+
+/* ===========================================================================
+ * BLOG LANDING — structural rebuild (paired with _pages/blog.md)
+ * Classes are namespaced .bp-* so they never collide with al-folio.
+ * ========================================================================= */
+.bp-blog {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.bp-hero {
+  padding: 6px 0 30px;
+}
+.bp-eyebrow {
+  font-family: var(--bp-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--global-theme-color);
+  margin-bottom: 16px;
+}
+.bp-hero-title {
+  font-family: var(--bp-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 5vw, 3.05rem);
+  line-height: 1.06;
+  margin: 0 0 18px;
+  color: var(--global-text-color);
+}
+.bp-hero-lead {
+  font-family: var(--bp-display);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+  max-width: 640px;
+  margin: 0 0 22px;
+}
+.bp-hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  align-items: center;
+}
+.bp-btn {
+  font-family: var(--bp-display);
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: #fff !important;
+  background: var(--global-theme-color);
+  border-radius: 7px;
+  padding: 10px 15px;
+  text-decoration: none !important;
+}
+.bp-btn:hover {
+  filter: brightness(1.08);
+}
+.bp-chip {
+  font-family: var(--bp-mono);
+  font-size: 0.78rem;
+  color: var(--global-text-color) !important;
+  border: 1px solid var(--bp-line-strong);
+  border-radius: 7px;
+  padding: 9px 13px;
+  text-decoration: none !important;
+}
+.bp-chip:hover {
+  border-color: var(--global-theme-color);
+}
+
+.bp-featured {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 0;
+  align-items: stretch;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--global-card-bg-color);
+  text-decoration: none !important;
+  margin: 6px 0 40px;
+}
+.bp-featured:hover {
+  border-color: var(--global-theme-color);
+}
+.bp-featured-body {
+  padding: 26px 28px;
+}
+.bp-kicker {
+  font-family: var(--bp-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--global-theme-color);
+  margin-bottom: 14px;
+}
+.bp-featured-title {
+  font-family: var(--bp-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  font-size: 1.68rem;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  color: var(--global-text-color);
+}
+.bp-featured-desc {
+  font-family: var(--bp-display);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--global-text-color-light);
+  margin: 0 0 18px;
+}
+.bp-featured-thumb {
+  position: relative;
+  min-height: 230px;
+  background: var(--global-bg-color);
+}
+.bp-featured-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bp-meta {
+  font-family: var(--bp-mono);
+  font-size: 0.78rem;
+  color: var(--global-text-color-light);
+}
+
+.bp-sec {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-bottom: 1px solid var(--bp-line-strong);
+  padding-bottom: 12px;
+  margin: 8px 0 2px;
+}
+.bp-sec-title {
+  font-family: var(--bp-display);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  color: var(--global-text-color);
+}
+.bp-sec-count {
+  font-family: var(--bp-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+.bp-sec-plain {
+  border: none;
+  padding: 0;
+  margin: 42px 0 16px;
+}
+.bp-sec-eyebrow {
+  font-family: var(--bp-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+}
+
+.bp-postlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bp-postlist > li {
+  margin: 0;
+}
+.bp-postrow {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 24px;
+  padding: 22px 10px;
+  border-bottom: 1px solid var(--global-divider-color);
+  text-decoration: none !important;
+}
+.bp-postrow:hover {
+  background: var(--global-card-bg-color);
+  box-shadow: inset 3px 0 0 var(--global-theme-color);
+}
+.bp-postrow-date {
+  padding-top: 3px;
+}
+.bp-date {
+  display: block;
+  font-family: var(--bp-mono);
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--global-text-color);
+}
+.bp-read {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--bp-mono);
+  font-size: 0.72rem;
+  color: var(--global-text-color-light);
+}
+.bp-postrow-title {
+  font-family: var(--bp-display);
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: var(--global-text-color);
+}
+.bp-postrow-desc {
+  font-family: var(--bp-display);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--global-text-color-light);
+  margin: 7px 0 0;
+  max-width: 620px;
+}
+.bp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+.bp-tag {
+  font-family: var(--bp-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  color: var(--global-text-color-light);
+}
+
+.bp-explore {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.bp-ex {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 10px;
+  padding: 16px;
+  text-decoration: none !important;
+}
+.bp-ex:hover {
+  border-color: var(--global-theme-color);
+}
+.bp-ex-n {
+  font-family: var(--bp-mono);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--global-theme-color);
+}
+.bp-ex-t {
+  font-family: var(--bp-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--global-text-color);
+  margin-top: 10px;
+}
+.bp-ex-d {
+  font-family: var(--bp-display);
+  font-size: 0.78rem;
+  color: var(--global-text-color-light);
+  margin-top: 4px;
+}
+
+@media (max-width: 720px) {
+  .bp-featured {
+    grid-template-columns: 1fr;
+  }
+  .bp-featured-thumb {
+    min-height: 170px;
+    order: -1;
+  }
+  .bp-postrow {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .bp-explore {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

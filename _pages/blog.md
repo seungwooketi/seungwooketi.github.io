@@ -3,156 +3,75 @@ layout: default
 title: blog
 permalink: /
 home: true
-pagination:
-  enabled: true
-  collection: posts
-  permalink: /page/:num/
-  per_page: 5
-  sort_field: date
-  sort_reverse: true
-  trail:
-    before: 1
-    after: 3
 ---
 
-<div class="post">
-  {% assign blog_name_size = site.blog_name | size %}
-  {% assign blog_description_size = site.blog_description | size %}
+{% comment %} Blueprint blog landing — structural rebuild (styles in \_sass/\_blueprint.scss). {% endcomment %}
 
-{% if blog_name_size > 0 or blog_description_size > 0 %}
+<div class="bp-blog">
 
-<div class="header-bar">
-<h1>{{ site.blog_name }}</h1>
-<h2>{{ site.blog_description }}</h2>
+  <header class="bp-hero">
+    <div class="bp-eyebrow">Writing &amp; Notes · Seungwoo Kum</div>
+    <h1 class="bp-hero-title">Notes on industrial AI, edge intelligence, and trustworthy systems.</h1>
+    <p class="bp-hero-lead">Research writing from the Director of the AI Data &amp; Security Research Center at KETI — foundation models for industry, agentic-AI security, and the data infrastructure underneath.</p>
+    <div class="bp-hero-links">
+      <a class="bp-btn" href="{{ '/about/' | relative_url }}">About &amp; research →</a>
+      <a class="bp-chip" href="mailto:seungwoo.kum@gmail.com">Email</a>
+      <a class="bp-chip" href="https://github.com/seungwooketi">GitHub</a>
+      <a class="bp-chip" href="https://scholar.google.com/citations?user=8DEsYMsAAAAJ">Scholar</a>
+    </div>
+  </header>
+
+{% assign posts = site.posts %}
+{% assign featured = posts | first %}
+
+{% if featured %}
+<a class="bp-featured" href="{{ featured.url | relative_url }}">
+
+<div class="bp-featured-body">
+<div class="bp-kicker">◆ Latest</div>
+<h2 class="bp-featured-title">{{ featured.title }}</h2>
+<p class="bp-featured-desc">{{ featured.description }}</p>
+{% assign f_read = featured.content | number_of_words | divided_by: 180 | plus: 1 %}
+<div class="bp-meta">{{ f_read }} min read &nbsp;·&nbsp; {{ featured.date | date: "%B %d, %Y" }}</div>
 </div>
+{% if featured.thumbnail %}
+<div class="bp-featured-thumb"><img src="{{ featured.thumbnail | relative_url }}" alt="{{ featured.title | escape }}"></div>
+{% endif %}
+</a>
 {% endif %}
 
-{% include blog_tags.liquid posts=site.posts base='/blog/tag/' %}
-
-{% assign featured_posts = site.posts | where: "featured", "true" %}
-{% if featured_posts.size > 0 %}
-<br>
-
-  <div class="container featured-posts">
-    {% assign is_even = featured_posts.size | modulo: 2 %}
-    <div class="row row-cols-{% if featured_posts.size <= 1 or is_even == 0 %}2{% else %}3{% endif %}">
-      {% for post in featured_posts %}
-      <div class="col mb-4">
-        <a href="{{ post.url | relative_url }}">
-          <div class="card hoverable">
-            <div class="row g-0">
-              <div class="col-md-12">
-                <div class="card-body">
-                  <div class="float-right">
-                    <i class="fa-solid fa-thumbtack fa-xs"></i>
-                  </div>
-                  <h3 class="card-title text-lowercase">{{ post.title }}</h3>
-                  <p class="card-text">{{ post.description }}</p>
-                  {% if post.external_source == blank %}
-                    {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-                  {% else %}
-                    {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
-                  {% endif %}
-                  {% assign year = post.date | date: "%Y" %}
-
-                  <p class="post-meta">
-                    {{ read_time }} min read &nbsp; &middot; &nbsp;
-                    <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
-                      <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
-      {% endfor %}
-    </div>
-
+  <div class="bp-sec">
+    <h3 class="bp-sec-title">All writing</h3>
+    <span class="bp-sec-count">{{ posts | size }} posts</span>
   </div>
-  <hr>
-  {% endif %}
 
-  <ul class="post-list">
-    {% if page.pagination.enabled %}
-      {% assign postlist = paginator.posts %}
-    {% else %}
-      {% assign postlist = site.posts %}
-    {% endif %}
-
-    {% for post in postlist %}
-      {% if post.external_source == blank %}
-        {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
-      {% else %}
-        {% assign read_time = post.feed_content | strip_html | number_of_words | divided_by: 180 | plus: 1 %}
-      {% endif %}
-      {% assign year = post.date | date: "%Y" %}
-      {% assign tags = post.tags | join: "" %}
-      {% assign categories = post.categories | join: "" %}
-
-      <li>
-        {% if post.thumbnail %}
-          <div class="row">
-            <div class="col-sm-9">
-        {% endif %}
-        <h3>
-          {% if post.redirect == blank %}
-            <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          {% elsif post.redirect contains '://' %}
-            <a class="post-title" href="{{ post.redirect }}" target="_blank">{{ post.title }}</a>
-            <svg width="2rem" height="2rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          {% else %}
-            <a class="post-title" href="{{ post.redirect | relative_url }}">{{ post.title }}</a>
+  <ul class="bp-postlist">
+    {% for post in posts offset:1 %}
+    {% assign read_time = post.content | number_of_words | divided_by: 180 | plus: 1 %}
+    <li>
+      <a class="bp-postrow" href="{{ post.url | relative_url }}">
+        <div class="bp-postrow-date">
+          <span class="bp-date">{{ post.date | date: "%b %d, %Y" }}</span>
+          <span class="bp-read">~{{ read_time }} min</span>
+        </div>
+        <div class="bp-postrow-main">
+          <div class="bp-postrow-title">{{ post.title }}</div>
+          {% if post.description %}<p class="bp-postrow-desc">{{ post.description }}</p>{% endif %}
+          {% if post.tags.size > 0 %}
+          <div class="bp-tags">{% for t in post.tags %}<span class="bp-tag">#{{ t }}</span>{% endfor %}</div>
           {% endif %}
-        </h3>
-        <p>{{ post.description }}</p>
-        <p class="post-meta">
-          {{ read_time }} min read &nbsp; &middot; &nbsp;
-          {{ post.date | date: '%B %d, %Y' }}
-          {% if post.external_source %}
-            &nbsp; &middot; &nbsp; {{ post.external_source }}
-          {% endif %}
-        </p>
-        <p class="post-tags">
-          <a href="{{ year | prepend: '/blog/' | prepend: site.baseurl}}">
-            <i class="fa-solid fa-calendar fa-sm"></i> {{ year }} </a>
-
-            {% if tags != "" %}
-            &nbsp; &middot; &nbsp;
-              {% for tag in post.tags %}
-              <a href="{{ tag | slugify | prepend: '/blog/tag/' | prepend: site.baseurl}}">
-                <i class="fa-solid fa-hashtag fa-sm"></i> {{ tag }}</a>
-                {% unless forloop.last %}
-                  &nbsp;
-                {% endunless %}
-                {% endfor %}
-            {% endif %}
-
-            {% if categories != "" %}
-            &nbsp; &middot; &nbsp;
-              {% for category in post.categories %}
-              <a href="{{ category | slugify | prepend: '/blog/category/' | prepend: site.baseurl}}">
-                <i class="fa-solid fa-tag fa-sm"></i> {{ category }}</a>
-                {% unless forloop.last %}
-                  &nbsp;
-                {% endunless %}
-                {% endfor %}
-            {% endif %}
-        </p>
-        {% if post.thumbnail %}
-            </div>
-            <div class="col-sm-3">
-              <img class="card-img" src="{{post.thumbnail | relative_url}}" style="object-fit: cover; height: 90%" alt="image">
-            </div>
-          </div>
-        {% endif %}
-      </li>
+        </div>
+      </a>
+    </li>
     {% endfor %}
-
   </ul>
 
-{% include pagination.liquid %}
+  <div class="bp-sec bp-sec-plain"><span class="bp-sec-eyebrow">Elsewhere on this site</span></div>
+  <div class="bp-explore">
+    <a class="bp-ex" href="{{ '/about/' | relative_url }}"><span class="bp-ex-n">01</span><span class="bp-ex-t">About</span><span class="bp-ex-d">Role, research, focus</span></a>
+    <a class="bp-ex" href="{{ '/publications/' | relative_url }}"><span class="bp-ex-n">02</span><span class="bp-ex-t">Publications</span><span class="bp-ex-d">Papers by year</span></a>
+    <a class="bp-ex" href="{{ '/projects/' | relative_url }}"><span class="bp-ex-n">03</span><span class="bp-ex-t">Projects</span><span class="bp-ex-d">Flagship R&amp;D</span></a>
+    <a class="bp-ex" href="{{ '/cv/' | relative_url }}"><span class="bp-ex-n">04</span><span class="bp-ex-t">CV</span><span class="bp-ex-d">Career &amp; education</span></a>
+  </div>
 
 </div>
