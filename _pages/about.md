@@ -1,7 +1,9 @@
 ---
 layout: about
 title: about
-permalink: /
+permalink: /about/
+nav: true
+nav_order: 0
 subtitle: "Director, <a href='https://www.keti.re.kr' target='_blank'>AI Data & Security Research Center</a> · Korea Electronics Technology Institute (KETI)"
 
 profile:
