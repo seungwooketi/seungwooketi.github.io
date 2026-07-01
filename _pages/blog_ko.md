@@ -14,7 +14,7 @@ nav_order: 7
   <header class="bp-hero">
     <div class="bp-eyebrow">글과 노트 · 금승우</div>
     <h1 class="bp-hero-title">산업 AI와 신뢰할 수 있는 시스템에 대한 기록.</h1>
-    <p class="bp-hero-lead">KETI 인공지능데이터보안연구센터장의 연구 노트 — 산업 파운데이션 모델, 에이전틱 AI 보안, 그리고 그 아래의 데이터 인프라.</p>
+    <p class="bp-hero-lead">산업 파운데이션 모델, 에이전틱 AI 보안, 그리고 그 아래를 받치는 데이터 인프라에 대한 연구 노트.</p>
     <div class="bp-hero-links">
       <a class="bp-btn" href="{{ '/about/' | relative_url }}">소개 &amp; 연구 →</a>
       <a class="bp-chip" href="mailto:seungwoo.kum@gmail.com">이메일</a>
