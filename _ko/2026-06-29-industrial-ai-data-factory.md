@@ -13,9 +13,6 @@ related_posts: false
 published: true
 toc:
   sidebar: left
-mermaid:
-  enabled: true
-  zoomable: false
 ---
 
 <p class="text-center"><small><em>English version: <a href="{{ '/blog/2026/industrial-ai-data-factory/' | relative_url }}">An Industrial Data Lake for Industrial AI</a></em></small></p>
@@ -116,22 +113,53 @@ Industrial Data Lake를 움직이는 주체는 네 부류로 나뉘고, 각자 �
 독립된 컨테이너이기 때문에, 공급자는 자기 자산(데이터든 소프트웨어든)을 통째로
 내주지 않고도 사슬에 참여할 수 있다.
 
-<style>
-  .mermaid { width: 100%; overflow: visible; text-align: center; }
-  .mermaid svg { width: 100% !important; max-width: 620px !important; height: auto !important; }
-</style>
-
-```mermaid
-%%{init: {'flowchart': {'rankSpacing': 60, 'nodeSpacing': 38}}}%%
-flowchart TB
-  DP["데이터 공급자<br/>‘데이터를 팔아줄게’"] -->|제공| RD["원 데이터"]
-  RD -->|데이터 가공 SW · 컨테이너| PD["가공 데이터"]
-  PD -->|학습 모듈 · 컨테이너| SFM["섹터 파운데이션 모델"]
-  SFM -->|최적화 모듈 · 컨테이너| CFM["기업 특화 모델"]
-  CFM -->|특화 모델| AIC["AI 수요자<br/>‘나는 AI 모델이 필요해’"]
-  SP["소프트웨어 공급자<br/>‘내 소프트웨어를 팔아줄게’"] -. 컨테이너 제공 .-> PD
-  AIC -. 기업 데이터 .-> CFM
-```
+<div style="max-width: 560px; margin: 1.5rem auto;">
+<svg viewBox="0 0 620 972" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" font-family="Pretendard, 'Noto Sans KR', system-ui, -apple-system, sans-serif" role="img" aria-label="Industrial Data Lake 처리 플로우: 데이터 공급자 → 원 데이터 → 가공 데이터 → 섹터 파운데이션 모델 → 기업 특화 모델 → AI 수요자. 소프트웨어 공급자가 컨테이너를 제공하고, AI 수요자가 기업 데이터를 제공한다.">
+  <rect x="3" y="3" width="614" height="966" rx="16" fill="#FCFCFF" stroke="#E7E7F2" stroke-width="1.5"/>
+  <defs>
+    <marker id="dlah" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#5A6B86"/>
+    </marker>
+  </defs>
+  <g stroke="#5A6B86" stroke-width="2.2" fill="none" marker-end="url(#dlah)">
+    <line x1="175" y1="108" x2="175" y2="190"/>
+    <line x1="175" y1="276" x2="175" y2="358"/>
+    <line x1="175" y1="444" x2="175" y2="526"/>
+    <line x1="175" y1="612" x2="175" y2="694"/>
+    <line x1="175" y1="780" x2="175" y2="862"/>
+    <path d="M345,402 L269,402" stroke-dasharray="2 6"/>
+    <path d="M265,894 L322,894 L322,772 L269,772" stroke-dasharray="2 6"/>
+  </g>
+  <g font-size="14" fill="#475569" text-anchor="middle">
+    <rect x="150" y="139" width="50" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="155">제공</text>
+    <rect x="62" y="307" width="226" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="323">데이터 가공 SW · 컨테이너</text>
+    <rect x="95" y="475" width="160" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="491">학습 모듈 · 컨테이너</text>
+    <rect x="88" y="643" width="174" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="659">최적화 모듈 · 컨테이너</text>
+    <rect x="139" y="811" width="72" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="827">특화 모델</text>
+    <rect x="258" y="377" width="98" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="307" y="393">컨테이너 제공</text>
+    <rect x="318" y="817" width="80" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="358" y="833">기업 데이터</text>
+  </g>
+  <g>
+    <rect x="85" y="24" width="180" height="84" rx="14" fill="#F1ECFB" stroke="#7A5AD6" stroke-width="2"/>
+    <text x="175" y="58" text-anchor="middle" font-size="15" font-weight="600" fill="#1f2a44">데이터 공급자</text>
+    <text x="175" y="81" text-anchor="middle" font-size="13" fill="#5b6b86" font-style="italic">‘데이터를 팔아줄게’</text>
+    <rect x="85" y="192" width="180" height="84" rx="14" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
+    <text x="175" y="240" text-anchor="middle" font-size="16" font-weight="600" fill="#1f2a44">원 데이터</text>
+    <rect x="85" y="360" width="180" height="84" rx="14" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
+    <text x="175" y="408" text-anchor="middle" font-size="16" font-weight="600" fill="#1f2a44">가공 데이터</text>
+    <rect x="85" y="528" width="180" height="84" rx="14" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
+    <text x="175" y="576" text-anchor="middle" font-size="15" font-weight="600" fill="#1f2a44">섹터 파운데이션 모델</text>
+    <rect x="85" y="696" width="180" height="84" rx="14" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
+    <text x="175" y="744" text-anchor="middle" font-size="16" font-weight="600" fill="#1f2a44">기업 특화 모델</text>
+    <rect x="85" y="864" width="180" height="84" rx="14" fill="#F1ECFB" stroke="#7A5AD6" stroke-width="2"/>
+    <text x="175" y="898" text-anchor="middle" font-size="15" font-weight="600" fill="#1f2a44">AI 수요자</text>
+    <text x="175" y="921" text-anchor="middle" font-size="13" fill="#5b6b86" font-style="italic">‘나는 AI 모델이 필요해’</text>
+    <rect x="345" y="360" width="230" height="84" rx="14" fill="#F1ECFB" stroke="#7A5AD6" stroke-width="2"/>
+    <text x="460" y="394" text-anchor="middle" font-size="15" font-weight="600" fill="#1f2a44">소프트웨어 공급자</text>
+    <text x="460" y="417" text-anchor="middle" font-size="13" fill="#5b6b86" font-style="italic">‘내 소프트웨어를 팔아줄게’</text>
+  </g>
+</svg>
+</div>
 
 이 흐름 위에 세 명의 플레이어가 각자의 동기를 가지고 만난다. 데이터 공급자는
 "데이터를 팔아줄게", 소프트웨어 공급자는 "내 소프트웨어를 팔아줄게", AI

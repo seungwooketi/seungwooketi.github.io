@@ -11,9 +11,6 @@ related_posts: false
 published: true
 toc:
   sidebar: left
-mermaid:
-  enabled: true
-  zoomable: false
 ---
 
 <p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/industrial-ai-data-factory/' | relative_url }}">산업 AI를 위한 Industrial Data Lake 구상</a></em></small></p>
@@ -128,22 +125,53 @@ The path from data to a specialized model is cut into container-sized stages.
 Because each stage is an independent container, a supplier can take part in the
 chain without handing over its whole asset — data or software.
 
-<style>
-  .mermaid { width: 100%; overflow: visible; text-align: center; }
-  .mermaid svg { width: 100% !important; max-width: 620px !important; height: auto !important; }
-</style>
-
-```mermaid
-%%{init: {'flowchart': {'rankSpacing': 60, 'nodeSpacing': 38}}}%%
-flowchart TB
-  DP["Data supplier<br/>'I'll sell you data'"] -->|provides| RD["Raw data"]
-  RD -->|Processing SW · container| PD["Processed data"]
-  PD -->|Training module · container| SFM["Sector foundation model"]
-  SFM -->|Optimization module · container| CFM["Company-specific model"]
-  CFM -->|specialized model| AIC["AI consumer<br/>'I need an AI model'"]
-  SP["Software supplier<br/>'I'll sell you my software'"] -. provides containers .-> PD
-  AIC -. company data .-> CFM
-```
+<div style="max-width: 560px; margin: 1.5rem auto;">
+<svg viewBox="0 0 620 972" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img" aria-label="Industrial Data Lake processing flow: data supplier to raw data to processed data to sector foundation model to company-specific model to AI consumer. The software supplier provides containers and the AI consumer provides company data.">
+  <rect x="3" y="3" width="614" height="966" rx="16" fill="#FCFCFF" stroke="#E7E7F2" stroke-width="1.5"/>
+  <defs>
+    <marker id="dlahen" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#5A6B86"/>
+    </marker>
+  </defs>
+  <g stroke="#5A6B86" stroke-width="2.2" fill="none" marker-end="url(#dlahen)">
+    <line x1="175" y1="108" x2="175" y2="190"/>
+    <line x1="175" y1="276" x2="175" y2="358"/>
+    <line x1="175" y1="444" x2="175" y2="526"/>
+    <line x1="175" y1="612" x2="175" y2="694"/>
+    <line x1="175" y1="780" x2="175" y2="862"/>
+    <path d="M345,402 L269,402" stroke-dasharray="2 6"/>
+    <path d="M265,894 L322,894 L322,772 L269,772" stroke-dasharray="2 6"/>
+  </g>
+  <g font-size="13" fill="#475569" text-anchor="middle">
+    <rect x="148" y="139" width="54" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="155">provides</text>
+    <rect x="88" y="307" width="174" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="323">Processing SW · container</text>
+    <rect x="82" y="475" width="186" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="491">Training module · container</text>
+    <rect x="66" y="643" width="218" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="659">Optimization module · container</text>
+    <rect x="116" y="811" width="118" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="827">specialized model</text>
+    <rect x="278" y="377" width="58" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="307" y="393">provides</text>
+    <rect x="316" y="817" width="84" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="358" y="833">company data</text>
+  </g>
+  <g>
+    <rect x="85" y="24" width="180" height="84" rx="14" fill="#F1ECFB" stroke="#7A5AD6" stroke-width="2"/>
+    <text x="175" y="58" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2a44">Data supplier</text>
+    <text x="175" y="81" text-anchor="middle" font-size="12" fill="#5b6b86" font-style="italic">‘I’ll sell you data’</text>
+    <rect x="85" y="192" width="180" height="84" rx="14" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
+    <text x="175" y="240" text-anchor="middle" font-size="15" font-weight="600" fill="#1f2a44">Raw data</text>
+    <rect x="85" y="360" width="180" height="84" rx="14" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
+    <text x="175" y="408" text-anchor="middle" font-size="15" font-weight="600" fill="#1f2a44">Processed data</text>
+    <rect x="85" y="528" width="180" height="84" rx="14" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
+    <text x="175" y="576" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2a44">Sector foundation model</text>
+    <rect x="85" y="696" width="180" height="84" rx="14" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
+    <text x="175" y="744" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2a44">Company-specific model</text>
+    <rect x="85" y="864" width="180" height="84" rx="14" fill="#F1ECFB" stroke="#7A5AD6" stroke-width="2"/>
+    <text x="175" y="898" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2a44">AI consumer</text>
+    <text x="175" y="921" text-anchor="middle" font-size="12" fill="#5b6b86" font-style="italic">‘I need an AI model’</text>
+    <rect x="345" y="360" width="230" height="84" rx="14" fill="#F1ECFB" stroke="#7A5AD6" stroke-width="2"/>
+    <text x="460" y="394" text-anchor="middle" font-size="14" font-weight="600" fill="#1f2a44">Software supplier</text>
+    <text x="460" y="417" text-anchor="middle" font-size="12" fill="#5b6b86" font-style="italic">‘I’ll sell you my software’</text>
+  </g>
+</svg>
+</div>
 
 Three players meet on this flow, each with their own motive. The data supplier
 says "I'll sell you data," the software supplier says "I'll sell you my
