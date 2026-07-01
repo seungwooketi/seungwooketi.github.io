@@ -480,3 +480,15 @@ blockquote {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ---- Brand logo (navbar wordmark image) --------------------------------- */
+.navbar .navbar-brand .brand-logo {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+/* deep-blue ink reads low-contrast on the dark navbar → lift toward the
+   dark-scheme accent so the wordmark stays legible */
+html[data-theme="dark"] .navbar-brand .brand-logo {
+  filter: brightness(1.75) saturate(1.05);
+}
