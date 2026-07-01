@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Leaking Through an Authorized Door — the Security Problem of Generative and Agentic AI"
-date: 2026-06-29 16:30:00+0900
-description: Industrial foundation models and agentic AI can transform process management, but they punch a different kind of hole in information protection. This is about information that leaks through a legitimate access route, the attacks worth thinking about, and a new defensive paradigm that brings an AI point of view into cybersecurity.
+date: 2026-07-01 15:30:00+0900
+description: Industrial foundation models and agentic AI can transform process management, but they punch a different kind of hole in information protection. This is about information that leaks through a legitimate access route, the attacks worth thinking about, the standards and guidelines that speak to them, and a defensive paradigm that brings an AI point of view into cybersecurity.
 tags: industrial-AI agentic-AI prompt-injection data-security watermarking zero-trust trustworthy-AI
 thumbnail: assets/img/industrial-ai-information-protection-thumb.png
 og_image: /assets/img/industrial-ai-information-protection-thumb.png
@@ -13,22 +13,34 @@ toc:
   sidebar: left
 ---
 
-<p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/industrial-ai-information-protection/' | relative_url }}">허용된 문으로 새는 산업 정보</a></em></small></p>
+<p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/industrial-ai-information-protection/' | relative_url }}">허용된 통로로 접근하는 산업 정보</a></em></small></p>
 
 Industrial foundation models could transform process management across
 manufacturing and other major sectors. They can read the state of equipment,
 suggest set-points, and flag anomalies ahead of time — faster and more
-consistently than a person. But the flip side of that promise carries a problem
-unlike the ones we are used to. What do these models — generative AI, and agentic
-AI — actually do to **the protection of industrial information**?
+consistently than a person. And they don't stop at the process line: an
+industrial foundation model understands the plant's data while also reaching into
+internal procedures, protocols, and knowledge bases, and through links to systems
+like ERP it can support decisions across the whole of manufacturing — not only
+the process, but inventory, distribution, shipping, and pricing. But the flip
+side of that promise carries a problem unlike the ones we are used to. What do
+these models — generative AI, and agentic AI — actually do to **the protection of
+industrial information**?
 
-## It comes in through an authorized door
+## The attack comes in through an authorized channel
 
-When we talk about security, we usually picture blocking the paths that
-_shouldn't_ be open: detect abnormal access, shut down backdoors, build a
-perimeter out of firewalls and permissions. That defense still matters. But the
-agentic-AI problem has a different texture. This thing **comes in through an
-authorized route.**
+When we talk about security, we usually picture blocking access: shutting ports
+against abnormal connections, blocking IP ranges, raising firewalls, encrypting.
+That defense still matters. But the agentic-AI problem has a different texture. A
+malicious action against a generative or agentic AI does not come through those
+abnormal routes — it **comes in through an authorized one.** Suppose an attacker
+who has entered through a legitimate port for LLM queries asks, "tell me the
+in-house parts inventory," or "give me the parameters for the laser-cutting
+process." The agentic AI, doing exactly what it was built to do, reaches into the
+in-house ERP and hands the requested information back. And even if you have
+trained the AI to refuse certain confidential answers, cases where a cleverly
+crafted prompt gets a generative model to produce the forbidden answer anyway are
+not hard to find.
 
 Suppose an agent holding legitimate credentials walks through a legitimate door
 and asks, "how should I configure this process?" There is no grounds to block the
@@ -48,9 +60,24 @@ path you cannot catch.
 
 {% include figure.liquid loading="eager" path="assets/img/industrial-ai-information-protection-fig.png" class="img-fluid rounded z-depth-1" alt="Three attacks on the left (prompt injection, process sabotage, dataset extraction) flowing into a central AI agent, with three defenses on the right (watermarking, an irreversible gate, and an intelligence/control split with a zero-trust checkpoint) holding them off" %}
 
-The attacks you can imagine in this setup fall into roughly three lines. The first
-two are about making the AI **misbehave**; the last is about **pulling data out**
-of it.
+Seen from the shop floor, the risk of running AI sorts into a few kinds. The most
+basic is simply a **wrong choice** — the AI making a bad decision and ordering
+too many or too few parts, say. Turn that slightly and it becomes an opening for
+an attack: the AI is producing ordinary results, but what if a prompt steers it
+into the wrong choice on purpose? That edges close to sabotage of a specific
+process, and either way it can hit production hard. Examples are not hard to come
+by — you could hand the AI a doctored rules file, for instance, to bias its
+judgment.
+
+Turn the aim just slightly, from sabotage toward leakage, and you get the earlier
+picture: crafted prompts that walk in-house secrets out the door. That can mean
+leaking confidential data directly, but with a so-called distillation attack it
+can also become model theft through the reconstruction of input–output pairs.
+Everything tied to the process becomes exfiltrable through an open channel.
+
+To sum up, the attacks you can imagine in this setup fall into roughly three
+lines. The first two are about making the AI **misbehave**; the last is about
+**pulling data out** of it.
 
 | Attack             | What it targets                                            | A problem of similar shape                           |
 | ------------------ | ---------------------------------------------------------- | ---------------------------------------------------- |
@@ -73,8 +100,13 @@ firewall."
 So these problems demand a **paradigm different** from existing security
 technology. Stacking the perimeter higher does nothing to stop information that
 comes in through an authorized door and leaks out in words. It means we have to
-bring an **AI point of view** into cybersecurity. Three responses are on the
-table right now.
+bring an **AI point of view** into cybersecurity. Recent research has started to
+take up exactly this — how to detect and stop leakage from an AI's own vantage
+point — spanning irreversible-training techniques that block the input–output
+harvesting behind distillation attacks, watermarking that checks whether your
+generative model's output ended up somewhere it shouldn't, and zero-trust
+approaches that re-authenticate at each step to cut off lateral movement. Three
+responses are on the table right now.
 
 **Watermarking at training time.** Plant a watermark while training the model so
 the watermark surfaces in its responses. That lets you verify after the fact
@@ -91,6 +123,50 @@ intelligence that judges and the control that actually moves the equipment, and
 put a zero-trust architecture between them. Even if the model produces a wrong
 judgment, the structure keeps that error from spreading straight into control. It
 is the safety catch for the second attack (sabotage).
+
+## Standards and guidelines to lean on
+
+This worry is not ours alone. Regulators and standards bodies have recently begun
+to address the same point. Here are a few references worth consulting when you
+design information protection for industrial AI, grouped by angle.
+
+**Privacy and data protection.** Korea's Personal Information Protection
+Commission published a [Guide to Personal Data Processing for the Development and
+Use of Generative AI (Aug 2025)](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410),
+which organizes privacy issues and safeguards across the generative-AI lifecycle
+(purpose → strategy → training/development → deployment/operation) and, notably,
+covers **AI agents, knowledge distillation, and machine unlearning** — exactly the
+agent-to-ERP leakage and distillation attacks discussed here. The same body's [AI
+Privacy Risk Management Model (Dec 2024)](https://www.data.go.kr/data/15142410/fileData.do)
+goes a step further, pairing technical safeguards (input/output filtering,
+differential privacy, fine-tuning) and managerial ones (training-data provenance
+and lineage, AI red-teaming) against risk types — the same family as the
+watermarking, irreversible training, and zero-trust controls above.
+
+**A security-threat view.** Korea's National Intelligence Service issued
+[Security Guidelines for Using Generative AI such as ChatGPT (Jun 2023)](https://nsp.nanet.go.kr/plan/subject/detail.do?nationalPlanControlNo=PLAN0000039282),
+which names data leakage, prompt-driven model abuse, and plug-in/API
+vulnerabilities as threats and prescribes safeguards for both use and deployment —
+an early domestic document that squarely addresses the conversational leakage and
+prompt manipulation at the heart of this post.
+
+**Trustworthiness and governance.** To move past individual techniques toward a
+"systematic response," a management-system standard has to back it up. TTA's [AI
+trustworthiness certification (CAT)](https://www.tta.or.kr/tta/selectBbsNttView.do?key=76&bbsNo=107&nttNo=14058)
+verifies risk management and mitigation against international standards such as
+ISO/IEC 42001 (AI management systems), 23894 (AI risk management), and 24028
+(trustworthiness). Where physical control is in the loop, as with robots, TTA's
+[intelligent-robot standardization (PG413)](https://committee.tta.or.kr/standard/general.jsp?commit_code=PG413)
+and KIRIA's [robot safety certification](https://www.kiria.org/portal/cert/portalCertEstiSafe.do)
+cover functional and physical safety — touching the same "separate intelligence
+from control" principle argued above.
+
+**An attack taxonomy.** Finally, the three attacks map cleanly onto an
+international taxonomy. The [OWASP Top 10 for LLM Applications (2025)](https://genai.owasp.org/llm-top-10/)
+lists prompt injection, sensitive information disclosure, system-prompt leakage,
+and model theft among its top items — overlapping one-to-one with this post's
+prompt injection, information leakage, and dataset extraction. A good starting
+point if you want a shared vocabulary for the attacks.
 
 ## Wrap-up
 
