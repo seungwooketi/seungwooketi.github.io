@@ -10,7 +10,7 @@ thumbnail: assets/img/industrial-ai-information-protection-thumb.png
 og_image: /assets/img/industrial-ai-information-protection-thumb.png
 giscus_comments: false
 related_posts: false
-published: false
+published: true
 toc:
   sidebar: left
 ---
