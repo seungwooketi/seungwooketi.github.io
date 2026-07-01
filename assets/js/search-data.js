@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-an-industrial-data-lake-for-industrial-ai",
+        },{id: "post-leaking-through-an-authorized-door-the-security-problem-of-generative-and-agentic-ai",
+        
+          title: "Leaking Through an Authorized Door — the Security Problem of Generative and Agentic...",
+        
+        description: "Industrial foundation models and agentic AI can transform process management, but they punch a different kind of hole in information protection. This is about information that leaks through a legitimate access route, the attacks worth thinking about, the standards and guidelines that speak to them, and a defensive paradigm that brings an AI point of view into cybersecurity.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/industrial-ai-information-protection/";
+          
+        },
+      },{id: "post-an-industrial-data-lake-for-industrial-ai",
         
           title: "An Industrial Data Lake for Industrial AI",
         
