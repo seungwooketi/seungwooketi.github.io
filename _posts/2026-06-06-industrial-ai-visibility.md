@@ -88,6 +88,6 @@ Only with this feedback does an industrial AI become a living system that update
 
 So an industrial AI model, to me, isn't about building "an even bigger do-everything model than the commercial ones." If anything it's the opposite. Inside a closed, information-protected environment, you clearly separate the context-understanding foundation model from the knowledge base and tools that hold domain knowledge, and let an agent connect the two — and that much is a matter of design.
 
-But what makes that design *sustainable* is, in the end, AI visibility: surfacing what failed to reach the user and why, and feeding that diagnosis back into both context understanding and domain knowledge. Only when that loop is in place does an industrial AI survive as its field keeps shifting.
+But what makes that design _sustainable_ is, in the end, AI visibility: surfacing what failed to reach the user and why, and feeding that diagnosis back into both context understanding and domain knowledge. Only when that loop is in place does an industrial AI survive as its field keeps shifting.
 
 In the previous post I argued that a foundation model should be "bedrock you build knowledge on," not "a model that knows everything." Take one more step and you arrive here: the work of watching over the structures on that bedrock and repairing them so they don't collapse — that is visibility, and it's the real value that sets industrial AI apart from simply using a commercial one.

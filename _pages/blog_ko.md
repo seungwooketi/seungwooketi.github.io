@@ -14,9 +14,9 @@ nav_order: 7
     <h2>AI 데이터 플랫폼, 엣지 인텔리전스, 그리고 그 과정에서 만든 연구 도구들에 대한 한국어 기록.</h2>
   </div>
 
-  {% assign ko_posts = site.ko | where_exp: "post", "post.published != false" | sort: "date" | reverse %}
+{% assign ko_posts = site.ko | where_exp: "post", "post.published != false" | sort: "date" | reverse %}
 
-  {% include blog_tags.liquid posts=ko_posts base='/blog/ko/tag/' %}
+{% include blog_tags.liquid posts=ko_posts base='/blog/ko/tag/' %}
 
   <ul class="post-list">
     {% for post in ko_posts %}
@@ -50,6 +50,7 @@ nav_order: 7
         </p>
       </li>
     {% endfor %}
+
   </ul>
 
 </div>

@@ -21,13 +21,13 @@ toc:
 <p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/foundation-ai-for-industry/' | relative_url }}">산업 파운데이션 모델은 무엇이어야 하는가</a></em></small></p>
 
 AI is being pushed into one field after another, and faster every year. In Korea
-that push has a particular shape: a wave of public R&D money aimed at *industrial
-foundation models*. Across the programs announced lately, the ministries — MOTIE,
+that push has a particular shape: a wave of public R&D money aimed at _industrial
+foundation models_. Across the programs announced lately, the ministries — MOTIE,
 MSIT, and others — keep pairing two themes: the importance of data, and the need
-to *share* that data in order to build industrial foundation AI.
+to _share_ that data in order to build industrial foundation AI.
 
 It's worth pausing on what we're actually asking for. What is a foundation model,
-exactly? And what would an *industrial* foundation model have to do to deserve the
+exactly? And what would an _industrial_ foundation model have to do to deserve the
 name?
 
 ## What makes a model "foundational"
@@ -35,10 +35,10 @@ name?
 There are many definitions, but the report that first pinned the term down —
 Stanford's CRFM — describes a foundation model as one "trained on broad data …
 that can be **adapted** to a wide range of downstream tasks."[^crfm] The center of
-gravity sits on *adaptable*, not *all-knowing*: the whole point is that you can
+gravity sits on _adaptable_, not _all-knowing_: the whole point is that you can
 build something on top of it.
 
-Take the word at face value. A foundation model should be something that *grounds*
+Take the word at face value. A foundation model should be something that _grounds_
 other things — less a God-Almighty that understands everything and solves every
 problem, and more the bedrock, or the cornerstone, you set the rest of the
 building on.
@@ -49,23 +49,23 @@ That distinction isn't academic; it shapes how such a model lands in an industry
 Picture a foundation model for the semiconductor business. Suppose some chipmaker,
 sitting on an enormous trove of data, trains an excellent model that guides
 decisions across its fabrication process. Now suppose it ships that model under
-the banner of a *foundation model*. What happens to the barriers to entry in that
+the banner of a _foundation model_. What happens to the barriers to entry in that
 market? They come down.
 
 The first mover would simply be handing its hard-won know-how to everyone behind
 it — a pure **floor-lifting** effect that raises the floor for latecomers at the
-leader's own expense. A model like that is more accurately called *almighty* or
-*omniscient* than *foundational*. It's closer to a finished product than to a base
+leader's own expense. A model like that is more accurately called _almighty_ or
+_omniscient_ than _foundational_. It's closer to a finished product than to a base
 you build on.
 
 ## A foundation holds knowledge up; it doesn't hold it in
 
-So when I say *foundation model*, I don't mean a model that already contains every
+So when I say _foundation model_, I don't mean a model that already contains every
 domain's knowledge. I mean one whose job is to let that knowledge be **stacked on
 top of it**. Domain expertise accumulates on the industrial foundation model and
 spreads outward — into manufacturing, into service operations, into quality
 management, into one domain-specific model after another. Only then does the word
-*foundation* actually fit.
+_foundation_ actually fit.
 
 <p class="text-center">
   <img src="{{ '/assets/img/foundation-ai-stack.png' | relative_url }}"
@@ -105,10 +105,10 @@ but as a three-layer **life-cycle**.
 3. **Company-specific AI models.** Higher still, fine-tuning on customer and
    corporate data yields **high-security, company-owned proprietary models**.
 
-What I find compelling is that this picture answers the *floor-lifting* dilemma
+What I find compelling is that this picture answers the _floor-lifting_ dilemma
 through its structure. The base layer is open for anyone to stand on, while a
 company's real know-how stays in the domain- and company-specific layers above. Put
-another way, it draws the line for **how much to open up as foundation** *below*
+another way, it draws the line for **how much to open up as foundation** _below_
 the know-how. The base lifts everyone's floor as a public good, and yet the first
 mover never has to hand over its own cornerstone wholesale.
 
@@ -117,7 +117,7 @@ you build once. They're bound together as a **continuously trained, continuously
 improving life-cycle**. Fine-tuning and continued pre-training are the connective
 tissue between the layers, and keeping that flow unbroken is precisely the
 foundation's job. In the end, the value of an industrial foundation model comes not
-from *how much it knows*, but from **how well domain and company knowledge can grow
+from _how much it knows_, but from **how well domain and company knowledge can grow
 on top of it**.
 
 ---

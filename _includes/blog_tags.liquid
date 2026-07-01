@@ -7,39 +7,39 @@
   Selects the most-used tags, drops language-marker tags, displays alphabetically.
 {%- endcomment -%}
 {%- assign tag_limit = include.limit | default: 8 -%}
-{%- assign collected = "" | split: "" -%}
+{%- assign collected = '' | split: '' -%}
 {%- for post in include.posts -%}
   {%- for tag in post.tags -%}
-    {%- unless tag == "korean" or tag == "english" -%}
+    {%- unless tag == 'korean' or tag == 'english' -%}
       {%- assign collected = collected | push: tag -%}
     {%- endunless -%}
   {%- endfor -%}
 {%- endfor -%}
 {%- if collected.size > 0 -%}
-  {%- assign groups = collected | group_by_exp: "t", "t" -%}
-  {%- assign ranked = "" | split: "" -%}
+  {%- assign groups = collected | group_by_exp: 't', 't' -%}
+  {%- assign ranked = '' | split: '' -%}
   {%- for g in groups -%}
     {%- assign weight = g.items.size | plus: 1000 -%}
     {%- capture row -%}{{ weight }}|{{ g.name }}{%- endcapture -%}
     {%- assign ranked = ranked | push: row -%}
   {%- endfor -%}
   {%- assign ranked = ranked | sort | reverse | slice: 0, tag_limit -%}
-  {%- assign chosen = "" | split: "" -%}
+  {%- assign chosen = '' | split: '' -%}
   {%- for row in ranked -%}
-    {%- assign t = row | split: "|" | last -%}
+    {%- assign t = row | split: '|' | last -%}
     {%- assign chosen = chosen | push: t -%}
   {%- endfor -%}
   {%- assign chosen = chosen | sort -%}
-<div class="tag-category-list">
-  <ul class="p-0 m-0">
-    {%- for tag in chosen -%}
-    <li>
-      <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: include.base | relative_url }}">{{ tag }}</a>
-    </li>
-    {%- unless forloop.last -%}
-    <p>&bull;</p>
-    {%- endunless -%}
-    {%- endfor -%}
-  </ul>
-</div>
+  <div class="tag-category-list">
+    <ul class="p-0 m-0">
+      {%- for tag in chosen -%}
+        <li>
+          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: include.base | relative_url }}">{{ tag }}</a>
+        </li>
+        {%- unless forloop.last -%}
+          <p>&bull;</p>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+  </div>
 {%- endif -%}

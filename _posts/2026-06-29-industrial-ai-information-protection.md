@@ -25,7 +25,7 @@ AI — actually do to **the protection of industrial information**?
 ## It comes in through an authorized door
 
 When we talk about security, we usually picture blocking the paths that
-*shouldn't* be open: detect abnormal access, shut down backdoors, build a
+_shouldn't_ be open: detect abnormal access, shut down backdoors, build a
 perimeter out of firewalls and permissions. That defense still matters. But the
 agentic-AI problem has a different texture. This thing **comes in through an
 authorized route.**
@@ -52,11 +52,11 @@ The attacks you can imagine in this setup fall into roughly three lines. The fir
 two are about making the AI **misbehave**; the last is about **pulling data out**
 of it.
 
-| Attack | What it targets | A problem of similar shape |
-| --- | --- | --- |
-| Prompt injection | Coax a generative AI into giving a forbidden answer | Akin to the ethics/jailbreak problem in consumer AI |
-| Process sabotage | Get it to carry out an abnormal process action | Aims squarely at the integrity of safety and control |
-| Dataset extraction | Engineer query/response pairs to reconstruct training data | Leakage of an asset dissolved into the model |
+| Attack             | What it targets                                            | A problem of similar shape                           |
+| ------------------ | ---------------------------------------------------------- | ---------------------------------------------------- |
+| Prompt injection   | Coax a generative AI into giving a forbidden answer        | Akin to the ethics/jailbreak problem in consumer AI  |
+| Process sabotage   | Get it to carry out an abnormal process action             | Aims squarely at the integrity of safety and control |
+| Dataset extraction | Engineer query/response pairs to reconstruct training data | Leakage of an asset dissolved into the model         |
 
 The first is a familiar face. It is the same family as the prompt injection that
 tries to draw a "shouldn't-say" answer out of a consumer generative AI, and you
