@@ -492,3 +492,44 @@ blockquote {
 html[data-theme="dark"] .navbar-brand .brand-logo {
   filter: brightness(1.75) saturate(1.05);
 }
+
+/* ---- Share buttons (post footer) ---------------------------------------- */
+.bp-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 36px 0 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--global-divider-color);
+}
+.bp-share-label {
+  font-family: var(--bp-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+  margin-right: 4px;
+}
+.bp-share-btn {
+  font-family: var(--bp-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 3px;
+  padding: 5px 10px;
+  background: transparent;
+  cursor: pointer;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+.bp-share-btn:hover {
+  color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+  text-decoration: none;
+}
