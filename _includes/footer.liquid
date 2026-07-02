@@ -24,6 +24,12 @@
     {% endif %}
 
     <div class="container">
+      {% unless page.social %}
+        <div class="social footer-social">
+          <div class="contact-icons">{% social_links %}</div>
+          <div class="contact-note">{{ site.contact_note }}</div>
+        </div>
+      {% endunless %}
       {{ footer_contents }}
     </div>
   </footer>

@@ -546,3 +546,11 @@ html[data-theme="dark"] .navbar-brand .brand-logo {
 .bp-share-btn:active {
   transform: translateY(1px);
 }
+
+/* ---- Social block in the site footer (every page) ----------------------- */
+.footer-social {
+  margin-bottom: 22px;
+}
+.footer-social .contact-note {
+  margin-top: 6px;
+}
