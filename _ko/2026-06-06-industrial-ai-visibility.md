@@ -7,7 +7,7 @@ permalink: /blog/ko/industrial-ai-visibility/
 og_image: https://seungwooketi.github.io/assets/img/industrial-ai-visibility-hero.png
 description: 상용 AI는 이미 놀랍도록 잘 한다. 그렇다면 산업 AI 모델은 따로 필요할까? 정보 보호·비용·지속가능성이라는 세 제약을 짚고, 그 모든 걸 지속가능하게 만드는 핵심이 왜 'AI 가시성(visibility)'인지 이야기한다.
 tags: industrial-ai foundation-models ai-visibility agentic-ai sustainability llm korean
-giscus_comments: false
+giscus_comments: true
 related_posts: false
 published: true
 toc:

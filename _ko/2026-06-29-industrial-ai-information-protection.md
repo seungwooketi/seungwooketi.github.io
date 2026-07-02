@@ -8,7 +8,7 @@ description: 산업 파운데이션 모델과 에이전틱 AI는 공정 관리�
 tags: industrial-AI agentic-AI prompt-injection data-security watermarking zero-trust trustworthy-AI korean
 thumbnail: assets/img/industrial-ai-information-protection-thumb.png
 og_image: /assets/img/industrial-ai-information-protection-thumb.png
-giscus_comments: false
+giscus_comments: true
 related_posts: false
 published: true
 toc:

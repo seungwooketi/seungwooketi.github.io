@@ -4,7 +4,7 @@ title: "A Study Roadmap for Uncertainty Quantification + Inverse Dynamics"
 date: 2026-05-23 10:00:00+0900
 description: A leveled reading list and a 10-week curriculum for getting from Bayesian basics to physics-informed, uncertainty-aware inverse dynamic models.
 tags: UQ IDM reading-list bayesian-deep-learning robotics
-giscus_comments: false
+giscus_comments: true
 related_posts: false
 published: true
 toc:

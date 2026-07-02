@@ -6,7 +6,7 @@ description: A sketch of an Industrial Data Lake — a way to build industrial A
 tags: industrial-AI industrial-data-lake foundation-model agentic-AI multi-agent data-security AI-BOM trustworthy-AI
 thumbnail: assets/img/industrial-ai-data-factory-thumb.png
 og_image: /assets/img/industrial-ai-data-factory-thumb.png
-giscus_comments: false
+giscus_comments: true
 related_posts: false
 published: true
 toc:

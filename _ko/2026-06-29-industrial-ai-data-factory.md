@@ -8,7 +8,7 @@ description: 데이터와 모델을 기업의 자산으로 보호하면서도 �
 tags: industrial-AI industrial-data-lake foundation-model agentic-AI multi-agent data-security AI-BOM trustworthy-AI korean
 thumbnail: assets/img/industrial-ai-data-factory-thumb.png
 og_image: /assets/img/industrial-ai-data-factory-thumb.png
-giscus_comments: false
+giscus_comments: true
 related_posts: false
 published: true
 toc:

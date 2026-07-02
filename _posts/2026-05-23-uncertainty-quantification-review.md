@@ -4,7 +4,7 @@ title: "Uncertainty Quantification Meets Inverse Dynamics"
 date: 2026-05-23 09:00:00+0900
 description: A concept review of uncertainty quantification (UQ), inverse dynamic models (IDM), and why combining them matters for safe, data-efficient robot control.
 tags: UQ IDM bayesian-deep-learning robotics trustworthy-AI
-giscus_comments: false
+giscus_comments: true
 related_posts: false
 published: true
 toc:

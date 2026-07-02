@@ -6,7 +6,7 @@ description: Industrial foundation models and agentic AI can transform process m
 tags: industrial-AI agentic-AI prompt-injection data-security watermarking zero-trust trustworthy-AI
 thumbnail: assets/img/industrial-ai-information-protection-thumb.png
 og_image: /assets/img/industrial-ai-information-protection-thumb.png
-giscus_comments: false
+giscus_comments: true
 related_posts: false
 published: true
 toc:

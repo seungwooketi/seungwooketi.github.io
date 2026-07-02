@@ -4,7 +4,7 @@ title: "Bootstrapping a Personal Knowledge Base in an Afternoon"
 date: 2026-05-27 17:00:00+0900
 description: Notes from a day spent designing folders, slugs, and a small LLM skill so that future updates to a personal knowledge base only require pointing at the source material.
 tags: knowledge-base claude productivity personal-tools
-giscus_comments: false
+giscus_comments: true
 related_posts: false
 published: true
 toc:
