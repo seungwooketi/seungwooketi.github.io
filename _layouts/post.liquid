@@ -61,7 +61,7 @@ layout: default
       <img
         loading="lazy"
         alt="View count"
-        src="https://hits.sh/{{ page.url | absolute_url | remove_first: 'https://' }}.svg?style=flat-square&label=views&color=2f54d4&labelColor=1f2a44"
+        src="https://hits.sh/{{ page.url | absolute_url | remove_first: 'https://' | split: '/' | join: '/' }}.svg?style=flat-square&label=views&color=2f54d4&labelColor=1f2a44"
       >
     </p>
   </header>
