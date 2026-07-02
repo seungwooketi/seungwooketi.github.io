@@ -505,31 +505,44 @@ html[data-theme="dark"] .navbar-brand .brand-logo {
 }
 .bp-share-label {
   font-family: var(--bp-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--global-text-color-light);
-  margin-right: 4px;
+  font-weight: 600;
+  color: var(--global-text-color);
+  margin-right: 2px;
 }
 .bp-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-family: var(--bp-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--global-text-color-light);
-  border: 1px solid var(--global-divider-color);
-  border-radius: 3px;
-  padding: 5px 10px;
-  background: transparent;
-  cursor: pointer;
+  font-weight: 500;
   line-height: 1;
+  color: var(--global-theme-color);
+  border: 1px solid var(--global-theme-color);
+  border-radius: 4px;
+  padding: 8px 14px;
+  cursor: pointer;
   text-decoration: none;
+  background: #eef2fd;
+  background: color-mix(in srgb, var(--global-theme-color) 12%, transparent);
   transition:
-    border-color 0.15s ease,
-    color 0.15s ease;
+    background 0.15s ease,
+    color 0.15s ease,
+    transform 0.1s ease;
+}
+.bp-share-btn i {
+  font-size: 0.9rem;
 }
 .bp-share-btn:hover {
-  color: var(--global-theme-color);
-  border-color: var(--global-theme-color);
+  background: var(--global-theme-color);
+  color: #fff;
   text-decoration: none;
+}
+.bp-share-btn:active {
+  transform: translateY(1px);
 }

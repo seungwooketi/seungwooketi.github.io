@@ -17,33 +17,38 @@
     href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | url_encode }}"
     target="_blank"
     rel="noopener noreferrer"
-    >LinkedIn</a
+    ><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a
   >
   <a
     class="bp-share-btn"
     href="https://twitter.com/intent/tweet?url={{ share_url | url_encode }}&text={{ page.title | url_encode }}"
     target="_blank"
     rel="noopener noreferrer"
-    >X</a
+    ><i class="fa-brands fa-x-twitter"></i>X</a
   >
   <a class="bp-share-btn" href="https://www.facebook.com/sharer/sharer.php?u={{ share_url | url_encode }}" target="_blank" rel="noopener noreferrer"
-    >Facebook</a
+    ><i class="fa-brands fa-facebook-f"></i>Facebook</a
   >
-  <a class="bp-share-btn" href="mailto:?subject={{ page.title | url_encode }}&body={{ share_url | url_encode }}">{{ l_email }}</a>
-  <button class="bp-share-btn bp-share-copy" type="button" data-copied="{{ l_copied }}">{{ l_copy }}</button>
+  <a class="bp-share-btn" href="mailto:?subject={{ page.title | url_encode }}&body={{ share_url | url_encode }}"
+    ><i class="fa-solid fa-envelope"></i>{{ l_email -}}
+  </a>
+  <button class="bp-share-btn bp-share-copy" type="button" data-copied="{{ l_copied }}">
+    <i class="fa-solid fa-link"></i><span class="bp-share-txt">{{ l_copy }}</span>
+  </button>
 </div>
 <script>
   (function () {
     var btn = document.querySelector(".bp-share-copy");
     if (!btn) return;
+    var txt = btn.querySelector(".bp-share-txt");
     var url = {{ share_url | jsonify }};
-    var label = btn.textContent;
+    var label = txt.textContent;
     btn.addEventListener("click", function () {
       if (!navigator.clipboard) return;
       navigator.clipboard.writeText(url).then(function () {
-        btn.textContent = btn.getAttribute("data-copied");
+        txt.textContent = btn.getAttribute("data-copied");
         setTimeout(function () {
-          btn.textContent = label;
+          txt.textContent = label;
         }, 1500);
       });
     });
