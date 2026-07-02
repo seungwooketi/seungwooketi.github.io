@@ -34,7 +34,9 @@ function determineGiscusTheme() {
     "data-emit-metadata": "{{ site.giscus.emit_metadata }}",
     "data-input-position": "{{ site.giscus.input_position }}",
     "data-theme": giscusTheme,
-    "data-lang": "{{ site.giscus.lang }}",
+    "data-lang":
+      document.getElementById("giscus_thread").getAttribute("data-lang") ||
+      "{{ site.giscus.lang }}",
     crossorigin: "anonymous",
     async: true,
   };

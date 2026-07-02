@@ -1,5 +1,6 @@
 <div
   id="giscus_thread"
+  data-lang="{{ page.lang | default: site.giscus.lang }}"
   {% if page.layout == 'post' %}
     style="max-width: {{ site.max_width }}; margin: 0 auto;"
   {% endif %}
