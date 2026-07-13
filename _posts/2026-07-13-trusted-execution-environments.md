@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Trusted Execution Environments, Explained"
+title: "Running AI Inside a Trusted Execution Environment"
 date: 2026-07-13 17:20:00+0900
-description: A plain-language introduction to Trusted Execution Environments (TEEs) — the hardware-enforced "safe room" inside a processor that keeps code and data protected while they are running, even from the operating system, hypervisor, or cloud operator. Isolation, remote attestation, sealing, the main technologies (ARM TrustZone, Intel SGX/TDX, AMD SEV-SNP, confidential VMs and containers), and the caveats.
-tags: TEE confidential-computing trustzone sgx hardware-security attestation trustworthy-AI
+description: Less a tutorial, more a field report — why you'd run an AI model inside a Trusted Execution Environment (to keep weights and data out of the host's reach), why today's TEEs strain under it (tiny enclave memory, CPU-only trust, costly CPU↔GPU transfers), and the open problems, including why confidential GPU inference needs a Hopper-class data-center GPU and why Jetson Thor's Blackwell doesn't qualify.
+tags: TEE confidential-computing gpu nvidia-hopper attestation model-protection edge-AI trustworthy-AI
 giscus_comments: true
 related_posts: false
 published: false
@@ -11,142 +11,125 @@ toc:
   sidebar: left
 ---
 
-<p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/trusted-execution-environments/' | relative_url }}">신뢰 실행 환경(TEE) 입문</a></em></small></p>
+<p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/trusted-execution-environments/' | relative_url }}">신뢰 실행 환경(TEE) 안에서 AI 돌리기</a></em></small></p>
 
-We have gotten good at protecting data in two of its three states. Data **at
-rest** sits on an encrypted disk; data **in transit** travels inside TLS. But
-there is a third state we usually wave away: data **in use** — the moment it is
-decrypted into memory and the CPU actually computes on it. At that instant the
-plaintext is exposed to whatever software has enough privilege to read that
-memory: the operating system, the hypervisor, a kernel driver, another tenant
-who has escaped their sandbox, or the cloud operator who owns the machine. A
-**Trusted Execution Environment (TEE)** is the hardware's answer to that third
-state.
+We've gotten good at protecting data **at rest** (encrypted disk) and **in
+transit** (TLS). The state we still wave away is data **in use** — the moment it
+is decrypted into memory and the processor computes on it, exposed to anything
+with enough privilege to read that memory: the OS, the hypervisor, another
+tenant, or the cloud operator who owns the machine. A **Trusted Execution
+Environment (TEE)** is the hardware's answer to that third state. For AI it stops
+being an abstraction, because with AI the crown jewels — the model weights and
+the input data — are _exactly_ the plaintext sitting in memory while the GPU
+crunches. This post is about running AI in a TEE: why you'd want to, and why the
+hardware still makes it hard.
 
-## What a TEE actually is
+## What a TEE is, in one pass
 
-A TEE is an isolated execution environment, enforced by the processor itself,
-where code runs and data lives with two guarantees:
+A TEE is an isolated region the processor carves out and enforces — an
+_enclave_, a _secure world_, or a _confidential VM_ — with two guarantees for the
+code and data inside: **confidentiality** (nothing outside can read its memory,
+not even higher-privileged software) and **integrity** (nothing outside can
+tamper with it undetected). On modern parts the memory is hardware-**encrypted**,
+so even someone probing the DRAM bus sees ciphertext. The trade is in the threat
+model: you stop trusting the whole software stack and instead trust the **CPU
+vendor** to hold one small, well-defined line.
 
-- **Confidentiality** — nothing outside the environment can read its memory,
-  even software running at higher privilege than the environment's own code.
-- **Integrity** — nothing outside can silently tamper with the code or data
-  inside; tampering is detected.
+Two more pieces make it usable. **Attestation** lets the environment prove to a
+remote party "I'm a genuine TEE from this vendor, and the exact code inside me
+hashes to _this_ value" — so secrets are released only after that proof checks
+out. **Sealing** binds an encryption key to the hardware and the code's
+measurement, so data can only be decrypted again by the same code on the same
+machine. The technologies you'll meet: **ARM TrustZone** (secure/normal world,
+everywhere in phones and edge), **Intel SGX** (tiny process enclaves, now steered
+toward VM-level **TDX**), and **AMD SEV-SNP** (encrypted, attested VMs). Keep that
+much in your head; the rest of this post is what happens when you try to put a
+model inside one.
 
-The key move is the **threat model**. Ordinary security assumes the operating
-system is trustworthy and defends the app from other apps. A TEE flips part of
-that: it assumes the OS, the hypervisor, and the physical operator might all be
-compromised or hostile, and it still protects the code and data inside the
-environment from them. You are no longer trusting the whole software stack — you
-are trusting the CPU (and the vendor who made it) to hold a small, well-defined
-line.
+## Why you'd put AI inside one
 
-## Three things every TEE gives you
+The pitch is simple: run the model where the host can't see it. Concretely, that
+defends against a cluster of very real threats.
 
-**Isolation.** The processor carves out a protected region — an _enclave_, a
-_secure world_, or a _confidential VM_, depending on the technology — and
-enforces that only code inside it can touch its memory. On modern designs the
-memory is also **encrypted** by the hardware, so even someone with physical
-access reading the DRAM bus sees ciphertext.
+- **Model / weight theft.** Trained weights are the asset. On someone else's
+  machine — a cloud host, an on-prem box you don't control, an insider with
+  root — they can be copied straight out of memory. A TEE keeps them encrypted
+  everywhere except inside the boundary.
+- **Training-data and membership extraction.** Attackers reconstruct training
+  data or infer whether a specific record was in the training set. Keeping the
+  model and its I/O confidential shrinks the surface — though, honestly, a TEE
+  guards the _substrate_, not the query surface: a legitimate querier can still
+  probe the model, so this pairs with model-level defenses (irreversible
+  learning, watermarking, output filtering) rather than replacing them.
+- **Input / prompt privacy.** Medical, financial, or industrial inputs stay
+  unreadable to whoever operates the inference server.
+- **Integrity by attestation.** You can prove the _exact_ model and code are
+  running — no silently swapped or backdoored weights.
 
-**Attestation.** Isolation is worthless if you can't tell whether you're talking
-to the _genuine_ protected code or an impostor. Attestation lets a TEE prove, to
-a remote party, "I am a real TEE from this vendor, and the exact code running
-inside me hashes to _this_ value." Only after checking that proof does the remote
-party hand over its secrets. More on this below — it's the part that makes TEEs
-useful rather than merely isolated.
+The pattern that ties these together is **confidential inference** (and,
+increasingly, confidential training): the model owner and the data owner each
+verify the other's TEE by attestation and only then release their half — weights
+from one side, data from the other — into an environment neither host can read.
+It's already shipping: cloud providers offer confidential GPU VMs, "model-as-a-
+service" vendors can serve weights they never expose, hospitals pool records for
+a joint model inside a confidential VM, and large consumer AI backends now lean on
+attested confidential compute so even the operator can't read your requests.
 
-**Sealing.** A TEE can derive an encryption key that is bound to the hardware
-_and_ to the measurement of the code running in it. It can encrypt ("seal") data
-with that key so the data can only ever be decrypted again by the _same_ code on
-the _same_ machine — handy for persisting secrets between runs.
+## Where today's hardware strains
 
-## The landscape
+Here's the rub: the two decades of TEE design above were built for CPUs and small
+secrets, and AI is neither.
 
-TEEs come in two broad shapes: **process-level**, which protect a single
-application (small trusted computing base, but you often have to rewrite the app
-to split its secret parts into the enclave), and **VM-level**, which wrap an
-entire virtual machine (drop-in for existing workloads, larger trusted base).
+**The enclave is too small.** Classic CPU enclaves offered on the order of ~100 MB
+of protected memory. A modern model is gigabytes. It simply doesn't fit, and
+paging weights in and out of a small enclave is punishingly slow. VM-level TEEs
+(TDX, SEV-SNP) removed _that_ specific ceiling by protecting a whole VM's memory —
+but they're still CPU-side.
 
-- **ARM TrustZone** — splits the whole system-on-chip into a _secure world_ and a
-  _normal world_. Ubiquitous in phones, embedded, and edge devices, where it
-  backs things like key stores, biometrics, and DRM. TrustZone-M brings the same
-  idea to microcontrollers.
-- **Intel SGX** — user-space _enclaves_ at the granularity of a process, with a
-  deliberately tiny trusted base. Influential and widely studied; Intel has since
-  deprecated it on client CPUs and steered server confidential computing toward
-  VM-level TDX.
-- **Intel TDX** — _trust domains_: a whole guest VM shielded from the hypervisor.
-- **AMD SEV / SEV-SNP** — encrypted VMs; SEV-SNP adds strong integrity and
-  attestation. The AMD side of confidential VMs.
-- **AWS Nitro Enclaves** — an isolated VM carved off an instance, with no
-  persistent storage and no external network, reachable only over a local
-  channel, with its own attestation.
-- **RISC-V** — open designs such as Keystone, plus vendor-specific TEEs.
+**The compute lives on the GPU; the TEE doesn't.** AI runs on GPUs, and until
+recently GPUs sat entirely _outside_ the trust boundary. That left a bad choice:
+keep the model in a CPU TEE and lose GPU acceleration (unusably slow for real
+models), or ship the data to an untrusted GPU and lose the confidentiality you
+built the TEE for.
 
-On top of these, the **Confidential Computing** ecosystem (coordinated by the
-Confidential Computing Consortium under the Linux Foundation) has grown a
-friendlier layer — **confidential VMs** and **confidential containers** (e.g.,
-running Kata/CoCo workloads inside TDX or SEV) — so teams can adopt TEEs without
-rewriting everything as an enclave.
+**Bridging CPU and GPU has a cost.** NVIDIA's **Confidential Computing**,
+introduced with the **Hopper H100**, pulls the GPU inside the boundary: the GPU
+runs in a confidential mode with encrypted memory, the data crossing PCIe between
+the CPU's confidential VM and the GPU is encrypted, and the GPU itself can be
+attested. Pair an attested H100 with a confidential VM (TDX or SEV-SNP) and you
+get an end-to-end TEE spanning CPU and GPU. But that PCIe crossing is the catch:
+data is encrypted through a **bounce buffer** in the CPU TEE and copied to the
+device, so the more you shuttle between host and GPU, the more you pay. For large,
+compute-bound models the overhead is modest; for small models or chatty pipelines
+it bites.
 
-## Attestation, a little closer
+## The open problems (and a hardware reality check)
 
-Attestation is the handshake that turns isolation into trust. Roughly:
+This is where the interesting work is right now.
 
-1. **Measurement.** When the TEE is created, the hardware records a cryptographic
-   hash of its initial code and data — its _measurement_.
-2. **Quote.** The relying party sends a challenge; the TEE asks the hardware to
-   produce a _quote_ — the measurement plus the challenge, signed by a key that
-   is rooted in the CPU vendor's hardware and cannot leave it.
-3. **Verification.** The relying party checks the signature against the vendor's
-   certificate chain (confirming it's genuine silicon) and checks the measurement
-   against a **reference value** it expects (confirming it's the exact code it
-   meant to talk to).
-4. **Release.** Only now does the relying party provision secrets — decrypt the
-   dataset, hand over a model, release a key — into the environment it has just
-   verified.
+- **Harmonizing CPU-TEE, GPU, and memory.** The enclave is small and CPU-side;
+  the model and the math live on the GPU. Getting the most from both is a
+  resource-optimization problem as much as a security one: schedule work so the
+  sensitive parts stay protected while the heavy compute runs accelerated, and
+  cut the encrypted CPU↔GPU traffic to the bone.
+- **Which layers to shield.** Putting the whole model in the TEE is simplest and
+  costliest. A lot of current work asks whether you can protect only what
+  matters — the layers whose weights are most valuable or most exposed to
+  extraction, or a thin "shield" sub-network — and run the rest in the clear on
+  the GPU, trading a controlled, measured amount of exposure for a large speedup.
+- **The hardware floor is real.** Confidential GPU inference needs a **data-center
+  GPU with Confidential Computing — Hopper (H100/H200) or Blackwell
+  (B100/B200/GB200)** — plus a CPU that supports a confidential VM. Older GPUs
+  (Ada, Ampere) don't have it. And **architecture family alone isn't enough**:
+  Jetson Thor is built on a Blackwell-generation GPU, yet it _can't_ do this —
+  Confidential Computing is a feature of NVIDIA's discrete **data-center** GPUs
+  and platforms, not the Jetson/embedded SoC line, which lacks the CC
+  hardware-security engine, firmware, and attestation path. Thor targets edge
+  robotics, not attested confidential inference; "it's Blackwell" doesn't buy you
+  a TEE the way a GB200 does.
 
-This is what lets two mutually distrusting parties cooperate: each verifies the
-other's TEE and code _before_ sending anything sensitive.
-
-## What people build with it
-
-- **Confidential inference / confidential AI.** Run a model inside a TEE so that
-  the data owner's inputs are never exposed to whoever hosts the model, _and_ the
-  model owner's weights are never exposed to whoever owns the data. Attestation
-  lets each side verify before releasing its half.
-- **Key management and secrets.** HSM-like protection for signing keys and
-  wallets without dedicated hardware.
-- **Multi-party computation and clean rooms.** Several parties pool sensitive
-  data for a joint computation, seeing only the agreed-upon result.
-- **Edge and IoT.** A hardware root of trust on devices in the field, where the
-  physical environment itself is untrusted.
-
-## Where TEEs fall short
-
-A TEE is a sharp tool, not a magic shield. The honest caveats:
-
-- **Side channels.** TEEs protect the _contents_ of memory, but timing, cache,
-  power, and speculative-execution behavior can still leak. A long line of
-  attacks (Foreshadow, ÆPIC Leak, and the broader Spectre/Meltdown family, among
-  others) has repeatedly pulled data out of enclaves; defense is an ongoing arms
-  race, not a solved problem.
-- **You still trust the vendor.** A TEE doesn't remove trust — it _relocates_ it,
-  from the OS and cloud operator to the CPU vendor and their attestation service.
-  If you don't trust the silicon, a TEE can't help you.
-- **Availability isn't covered.** A TEE guarantees confidentiality and integrity,
-  not that your code gets to run. A malicious host can still refuse to schedule
-  it or simply pull the plug.
-- **Cost and friction.** Memory encryption and enclave transitions add overhead;
-  process-level TEEs may need real re-architecting; measurements and reference
-  values have to be managed as the code evolves.
-
-## Wrap-up
-
-Strip it down and a TEE is one idea: a **hardware-enforced root of trust for
-data in use**, plus a way to **prove remotely** exactly what is running inside it
-before anyone trusts it with secrets. It doesn't replace encryption at rest or in
-transit — it closes the gap between them, the runtime moment when plaintext is
-unavoidable. Used with clear eyes about its limits, it's the piece that lets you
-compute on data you don't fully control, on a machine you don't fully trust.
+None of this is solved. But the direction is clear, and it's the practical
+frontier: a TEE gives AI a hardware root of trust for its data-in-use, and the
+job now is making that trust reach the GPU without paying too much for it — and,
+for anyone building at the edge, knowing that today the confidential path runs
+through the data center, not the robot.
