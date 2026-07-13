@@ -77,3 +77,10 @@ TEE는 프로세서가 따로 떼어 내 지켜 주는 격리 구역이다. 기�
 - **하드웨어 하한은 진짜로 있다.** 기밀 GPU 추론을 하려면 컨피덴셜 컴퓨팅을 지원하는 데이터센터 GPU(Hopper의 H100/H200, 또는 Blackwell의 B100/B200/GB200)에 컨피덴셜 VM을 지원하는 CPU가 있어야 한다. 그 이전 세대(Ada, Ampere)에는 이 기능이 없다. 그리고 아키텍처 세대가 같다고 되는 게 아니다. Jetson Thor는 Blackwell 세대 GPU로 만들어졌는데도 이걸 못 한다. 컨피덴셜 컴퓨팅은 NVIDIA의 데이터센터용 개별 GPU와 그 플랫폼에 들어간 기능이지, CC용 하드웨어 보안 엔진도 펌웨어도 증명 경로도 없는 Jetson/임베디드 SoC 라인의 기능이 아니기 때문이다. Thor는 엣지 로보틱스를 노린 물건이지 증명된 기밀 추론을 노린 물건이 아니다. 'Blackwell이잖아'가 GB200처럼 TEE를 만들어 주진 않는다.
 
 어느 것도 다 풀린 문제는 아니다. 그래도 방향은 뚜렷하고, 이게 지금 가장 실용적인 최전선이다. TEE는 '쓰이는 중'인 AI 데이터에 하드웨어로 된 믿을 구석 하나를 만들어 준다. 이제 남은 숙제는 그 믿을 구석을 너무 비싸지 않게 GPU까지 닿게 하는 일이고, 엣지에서 뭔가를 만드는 사람이라면 하나 더, 오늘 기준 그 기밀 경로가 로봇이 아니라 데이터센터를 지난다는 사실을 잊지 않는 일이다.
+
+## 참고 문헌
+
+1. Florian Tramèr, Dan Boneh, [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287), ICLR 2019 — 민감한 연산은 CPU TEE 안에 두고 무거운 선형 계층은 더 빠른(하지만 못 믿을) 보조 프로세서로 넘기는 방식. CPU-TEE ↔ GPU 분할의 초기 사례다.
+2. Stavros Volos, Kapil Vaswani, Rodrigo Bruno, [Graviton: Trusted Execution Environments on GPUs](https://www.usenix.org/conference/osdi18/presentation/volos), USENIX OSDI 2018 — 최초의 연구용 GPU TEE. 오버헤드 대부분이 GPU를 오가는 트래픽 암호화에서 나온다는 점이 본문의 CPU↔GPU 비용 이야기와 그대로 겹친다.
+3. Ziqi Zhang 외, [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](https://arxiv.org/abs/2310.07152), IEEE S&P 2024 — 일부 계층만 TEE로 가리는 게 생각보다 까다롭다는 걸 보이고 TEESlice를 제안한다. '어느 계층을 가릴까'와 바로 직결된다.
+4. NVIDIA, [Confidential Compute on NVIDIA Hopper H100](https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/HCC-Whitepaper-v1.0.pdf) (백서) — 컨피덴셜 컴퓨팅을 지원하는 최초의 GPU인 H100. 온다이 신뢰 기반, GPU 증명, 그리고 암호화된 CPU↔GPU 바운스 버퍼를 다룬다.

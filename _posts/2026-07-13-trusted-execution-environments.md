@@ -155,3 +155,10 @@ frontier: a TEE gives AI a hardware root of trust for its data-in-use, and the
 job now is making that trust reach the GPU without paying too much for it — and,
 for anyone building at the edge, knowing that today the confidential path runs
 through the data center, not the robot.
+
+## References
+
+1. Florian Tramèr and Dan Boneh, [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287), ICLR 2019 — keeps a DNN's sensitive work inside a CPU TEE while offloading the heavy linear layers to a faster, untrusted co-processor; an early take on the CPU-TEE ↔ GPU split.
+2. Stavros Volos, Kapil Vaswani, and Rodrigo Bruno, [Graviton: Trusted Execution Environments on GPUs](https://www.usenix.org/conference/osdi18/presentation/volos), USENIX OSDI 2018 — the first research GPU TEE; its overhead is dominated by encrypting traffic to and from the GPU, exactly the CPU↔GPU cost this post flags.
+3. Ziqi Zhang et al., [No Privacy Left Outside: On the (In-)Security of TEE-Shielded DNN Partition for On-Device ML](https://arxiv.org/abs/2310.07152), IEEE S&P 2024 — shows that shielding only _some_ layers in a TEE is trickier than it looks, and proposes TEESlice; directly on point for "which layers to shield."
+4. NVIDIA, [Confidential Compute on NVIDIA Hopper H100](https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/HCC-Whitepaper-v1.0.pdf) (whitepaper) — the H100 as the first GPU with confidential computing: on-die root of trust, GPU attestation, and the encrypted CPU↔GPU bounce buffer.
