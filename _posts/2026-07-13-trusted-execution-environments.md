@@ -8,7 +8,7 @@ thumbnail: assets/img/tee-hero.png
 og_image: /assets/img/tee-hero.png
 giscus_comments: true
 related_posts: false
-published: false
+published: true
 toc:
   sidebar: left
 ---
