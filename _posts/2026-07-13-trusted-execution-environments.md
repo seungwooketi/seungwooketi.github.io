@@ -42,9 +42,23 @@ out. **Sealing** binds an encryption key to the hardware and the code's
 measurement, so data can only be decrypted again by the same code on the same
 machine. The technologies you'll meet: **ARM TrustZone** (secure/normal world,
 everywhere in phones and edge), **Intel SGX** (tiny process enclaves, now steered
-toward VM-level **TDX**), and **AMD SEV-SNP** (encrypted, attested VMs). Keep that
-much in your head; the rest of this post is what happens when you try to put a
-model inside one.
+toward VM-level **TDX**), and **AMD SEV-SNP** (encrypted, attested VMs).
+
+These sort into two families — a process-level **TEE** and a hypervisor-level **TEE hypervisor** (a confidential VM):
+
+|                    | TEE (enclave)                       | TEE hypervisor (confidential VM)                                    |
+| ------------------ | ----------------------------------- | ------------------------------------------------------------------- |
+| Protects           | part of one app — an _enclave_      | a whole guest **VM**                                                |
+| Examples           | Intel SGX, ARM TrustZone            | Intel TDX, AMD SEV-SNP, ARM CCA                                     |
+| Trusted base (TCB) | tiny — enclave code only            | large — guest OS + app                                              |
+| The host           | OS untrusted; the app guards itself | hypervisor untrusted; hardware + a secure monitor enforce isolation |
+| App changes        | usually rewrite / partition the app | drop-in (lift-and-shift)                                            |
+| Protected memory   | small (classic ~100 MB)             | the whole VM's RAM (GBs)                                            |
+| Fit for AI         | the model won't fit                 | the practical base for confidential AI                              |
+
+Which family you use decides much of what follows — the memory problem below most
+of all. Keep that much in your head; the rest of this post is what happens when
+you try to put a model inside one.
 
 ## Why you'd put AI inside one
 
