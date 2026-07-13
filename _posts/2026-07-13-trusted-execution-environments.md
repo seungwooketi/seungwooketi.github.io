@@ -2,7 +2,7 @@
 layout: post
 title: "Running AI Inside a Trusted Execution Environment"
 date: 2026-07-13 17:20:00+0900
-description: Less a tutorial, more a field report — why you'd run an AI model inside a Trusted Execution Environment (to keep weights and data out of the host's reach), why today's TEEs strain under it (tiny enclave memory, CPU-only trust, costly CPU↔GPU transfers), and the open problems, including why confidential GPU inference needs a Hopper-class data-center GPU and why Jetson Thor's Blackwell doesn't qualify.
+description: Less a tutorial, more a field report — why you'd run an AI model inside a Trusted Execution Environment (to keep weights and data out of the host's reach), why today's TEEs strain under it (tiny enclave memory, CPU-only trust, costly CPU↔GPU transfers), and recent research directions, including why confidential GPU inference needs a Hopper-class data-center GPU and why Jetson Thor's Blackwell doesn't qualify.
 tags: TEE confidential-computing gpu nvidia-hopper attestation model-protection edge-AI trustworthy-AI
 thumbnail: assets/img/tee-hero.png
 og_image: /assets/img/tee-hero.png

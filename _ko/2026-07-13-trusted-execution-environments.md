@@ -4,7 +4,7 @@ lang: ko
 title: "신뢰 실행 환경(TEE) 안에서 AI 돌리기"
 date: 2026-07-13 17:20:00+0900
 permalink: /blog/ko/trusted-execution-environments/
-description: 교과서적인 설명보다는 현장 감각으로 정리했다. AI 모델을 신뢰 실행 환경(TEE) 안에서 돌리려는 이유(가중치와 데이터를 호스트 손에서 지키기), 지금의 TEE가 AI 앞에서 삐걱대는 대목(너무 작은 엔클레이브 메모리, CPU에 갇힌 신뢰, 값비싼 CPU↔GPU 전송), 그리고 아직 열려 있는 문제들까지. 기밀 GPU 추론이 왜 Hopper급 데이터센터 GPU를 요구하는지, Jetson Thor의 Blackwell로는 왜 안 되는지도 짚었다.
+description: 교과서적인 설명보다는 현장 감각으로 정리했다. AI 모델을 신뢰 실행 환경(TEE) 안에서 돌리려는 이유(가중치와 데이터를 호스트 손에서 지키기), 지금의 TEE가 AI 앞에서 삐걱대는 대목(너무 작은 엔클레이브 메모리, CPU에 갇힌 신뢰, 값비싼 CPU↔GPU 전송), 그리고 최근 연구 토픽까지. 기밀 GPU 추론이 왜 Hopper급 데이터센터 GPU를 요구하는지, Jetson Thor의 Blackwell로는 왜 안 되는지도 짚었다.
 tags: TEE confidential-computing gpu nvidia-hopper attestation model-protection edge-AI trustworthy-AI korean
 thumbnail: assets/img/tee-hero.png
 og_image: /assets/img/tee-hero.png
