@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-leaking-through-an-authorized-door-the-security-problem-of-generative-and-agentic-ai",
+        },{id: "post-running-ai-inside-a-trusted-execution-environment",
+        
+          title: "Running AI Inside a Trusted Execution Environment",
+        
+        description: "Less a tutorial, more a field report — why you&#39;d run an AI model inside a Trusted Execution Environment (to keep weights and data out of the host&#39;s reach), why today&#39;s TEEs strain under it (tiny enclave memory, CPU-only trust, costly CPU↔GPU transfers), and the open problems, including why confidential GPU inference needs a Hopper-class data-center GPU and why Jetson Thor&#39;s Blackwell doesn&#39;t qualify.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/trusted-execution-environments/";
+          
+        },
+      },{id: "post-leaking-through-an-authorized-door-the-security-problem-of-generative-and-agentic-ai",
         
           title: "Leaking Through an Authorized Door — the Security Problem of Generative and Agentic...",
         
@@ -164,6 +175,11 @@ ninja.data = [{
           description: "산업 파운데이션 모델과 에이전틱 AI는 공정 관리를 바꿔 놓을 수 있지만, 정보 보호에는 기존과 다른 종류의 구멍을 낸다. 허용된 접근 루트로 들어와 자연스럽게 정보를 흘리는 문제, 생각해 볼 수 있는 공격 유형, 그리고 사이버 시큐리티에 AI의 관점을 더한 새로운 대응 패러다임을 정리했다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/industrial-ai-information-protection/";
+            },},{id: "ko-신뢰-실행-환경-tee-안에서-ai-돌리기",
+          title: '신뢰 실행 환경(TEE) 안에서 AI 돌리기',
+          description: "교과서적인 설명보다는 현장 감각으로 정리했다. AI 모델을 신뢰 실행 환경(TEE) 안에서 돌리려는 이유(가중치와 데이터를 호스트 손에서 지키기), 지금의 TEE가 AI 앞에서 삐걱대는 대목(너무 작은 엔클레이브 메모리, CPU에 갇힌 신뢰, 값비싼 CPU↔GPU 전송), 그리고 아직 열려 있는 문제들까지. 기밀 GPU 추론이 왜 Hopper급 데이터센터 GPU를 요구하는지, Jetson Thor의 Blackwell로는 왜 안 되는지도 짚었다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/trusted-execution-environments/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
