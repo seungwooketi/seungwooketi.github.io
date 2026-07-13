@@ -17,6 +17,8 @@ toc:
 
 {% include figure.liquid loading="eager" path="assets/img/tee-hero.png" class="img-fluid rounded z-depth-1" alt="An AI model and a data crystal sealed inside a glowing vault on a processor die, shielded while an eye and a hand are blocked outside" %}
 
+A [previous post]({{ '/blog/2026/industrial-ai-information-protection/' | relative_url }}) took up AI security from the model's side — how a generative or agentic AI leaks information through its own answers, and the software-level defenses (watermarking, irreversible learning, zero-trust) that hold the line. Here I want to turn the scope the other way: toward the **infrastructure the model runs on**, and toward **edge and embedded AI** in particular, where the box doing the inference sits somewhere you don't fully control. There the question isn't what the model _says_, but who can read the model and its data while it runs. That's a hardware question — so let's talk about the hardware.
+
 We've gotten good at protecting data **at rest** (encrypted disk) and **in
 transit** (TLS). The state we still wave away is data **in use** — the moment it
 is decrypted into memory and the processor computes on it, exposed to anything
