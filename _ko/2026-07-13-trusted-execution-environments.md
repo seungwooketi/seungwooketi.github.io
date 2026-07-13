@@ -148,7 +148,7 @@ PCIe 횡단이 관건이다. 데이터는 CPU TEE 안의 **바운스 버퍼**를
   <line x1="360" y1="322" x2="360" y2="270" stroke="#C4CAD6" stroke-width="1.6" stroke-dasharray="3 4"/>
   <circle cx="360" cy="258" r="12" fill="#d4482f"/>
   <path d="M355,253 L365,263 M365,253 L355,263" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
-  <text x="380" y="262" font-size="11" fill="#d4482f">암호문만 보임</text>
+  <text x="380" y="292" font-size="11" fill="#d4482f">암호문만 보임</text>
 </svg>
 </div>
 

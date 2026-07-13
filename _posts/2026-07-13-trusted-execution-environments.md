@@ -146,14 +146,14 @@ it bites.
   <path d="M354,150 v-3 a6,6 0 0 1 12,0 v3" fill="none" stroke="#2f54d4" stroke-width="2"/>
   <line x1="312" y1="178" x2="404" y2="178" stroke="#2f54d4" stroke-width="2" marker-end="url(#teeAR)"/>
   <line x1="408" y1="192" x2="316" y2="192" stroke="#2f54d4" stroke-width="2" marker-end="url(#teeAR)"/>
-  <text x="360" y="216" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="10" fill="#5b6b86">PCIe · bounce buffer</text>
+  <text x="360" y="216" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="10" fill="#5b6b86">PCIe bounce buffer</text>
   <rect x="250" y="322" width="220" height="82" rx="12" fill="#F1F2F5" stroke="#C4CAD6" stroke-width="1.5"/>
   <text x="360" y="352" text-anchor="middle" font-size="14" font-weight="600" fill="#57606f">Untrusted host</text>
   <text x="360" y="374" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="11" fill="#7a8494">hypervisor · OS · operator</text>
   <line x1="360" y1="322" x2="360" y2="270" stroke="#C4CAD6" stroke-width="1.6" stroke-dasharray="3 4"/>
   <circle cx="360" cy="258" r="12" fill="#d4482f"/>
   <path d="M355,253 L365,263 M365,253 L355,263" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
-  <text x="380" y="262" font-size="11" fill="#d4482f">sees only ciphertext</text>
+  <text x="380" y="292" font-size="11" fill="#d4482f">sees only ciphertext</text>
 </svg>
 </div>
 
