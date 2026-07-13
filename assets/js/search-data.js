@@ -55,7 +55,7 @@ ninja.data = [{
         
           title: "Running AI Inside a Trusted Execution Environment",
         
-        description: "Less a tutorial, more a field report — why you&#39;d run an AI model inside a Trusted Execution Environment (to keep weights and data out of the host&#39;s reach), why today&#39;s TEEs strain under it (tiny enclave memory, CPU-only trust, costly CPU↔GPU transfers), and the open problems, including why confidential GPU inference needs a Hopper-class data-center GPU and why Jetson Thor&#39;s Blackwell doesn&#39;t qualify.",
+        description: "Less a tutorial, more a field report — why you&#39;d run an AI model inside a Trusted Execution Environment (to keep weights and data out of the host&#39;s reach), why today&#39;s TEEs strain under it (tiny enclave memory, CPU-only trust, costly CPU↔GPU transfers), and recent research directions, including why confidential GPU inference needs a Hopper-class data-center GPU and why Jetson Thor&#39;s Blackwell doesn&#39;t qualify.",
         section: "Posts",
         handler: () => {
           
@@ -177,7 +177,7 @@ ninja.data = [{
               window.location.href = "/blog/ko/industrial-ai-information-protection/";
             },},{id: "ko-신뢰-실행-환경-tee-안에서-ai-돌리기",
           title: '신뢰 실행 환경(TEE) 안에서 AI 돌리기',
-          description: "교과서적인 설명보다는 현장 감각으로 정리했다. AI 모델을 신뢰 실행 환경(TEE) 안에서 돌리려는 이유(가중치와 데이터를 호스트 손에서 지키기), 지금의 TEE가 AI 앞에서 삐걱대는 대목(너무 작은 엔클레이브 메모리, CPU에 갇힌 신뢰, 값비싼 CPU↔GPU 전송), 그리고 아직 열려 있는 문제들까지. 기밀 GPU 추론이 왜 Hopper급 데이터센터 GPU를 요구하는지, Jetson Thor의 Blackwell로는 왜 안 되는지도 짚었다.",
+          description: "교과서적인 설명보다는 현장 감각으로 정리했다. AI 모델을 신뢰 실행 환경(TEE) 안에서 돌리려는 이유(가중치와 데이터를 호스트 손에서 지키기), 지금의 TEE가 AI 앞에서 삐걱대는 대목(너무 작은 엔클레이브 메모리, CPU에 갇힌 신뢰, 값비싼 CPU↔GPU 전송), 그리고 최근 연구 토픽까지. 기밀 GPU 추론이 왜 Hopper급 데이터센터 GPU를 요구하는지, Jetson Thor의 Blackwell로는 왜 안 되는지도 짚었다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/trusted-execution-environments/";
             },},{id: "news-posted-a-new-update-on-linkedin",
