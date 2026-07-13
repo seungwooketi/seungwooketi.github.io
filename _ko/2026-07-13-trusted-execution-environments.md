@@ -6,6 +6,8 @@ date: 2026-07-13 17:20:00+0900
 permalink: /blog/ko/trusted-execution-environments/
 description: 교과서보다는 현장 노트에 가깝게 — 왜 AI 모델을 신뢰 실행 환경(TEE) 안에서 돌리려 하는가(가중치와 데이터를 호스트의 손에서 지키기 위해), 지금의 TEE가 왜 AI 앞에서 삐걱대는가(너무 작은 엔클레이브 메모리, CPU 중심의 신뢰, 비싼 CPU↔GPU 전송), 그리고 남은 문제들 — 기밀 GPU 추론이 왜 Hopper급 데이터센터 GPU를 요구하고, Jetson Thor의 Blackwell은 왜 안 되는지까지.
 tags: TEE confidential-computing gpu nvidia-hopper attestation model-protection edge-AI trustworthy-AI korean
+thumbnail: assets/img/tee-hero.png
+og_image: /assets/img/tee-hero.png
 giscus_comments: true
 related_posts: false
 published: false
@@ -14,6 +16,8 @@ toc:
 ---
 
 <p class="text-center"><small><em>English version: <a href="{{ '/blog/2026/trusted-execution-environments/' | relative_url }}">Running AI Inside a Trusted Execution Environment</a></em></small></p>
+
+{% include figure.liquid loading="eager" path="assets/img/tee-hero.png" class="img-fluid rounded z-depth-1" alt="프로세서 다이 위 빛나는 금고 안에 봉인된 AI 모델과 데이터 크리스털 — 방패 밖에서 눈과 손이 차단된 모습" %}
 
 우리는 데이터를 **저장 중(at rest, 암호화된 디스크)**과 **전송 중(in transit,
 TLS)**으로는 꽤 잘 지킨다. 늘 슬쩍 넘어가는 건 세 번째 상태 — **사용 중(in
@@ -112,45 +116,7 @@ PCIe 횡단이 관건이다. 데이터는 CPU TEE 안의 **바운스 버퍼**를
 연산 위주인 모델에선 오버헤드가 크지 않지만, 작은 모델이나 왕복이 잦은
 파이프라인에선 아프게 다가온다.
 
-<div style="max-width: 700px; margin: 1.75rem auto;">
-<svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" font-family="Pretendard, 'Noto Sans KR', system-ui, -apple-system, sans-serif" role="img" aria-label="기밀 AI 경로: 컨피덴셜 VM(CPU TEE — Intel TDX 또는 AMD SEV-SNP)과 증명된 GPU(Hopper/Blackwell)가 하나의 증명된 신뢰 경계 안에 있고, 암호화된 PCIe 전송(바운스 버퍼)으로 연결된다. 신뢰되지 않는 호스트(하이퍼바이저·OS·운영자)는 경계 밖에서 암호문만 본다.">
-  <rect x="3" y="3" width="714" height="434" rx="16" fill="#FCFCFF" stroke="#E7E7F2" stroke-width="1.5"/>
-  <defs>
-    <marker id="teeARk" markerWidth="11" markerHeight="11" refX="7.5" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#2f54d4"/></marker>
-  </defs>
-  <text x="28" y="38" font-size="12" letter-spacing="1" fill="#2f54d4">컨피덴셜 AI  ·  CPU-TEE ↔ GPU</text>
-  <rect x="40" y="62" width="640" height="196" rx="16" fill="none" stroke="#2f54d4" stroke-width="2" stroke-dasharray="7 6"/>
-  <rect x="54" y="52" width="150" height="20" rx="5" fill="#FCFCFF"/>
-  <text x="62" y="66" font-size="11.5" fill="#2f54d4">신뢰 경계 (증명됨)</text>
-  <rect x="72" y="98" width="232" height="130" rx="12" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
-  <text x="188" y="126" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1f2a44">컨피덴셜 VM · CPU TEE</text>
-  <text x="188" y="146" text-anchor="middle" font-size="11.5" fill="#5b6b86">Intel TDX · AMD SEV-SNP</text>
-  <line x1="92" y1="160" x2="284" y2="160" stroke="#D4DEEF" stroke-width="1"/>
-  <text x="188" y="187" text-anchor="middle" font-size="14" fill="#1f2a44">모델 + 데이터</text>
-  <text x="188" y="206" text-anchor="middle" font-size="11.5" font-style="italic" fill="#5b6b86">평문, 사용 중</text>
-  <rect x="416" y="98" width="232" height="130" rx="12" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
-  <circle cx="636" cy="110" r="13" fill="#12a594"/>
-  <path d="M631,110 l3.2,3.2 L641,104" stroke="#fff" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="524" y="126" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1f2a44">GPU · 증명됨</text>
-  <text x="524" y="146" text-anchor="middle" font-size="11.5" fill="#5b6b86">Hopper H100 · Blackwell</text>
-  <line x1="436" y1="160" x2="628" y2="160" stroke="#D4DEEF" stroke-width="1"/>
-  <text x="532" y="187" text-anchor="middle" font-size="14" fill="#1f2a44">암호화된 VRAM</text>
-  <text x="532" y="206" text-anchor="middle" font-size="11.5" font-style="italic" fill="#5b6b86">기밀 모드</text>
-  <text x="360" y="120" text-anchor="middle" font-size="10.5" fill="#475569">암호화 전송</text>
-  <rect x="351" y="150" width="18" height="14" rx="2.5" fill="#2f54d4"/>
-  <path d="M354,150 v-3 a6,6 0 0 1 12,0 v3" fill="none" stroke="#2f54d4" stroke-width="2"/>
-  <line x1="312" y1="178" x2="404" y2="178" stroke="#2f54d4" stroke-width="2" marker-end="url(#teeARk)"/>
-  <line x1="408" y1="192" x2="316" y2="192" stroke="#2f54d4" stroke-width="2" marker-end="url(#teeARk)"/>
-  <text x="360" y="216" text-anchor="middle" font-size="10.5" fill="#5b6b86">PCIe · 바운스 버퍼</text>
-  <rect x="250" y="322" width="220" height="82" rx="12" fill="#F1F2F5" stroke="#C4CAD6" stroke-width="1.5"/>
-  <text x="360" y="352" text-anchor="middle" font-size="14" font-weight="600" fill="#57606f">신뢰되지 않는 호스트</text>
-  <text x="360" y="374" text-anchor="middle" font-size="11.5" fill="#7a8494">하이퍼바이저 · OS · 운영자</text>
-  <line x1="360" y1="322" x2="360" y2="270" stroke="#C4CAD6" stroke-width="1.6" stroke-dasharray="3 4"/>
-  <circle cx="360" cy="258" r="12" fill="#d4482f"/>
-  <path d="M355,253 L365,263 M365,253 L355,263" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
-  <text x="380" y="292" font-size="11" fill="#d4482f">암호문만 보임</text>
-</svg>
-</div>
+{% include figure.liquid loading="eager" path="assets/img/tee-confidential-path.png" class="img-fluid rounded z-depth-1" alt="하나의 신뢰 경계 안의 컨피덴셜 VM(CPU)과 증명된 GPU가 자물쇠로 잠긴 암호화 채널로 연결되고, 신뢰되지 않는 호스트는 경계 밖에서 차단된 구조" %}
 
 ## 남은 문제들 (그리고 하드웨어 현실 점검)
 

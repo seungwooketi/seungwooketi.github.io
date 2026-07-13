@@ -4,6 +4,8 @@ title: "Running AI Inside a Trusted Execution Environment"
 date: 2026-07-13 17:20:00+0900
 description: Less a tutorial, more a field report — why you'd run an AI model inside a Trusted Execution Environment (to keep weights and data out of the host's reach), why today's TEEs strain under it (tiny enclave memory, CPU-only trust, costly CPU↔GPU transfers), and the open problems, including why confidential GPU inference needs a Hopper-class data-center GPU and why Jetson Thor's Blackwell doesn't qualify.
 tags: TEE confidential-computing gpu nvidia-hopper attestation model-protection edge-AI trustworthy-AI
+thumbnail: assets/img/tee-hero.png
+og_image: /assets/img/tee-hero.png
 giscus_comments: true
 related_posts: false
 published: false
@@ -12,6 +14,8 @@ toc:
 ---
 
 <p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/trusted-execution-environments/' | relative_url }}">신뢰 실행 환경(TEE) 안에서 AI 돌리기</a></em></small></p>
+
+{% include figure.liquid loading="eager" path="assets/img/tee-hero.png" class="img-fluid rounded z-depth-1" alt="An AI model and a data crystal sealed inside a glowing vault on a processor die, shielded while an eye and a hand are blocked outside" %}
 
 We've gotten good at protecting data **at rest** (encrypted disk) and **in
 transit** (TLS). The state we still wave away is data **in use** — the moment it
@@ -117,45 +121,7 @@ device, so the more you shuttle between host and GPU, the more you pay. For larg
 compute-bound models the overhead is modest; for small models or chatty pipelines
 it bites.
 
-<div style="max-width: 700px; margin: 1.75rem auto;">
-<svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" font-family="'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif" role="img" aria-label="The confidential AI path: a Confidential VM (CPU TEE — Intel TDX or AMD SEV-SNP) and an attested GPU (Hopper/Blackwell) sit inside one attested trust boundary, connected by an encrypted PCIe transfer through a bounce buffer; the untrusted host (hypervisor, OS, operator) sits outside and sees only ciphertext.">
-  <rect x="3" y="3" width="714" height="434" rx="16" fill="#FCFCFF" stroke="#E7E7F2" stroke-width="1.5"/>
-  <defs>
-    <marker id="teeAR" markerWidth="11" markerHeight="11" refX="7.5" refY="4" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L8,4 L0,8 Z" fill="#2f54d4"/></marker>
-  </defs>
-  <text x="28" y="38" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="12" letter-spacing="1.5" fill="#2f54d4">CONFIDENTIAL AI  ·  CPU-TEE ↔ GPU</text>
-  <rect x="40" y="62" width="640" height="196" rx="16" fill="none" stroke="#2f54d4" stroke-width="2" stroke-dasharray="7 6"/>
-  <rect x="54" y="52" width="212" height="20" rx="5" fill="#FCFCFF"/>
-  <text x="62" y="66" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="11" letter-spacing="1" fill="#2f54d4">TRUST BOUNDARY (ATTESTED)</text>
-  <rect x="72" y="98" width="232" height="130" rx="12" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
-  <text x="188" y="126" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1f2a44">Confidential VM · CPU TEE</text>
-  <text x="188" y="146" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="11" fill="#5b6b86">Intel TDX · AMD SEV-SNP</text>
-  <line x1="92" y1="160" x2="284" y2="160" stroke="#D4DEEF" stroke-width="1"/>
-  <text x="188" y="187" text-anchor="middle" font-size="14" fill="#1f2a44">model + data</text>
-  <text x="188" y="206" text-anchor="middle" font-size="11.5" font-style="italic" fill="#5b6b86">plaintext, in use</text>
-  <rect x="416" y="98" width="232" height="130" rx="12" fill="#EAF0FB" stroke="#4F76D6" stroke-width="2"/>
-  <circle cx="636" cy="110" r="13" fill="#12a594"/>
-  <path d="M631,110 l3.2,3.2 L641,104" stroke="#fff" stroke-width="2.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="524" y="126" text-anchor="middle" font-size="14.5" font-weight="600" fill="#1f2a44">GPU · attested</text>
-  <text x="524" y="146" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="11" fill="#5b6b86">Hopper H100 · Blackwell</text>
-  <line x1="436" y1="160" x2="628" y2="160" stroke="#D4DEEF" stroke-width="1"/>
-  <text x="532" y="187" text-anchor="middle" font-size="14" fill="#1f2a44">encrypted VRAM</text>
-  <text x="532" y="206" text-anchor="middle" font-size="11.5" font-style="italic" fill="#5b6b86">confidential mode</text>
-  <text x="360" y="120" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="10.5" fill="#475569">encrypted</text>
-  <rect x="351" y="150" width="18" height="14" rx="2.5" fill="#2f54d4"/>
-  <path d="M354,150 v-3 a6,6 0 0 1 12,0 v3" fill="none" stroke="#2f54d4" stroke-width="2"/>
-  <line x1="312" y1="178" x2="404" y2="178" stroke="#2f54d4" stroke-width="2" marker-end="url(#teeAR)"/>
-  <line x1="408" y1="192" x2="316" y2="192" stroke="#2f54d4" stroke-width="2" marker-end="url(#teeAR)"/>
-  <text x="360" y="216" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="10" fill="#5b6b86">PCIe bounce buffer</text>
-  <rect x="250" y="322" width="220" height="82" rx="12" fill="#F1F2F5" stroke="#C4CAD6" stroke-width="1.5"/>
-  <text x="360" y="352" text-anchor="middle" font-size="14" font-weight="600" fill="#57606f">Untrusted host</text>
-  <text x="360" y="374" text-anchor="middle" font-family="'IBM Plex Mono', ui-monospace, monospace" font-size="11" fill="#7a8494">hypervisor · OS · operator</text>
-  <line x1="360" y1="322" x2="360" y2="270" stroke="#C4CAD6" stroke-width="1.6" stroke-dasharray="3 4"/>
-  <circle cx="360" cy="258" r="12" fill="#d4482f"/>
-  <path d="M355,253 L365,263 M365,253 L355,263" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
-  <text x="380" y="292" font-size="11" fill="#d4482f">sees only ciphertext</text>
-</svg>
-</div>
+{% include figure.liquid loading="eager" path="assets/img/tee-confidential-path.png" class="img-fluid rounded z-depth-1" alt="Confidential VM (CPU) and an attested GPU inside one trust boundary, linked by an encrypted padlocked channel, with the untrusted host blocked outside" %}
 
 ## The open problems (and a hardware reality check)
 
