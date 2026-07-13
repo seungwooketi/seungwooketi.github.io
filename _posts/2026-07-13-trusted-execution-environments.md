@@ -125,9 +125,10 @@ it bites.
 
 {% include figure.liquid loading="eager" path="assets/img/tee-confidential-path.png" class="img-fluid rounded z-depth-1" alt="Confidential VM (CPU) and an attested GPU inside one trust boundary, linked by an encrypted padlocked channel, with the untrusted host blocked outside" %}
 
-## The open problems (and a hardware reality check)
+## Recent research topics
 
-This is where the interesting work is right now.
+Protecting data and models in AI is an active field, and a handful of topics are
+on the table right now.
 
 - **Harmonizing CPU-TEE, GPU, and memory.** The enclave is small and CPU-side;
   the model and the math live on the GPU. Getting the most from both is a
@@ -150,11 +151,13 @@ This is where the interesting work is right now.
   robotics, not attested confidential inference; "it's Blackwell" doesn't buy you
   a TEE the way a GB200 does.
 
-None of this is solved. But the direction is clear, and it's the practical
-frontier: a TEE gives AI a hardware root of trust for its data-in-use, and the
-job now is making that trust reach the GPU without paying too much for it — and,
-for anyone building at the edge, knowing that today the confidential path runs
-through the data center, not the robot.
+None of these are settled, but the direction is clear. As industry adoption of AI
+keeps accelerating, information protection in AI will only grow in importance —
+and the demand for TEEs will keep rising with it. A TEE gives AI a hardware root
+of trust for its data-in-use; the work ahead is making that trust reach the GPU
+without paying too much for it — and, for anyone building at the edge, remembering
+that today the confidential path still runs through the data center, not the
+robot.
 
 ## References
 
