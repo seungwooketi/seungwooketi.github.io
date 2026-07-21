@@ -6,6 +6,8 @@ date: 2026-07-21 10:00:00+0900
 permalink: /blog/ko/knowledge-base-three-failures/
 description: 연구과제를 하면서 쌓인 문서들 위에 지식베이스를 올려 보려 했다. 세 번 엎고 나서야 알았다. 어려운 건 추출이 아니었다. 변경이고, 비용이고, 모르는 걸 모른다고 말하게 하는 일이었다.
 tags: knowledge-base local-LLM pipeline HITL ontology engineering-lessons korean
+thumbnail: assets/img/kb-hero.png
+og_image: /assets/img/kb-hero.png
 giscus_comments: true
 related_posts: false
 published: false
@@ -14,6 +16,8 @@ toc:
 ---
 
 <p class="text-center"><small><em>English version: <a href="{{ '/blog/2026/knowledge-base-three-failures/' | relative_url }}">Three Failures Before a Knowledge Base That Held</a></em></small></p>
+
+{% include figure.liquid loading="eager" path="assets/img/kb-hero.png" class="img-fluid rounded z-depth-1" alt="흩어진 과제 문서들이 빛나는 원장으로 빨려 들어가 정돈된 지식 그래프로 나오고, 손 하나가 노드를 고치는 그림" %}
 
 연구과제를 하다 보면 문서가 쌓인다. 사업계획서, 협약서, 연차보고서, 정산 서류,
 출장 신청서와 복명서. 그것도 몇 년치가, 그해에 정리한 사람 마음대로 만들어진

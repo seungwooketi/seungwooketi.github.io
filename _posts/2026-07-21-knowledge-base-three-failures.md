@@ -4,6 +4,8 @@ title: "Three Failures Before a Knowledge Base That Held"
 date: 2026-07-21 10:00:00+0900
 description: I wanted a knowledge base over the documents my research projects generate — proposals, agreements, reports, trip records. It took three abandoned designs to learn that the hard part was never extraction. It was change, cost, and knowing what you don't know.
 tags: knowledge-base local-LLM pipeline HITL ontology engineering-lessons
+thumbnail: assets/img/kb-hero.png
+og_image: /assets/img/kb-hero.png
 giscus_comments: true
 related_posts: false
 published: false
@@ -12,6 +14,8 @@ toc:
 ---
 
 <p class="text-center"><small><em>한국어 버전: <a href="{{ '/blog/ko/knowledge-base-three-failures/' | relative_url }}">지식베이스 하나 만드는데 세 번을 엎었다</a></em></small></p>
+
+{% include figure.liquid loading="eager" path="assets/img/kb-hero.png" class="img-fluid rounded z-depth-1" alt="Scattered project documents drawn into a glowing ledger book and emerging as an orderly knowledge graph, with a hand adjusting one node" %}
 
 Running research projects generates a particular kind of sediment. Proposals,
 agreements, annual reports, settlement forms, trip authorizations, trip reports —
