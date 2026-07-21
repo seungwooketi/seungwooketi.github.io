@@ -31,8 +31,18 @@ you usually don't, and the answer to a simple question — _which projects did t
 reference each other.
 
 So: build a knowledge base over the corpus. Extract the facts, link them, keep it
-current. I've now done this three times badly. What follows is what each attempt
-got wrong, and what the fourth one looks like.
+current.
+
+I've circled this before. A while back I spent an afternoon
+[bootstrapping a personal knowledge base]({{ '/blog/2026/personal-knowledge-base-with-claude/' | relative_url }})
+out of markdown files and a small skill, and two days later wrote about
+[watching it strain until it wanted to be an RDF graph]({{ '/blog/2026/from-markdown-to-knowledge-graph/' | relative_url }})
+instead. Those were the pleasant rounds — a corpus small enough to hold in your
+head, and a design you could throw away on a whim.
+
+This is what happened when I pointed the same idea at the real pile. I've now
+done it three times badly. What follows is what each attempt got wrong, and what
+the fourth one looks like.
 
 ## Attempt 1 — one straight line from file to database
 
