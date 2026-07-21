@@ -2,7 +2,7 @@
 layout: post
 title: "Industrial AI and its visibility"
 date: 2026-06-06 09:00:00+0900
-og_image: https://seungwooketi.github.io/assets/img/industrial-ai-visibility-hero.png
+og_image: /assets/img/industrial-ai-visibility-hero.png
 description: "Commercial AI is already astonishingly good — so do we even need a separate industrial AI model? A look at three constraints (protecting information, cost, and sustainability) and why the thing that ultimately holds it all together is AI visibility."
 tags: industrial-ai foundation-models ai-visibility agentic-ai sustainability llm
 giscus_comments: true

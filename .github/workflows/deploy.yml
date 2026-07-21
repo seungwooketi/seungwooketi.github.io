@@ -138,7 +138,7 @@ jobs:
           fi
           subject=$(printf '%s' "$COMMIT_MSG" | head -1)
           noun="post"; [ "$POST_COUNT" -gt 1 ] 2>/dev/null && noun="posts"
-          text=$(printf '📝 *%s new blog %s published*\n> %s\nby %s · <%s|commit> · <https://seungwooketi.github.io|view site>' \
+          text=$(printf '📝 *%s new blog %s published*\n> %s\nby %s · <%s|commit> · <https://seungwoo.datasec.work|view site>' \
             "$POST_COUNT" "$noun" "$subject" "$AUTHOR" "$COMMIT_URL")
           payload=$(jq -n --arg text "$text" '{text: $text}')
           curl -sf -X POST -H 'Content-type: application/json' --data "$payload" "$SLACK_WEBHOOK_URL"

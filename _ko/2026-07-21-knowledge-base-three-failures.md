@@ -10,7 +10,7 @@ thumbnail: assets/img/kb-hero.png
 og_image: /assets/img/kb-hero.png
 giscus_comments: true
 related_posts: false
-published: false
+published: true
 toc:
   sidebar: left
 ---

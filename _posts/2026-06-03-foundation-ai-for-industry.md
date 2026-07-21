@@ -2,7 +2,7 @@
 layout: post
 title: "What an Industrial Foundation Model Should Be"
 date: 2026-06-03 09:00:00+0900
-og_image: https://seungwooketi.github.io/assets/img/foundation-ai-hero.png
+og_image: /assets/img/foundation-ai-hero.png
 description: "The phrase 'industrial foundation model' turns up in every R&D program now. But to earn the word 'foundation,' such a model shouldn't be an omniscient know-it-all — it should be the bedrock that domain knowledge gets built on."
 tags: foundation-models industrial-ai manufacturing domain-knowledge ai-policy ipcei eu-ai-act open-source
 giscus_comments: true
