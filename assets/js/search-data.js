@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-running-ai-inside-a-trusted-execution-environment",
+        },{id: "post-three-failures-before-a-knowledge-base-that-held",
+        
+          title: "Three Failures Before a Knowledge Base That Held",
+        
+        description: "I wanted a knowledge base over the documents my research projects generate — proposals, agreements, reports, trip records. It took three abandoned designs to learn that the hard part was never extraction. It was change, cost, and knowing what you don&#39;t know.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/knowledge-base-three-failures/";
+          
+        },
+      },{id: "post-running-ai-inside-a-trusted-execution-environment",
         
           title: "Running AI Inside a Trusted Execution Environment",
         
@@ -180,6 +191,11 @@ ninja.data = [{
           description: "교과서적인 설명보다는 현장 감각으로 정리했다. AI 모델을 신뢰 실행 환경(TEE) 안에서 돌리려는 이유(가중치와 데이터를 호스트 손에서 지키기), 지금의 TEE가 AI 앞에서 삐걱대는 대목(너무 작은 엔클레이브 메모리, CPU에 갇힌 신뢰, 값비싼 CPU↔GPU 전송), 그리고 최근 연구 토픽까지. 기밀 GPU 추론이 왜 Hopper급 데이터센터 GPU를 요구하는지, Jetson Thor의 Blackwell로는 왜 안 되는지도 짚었다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/trusted-execution-environments/";
+            },},{id: "ko-지식베이스-하나-만드는데-세-번을-엎었다",
+          title: '지식베이스 하나 만드는데 세 번을 엎었다',
+          description: "연구과제를 하면서 쌓인 문서들 위에 지식베이스를 올려 보려 했다. 세 번 엎고 나서야 알았다. 어려운 건 추출이 아니었다. 변경이고, 비용이고, 모르는 걸 모른다고 말하게 하는 일이었다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/knowledge-base-three-failures/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
