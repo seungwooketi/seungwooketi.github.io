@@ -196,6 +196,11 @@ ninja.data = [{
           description: "연구과제를 하면서 쌓인 문서들 위에 지식베이스를 올려 보려 했다. 세 번 엎고 나서야 알았다. 어려운 건 추출이 아니었다. 변경이고, 비용이고, 모르는 걸 모른다고 말하게 하는 일이었다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/knowledge-base-three-failures/";
+            },},{id: "ko-백서-ai-안전성과-보안",
+          title: '백서: AI 안전성과 보안',
+          description: "에이전틱 시대의 AI 안전성과 보안을 다룬 기술 백서. 기계적 해석가능성, 자동화된 레드티밍, 동적 평가, 에이전트 행위 제한, 기업 기밀성, 그리고 EU·미국·한국의 거버넌스 지형까지. 자유롭게 내려받을 수 있다 (CC BY-NC 4.0).",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/ai-safety-security-white-paper/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
