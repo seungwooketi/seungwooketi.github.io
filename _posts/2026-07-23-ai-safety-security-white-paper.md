@@ -8,7 +8,7 @@ thumbnail: assets/img/ai-safety-security-summary.png
 og_image: /assets/img/ai-safety-security-summary.png
 giscus_comments: true
 related_posts: false
-published: false
+published: true
 toc:
   sidebar: left
 ---
