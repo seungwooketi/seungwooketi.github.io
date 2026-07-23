@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "post-three-failures-before-a-knowledge-base-that-held",
+        },{id: "post-white-paper-advancing-ai-safety-and-security",
+        
+          title: "White Paper: Advancing AI Safety and Security",
+        
+        description: "A technical white paper on AI safety and security in the agentic era — mechanistic interpretability, automated red-teaming, dynamic evaluation, agentic action-restriction, enterprise confidentiality, and the governance landscape across the EU, the US, and Korea. Free to download (CC BY-NC 4.0).",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/ai-safety-security-white-paper/";
+          
+        },
+      },{id: "post-three-failures-before-a-knowledge-base-that-held",
         
           title: "Three Failures Before a Knowledge Base That Held",
         
