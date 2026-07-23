@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "White Paper: Advancing AI Safety and Security"
-date: 2026-07-23 14:00:00+0900
+date: 2026-07-23 11:00:00+0900
 description: A technical white paper on AI safety and security in the agentic era — mechanistic interpretability, automated red-teaming, dynamic evaluation, agentic action-restriction, enterprise confidentiality, and the governance landscape across the EU, the US, and Korea. Free to download (CC BY-NC 4.0).
 tags: AI-safety AI-security agentic-AI interpretability red-teaming governance white-paper
 thumbnail: assets/img/ai-safety-security-summary.png

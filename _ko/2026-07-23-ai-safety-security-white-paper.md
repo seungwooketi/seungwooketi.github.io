@@ -2,7 +2,7 @@
 layout: post
 lang: ko
 title: "백서: AI 안전성과 보안"
-date: 2026-07-23 14:00:00+0900
+date: 2026-07-23 11:00:00+0900
 permalink: /blog/ko/ai-safety-security-white-paper/
 description: 에이전틱 시대의 AI 안전성과 보안을 다룬 기술 백서. 기계적 해석가능성, 자동화된 레드티밍, 동적 평가, 에이전트 행위 제한, 기업 기밀성, 그리고 EU·미국·한국의 거버넌스 지형까지. 자유롭게 내려받을 수 있다 (CC BY-NC 4.0).
 tags: AI-safety AI-security agentic-AI interpretability red-teaming governance white-paper korean
