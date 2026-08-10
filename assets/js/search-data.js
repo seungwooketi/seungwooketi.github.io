@@ -44,13 +44,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-blog-kr",
-          title: "Blog(KR)",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/blog/";
-          },
         },{id: "post-white-paper-advancing-ai-safety-and-security",
         
           title: "White Paper: Advancing AI Safety and Security",
