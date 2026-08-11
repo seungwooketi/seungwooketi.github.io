@@ -205,6 +205,11 @@ ninja.data = [{
           description: "에이전틱 시대의 AI 안전성과 보안을 다룬 기술 백서. 기계적 해석가능성, 자동화된 레드티밍, 동적 평가, 에이전트 행위 제한, 기업 기밀성, 그리고 EU·미국·한국의 거버넌스 지형까지. 자유롭게 내려받을 수 있다 (CC BY-NC 4.0).",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/ai-safety-security-white-paper/";
+            },},{id: "ko-국제공동연구-생각보다-문턱이-낮습니다-자료-공유",
+          title: '국제공동연구, 생각보다 문턱이 낮습니다 — 자료 공유',
+          description: "최근 국제공동연구 관련 문의가 있어 정리한 김에 자료 두 건을 공유합니다. Horizon Europe·EUREKA를 처음 시작하는 분들을 위한 컨설팅 개요와 실무 심화 안내서. 첨부 문서는 모두 국문입니다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/international-joint-research/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
