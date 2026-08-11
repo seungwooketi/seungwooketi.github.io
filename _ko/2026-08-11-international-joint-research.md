@@ -32,9 +32,23 @@ published: true
 
 개요로 감을 잡고 심화 안내서로 파고드는 순서를 권합니다.
 
-<div class="text-center mt-4 mb-4">
-  <a class="btn btn-sm z-depth-1 me-2" href="{{ '/assets/pdf/keti-international-collaboration-consulting.pdf' | relative_url }}" target="_blank" rel="noopener">컨설팅 개요 (PDF)</a>
-  <a class="btn btn-sm z-depth-1" href="{{ '/assets/pdf/keti-international-collaboration-guide.pdf' | relative_url }}" target="_blank" rel="noopener">심화 안내서 (PDF)</a>
+<div style="display:flex; flex-wrap:wrap; gap:16px; margin:2rem 0;">
+  <a href="{{ '/assets/pdf/keti-international-collaboration-consulting.pdf' | relative_url }}" target="_blank" rel="noopener" style="flex:1 1 260px; display:flex; align-items:center; gap:16px; padding:20px 22px; border-radius:12px; background:#2f54d4; color:#fff !important; text-decoration:none !important; box-shadow:0 4px 14px rgba(47,84,212,0.28);">
+    <span style="font-size:2rem; line-height:1;">⬇</span>
+    <span style="display:flex; flex-direction:column; gap:3px;">
+      <span style="font-size:1.35rem; font-weight:700; letter-spacing:-0.01em;">다운로드</span>
+      <span style="font-size:1rem; font-weight:600; opacity:0.95;">컨설팅 개요</span>
+      <span style="font-size:0.82rem; opacity:0.8;">PDF · 1.4 MB</span>
+    </span>
+  </a>
+  <a href="{{ '/assets/pdf/keti-international-collaboration-guide.pdf' | relative_url }}" target="_blank" rel="noopener" style="flex:1 1 260px; display:flex; align-items:center; gap:16px; padding:20px 22px; border-radius:12px; background:#2f54d4; color:#fff !important; text-decoration:none !important; box-shadow:0 4px 14px rgba(47,84,212,0.28);">
+    <span style="font-size:2rem; line-height:1;">⬇</span>
+    <span style="display:flex; flex-direction:column; gap:3px;">
+      <span style="font-size:1.35rem; font-weight:700; letter-spacing:-0.01em;">다운로드</span>
+      <span style="font-size:1rem; font-weight:600; opacity:0.95;">심화 안내서 (34쪽)</span>
+      <span style="font-size:0.82rem; opacity:0.8;">PDF · 2.5 MB</span>
+    </span>
+  </a>
 </div>
 
 {% include figure.liquid loading="eager" path="assets/img/intl-collab-guide-cover.png" class="img-fluid rounded z-depth-1" max-width="420px" alt="국제공동연구 심화 안내서 표지 — Horizon Europe & EUREKA 처음 시작하는 기업을 위한 실무 가이드, KETI 인공지능데이터·보안연구센터, 금승우 센터장, v1.0" %}
