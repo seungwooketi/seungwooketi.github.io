@@ -42,7 +42,7 @@ judgment away — and there was no mechanism for that anywhere in it.
 
 ## What it takes to say "I don't know"
 
-A lot of what I heard today comes down to making *I don't know* a first-class
+A lot of what I heard today comes down to making _I don't know_ a first-class
 output. The simplest form is a rule that declines to answer:
 
 $$
@@ -135,8 +135,8 @@ reading list for when I get back.
 ## So
 
 The takeaway today isn't a technique. It's a question I can now ask at every
-decision point in my pipeline: *is there any basis on which this judgment could be
-discarded?* Right now the answer is almost always no.
+decision point in my pipeline: _is there any basis on which this judgment could be
+discarded?_ Right now the answer is almost always no.
 
 Papers alone really aren't enough — you have to turn up. Off to the poster session
 to go ask about some of this.
