@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-white-paper-advancing-ai-safety-and-security",
+        },{id: "post-at-uai-2026-my-pipeline-was-far-too-sure-of-itself",
+        
+          title: "At UAI 2026: My Pipeline Was Far Too Sure of Itself",
+        
+        description: "Sitting through a conference on uncertainty and causality, I realized the real problem with the LLM and agent pipelines I&#39;ve been building isn&#39;t that they get things wrong. It&#39;s that they have no way to say they don&#39;t know.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/uai-2026-uncertainty/";
+          
+        },
+      },{id: "post-white-paper-advancing-ai-safety-and-security",
         
           title: "White Paper: Advancing AI Safety and Security",
         
@@ -210,6 +221,11 @@ ninja.data = [{
           description: "최근 국제공동연구 관련 문의가 있어 정리한 김에 자료 두 건을 공유합니다. Horizon Europe·EUREKA를 처음 시작하는 분들을 위한 컨설팅 개요와 실무 심화 안내서. 첨부 문서는 모두 국문입니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/international-joint-research/";
+            },},{id: "ko-uai-2026에서-내-파이프라인이-너무-단호했다는-걸-깨닫다",
+          title: 'UAI 2026에서, 내 파이프라인이 너무 단호했다는 걸 깨닫다',
+          description: "확률과 인과 추론 학회에 앉아 있다가, 그동안 LLM과 에이전트로 만들어 온 판단들이 얼마나 heuristic하고 단호했는지를 새삼 깨달았다. 모른다고 말할 근거가 없는 파이프라인에 대한 메모.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/uai-2026-uncertainty/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
