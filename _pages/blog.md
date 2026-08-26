@@ -24,6 +24,7 @@ home: true
     <p class="bp-hero-lead">Research writing from the Director of the AI Data &amp; Security Research Center at KETI — foundation models for industry, agentic-AI security, and the data infrastructure underneath.</p>
     <div class="bp-hero-links">
       <a class="bp-btn" href="{{ '/about/' | relative_url }}">About &amp; research →</a>
+      <a class="bp-btn" href="https://www.datasec.work" target="_blank" rel="noopener">Research Center ↗</a>
       <a class="bp-chip" href="mailto:seungwoo.kum@gmail.com">Email</a>
       <a class="bp-chip" href="https://github.com/seungwooketi">GitHub</a>
       <a class="bp-chip" href="https://scholar.google.com/citations?user=8DEsYMsAAAAJ">Scholar</a>
@@ -94,6 +95,7 @@ home: true
     <p class="bp-hero-lead">산업 파운데이션 모델, 에이전틱 AI 보안, 그리고 그 아래를 받치는 데이터 인프라에 대한 연구 노트.</p>
     <div class="bp-hero-links">
       <a class="bp-btn" href="{{ '/about/' | relative_url }}">소개 &amp; 연구 →</a>
+      <a class="bp-btn" href="https://www.datasec.work" target="_blank" rel="noopener">연구센터 홈페이지 ↗</a>
       <a class="bp-chip" href="mailto:seungwoo.kum@gmail.com">이메일</a>
       <a class="bp-chip" href="https://github.com/seungwooketi">GitHub</a>
       <a class="bp-chip" href="https://scholar.google.com/citations?user=8DEsYMsAAAAJ">Scholar</a>
