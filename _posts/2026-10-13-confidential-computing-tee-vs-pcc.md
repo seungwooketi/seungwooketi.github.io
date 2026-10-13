@@ -26,7 +26,7 @@ mermaid:
 
 The [previous post]({{ '/blog/2026/trusted-execution-environments/' | relative_url }}) was about running AI models inside a Trusted Execution Environment, mostly a hardware story: enclave memory that is too small, trust that stops at the CPU, and an expensive encrypted hop between CPU and GPU. This time I want to move one level up and ask a simpler question. If you have a TEE, do you have an AI service that users can actually trust?
 
-The trigger for the question is Apple's Private Cloud Compute (PCC). PCC is often described as "Apple's confidential computing," but it is not a technology at the same layer as a TEE. A TEE is an isolated region the processor gives you. PCC is a service design that uses that isolated region as its foundation and stacks a good deal on top. So "TEE vs. PCC" is less a contest than a way to see what is missing between a component and a system, and how PCC fills the gap.
+The trigger for the question is Apple's [Private Cloud Compute (PCC)](https://security.apple.com/blog/private-cloud-compute/). PCC is often described as "Apple's confidential computing," but it is not a technology at the same layer as a TEE. A TEE is an isolated region the processor gives you. PCC is a service design that uses that isolated region as its foundation and stacks a good deal on top. So "TEE vs. PCC" is less a contest than a way to see what is missing between a component and a system, and how PCC fills the gap.
 
 ## Confidential computing, briefly
 
