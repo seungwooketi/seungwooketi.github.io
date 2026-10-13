@@ -6,6 +6,7 @@ description: Two days after building a markdown knowledge base, the cracks start
 tags: knowledge-graph knowledge-base ontology rdf sparql llm claude qwen exaone fuseki ollama
 giscus_comments: true
 related_posts: false
+translation_url: /blog/ko/markdown-to-knowledge-graph-ko/
 published: true
 toc:
   sidebar: left

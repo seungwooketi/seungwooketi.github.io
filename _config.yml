@@ -234,6 +234,10 @@ defaults:
     values:
       sitemap: false
   - scope:
+      path: "google5a8e552d797553dc.html"
+    values:
+      sitemap: false
+  - scope:
       path: ""
       type: posts
     values:

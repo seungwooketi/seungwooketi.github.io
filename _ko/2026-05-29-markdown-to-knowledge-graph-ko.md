@@ -8,6 +8,7 @@ description: 마크다운으로 개인 지식 베이스를 만든 지 이틀 만
 tags: knowledge-graph knowledge-base ontology rdf sparql llm claude qwen exaone fuseki ollama korean
 giscus_comments: true
 related_posts: false
+translation_url: /blog/2026/from-markdown-to-knowledge-graph/
 published: true
 toc:
   sidebar: left

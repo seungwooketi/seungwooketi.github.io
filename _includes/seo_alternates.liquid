@@ -1,0 +1,47 @@
+{%- comment -%}
+  Search-engine hints added for indexing hygiene.
+  1) Archive pages (tag / category / year listings) are thin lists of links:
+     keep them out of the index but let crawlers follow the links.
+  2) EN post <-> KO post pairs get hreflang alternates so Google treats them
+     as translations of each other, not as competing near-duplicates.
+     Pairs are matched by the last URL segment (/blog/2026/<slug>/ and
+     /blog/ko/<slug>/). When the slugs differ, set `translation_url:` in the
+     front matter of both posts.
+{%- endcomment -%}
+{%- if page.layout == 'archive' or page.url contains '/tag/' or page.url contains '/category/' -%}
+  <meta name="robots" content="noindex, follow">
+{%- endif -%}
+
+{%- assign alt_url = page.translation_url -%}
+{%- assign seg = page.url | split: '/' | last -%}
+{%- if page.collection == 'posts' -%}
+  {%- assign this_lang = 'en' -%}
+  {%- assign other_lang = 'ko' -%}
+  {%- if alt_url == null -%}
+    {%- assign want = '/blog/ko/' | append: seg | append: '/' -%}
+    {%- assign hit = site.ko | where: 'url', want | first -%}
+    {%- if hit -%}{%- assign alt_url = hit.url -%}{%- endif -%}
+  {%- endif -%}
+{%- elsif page.collection == 'ko' -%}
+  {%- assign this_lang = 'ko' -%}
+  {%- assign other_lang = 'en' -%}
+  {%- if alt_url == null -%}
+    {%- assign tail = '/' | append: seg | append: '/' -%}
+    {%- for p in site.posts -%}
+      {%- assign p_tail = p.url | split: '/' | last | prepend: '/' | append: '/' -%}
+      {%- if p_tail == tail -%}
+        {%- assign alt_url = p.url -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if alt_url -%}
+  <link rel="alternate" hreflang="{{ this_lang }}" href="{{ page.url | absolute_url }}">
+  <link rel="alternate" hreflang="{{ other_lang }}" href="{{ alt_url | absolute_url }}">
+  {%- if this_lang == 'en' -%}
+    <link rel="alternate" hreflang="x-default" href="{{ page.url | absolute_url }}">
+  {%- else -%}
+    <link rel="alternate" hreflang="x-default" href="{{ alt_url | absolute_url }}">
+  {%- endif -%}
+{%- endif -%}
