@@ -60,6 +60,10 @@ on:
       - "!INSTALL.md"
       - "!README.md"
   workflow_dispatch:
+  # Daily rebuild at 09:05 KST so posts with a future `date:` (Jekyll skips them
+  # until then) go live on their publication day without a manual push.
+  schedule:
+    - cron: "5 0 * * *"
 
 permissions:
   contents: write
