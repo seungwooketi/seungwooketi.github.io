@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-at-uai-2026-my-pipeline-was-far-too-sure-of-itself",
+        },{id: "post-confidential-computing-tee-vs-pcc-component-vs-system",
+        
+          title: "Confidential Computing: TEE vs. PCC, Component vs. System",
+        
+        description: "Does running inside a TEE make an AI service confidential? What cloud confidential computing protects and what it leaves open, what Apple&#39;s Private Cloud Compute (PCC) builds on top of the TEE, and what PCC&#39;s June 2026 move onto Google Cloud&#39;s TDX and Blackwell confidential GPUs says about where trust actually comes from - the hardware is the floor, the system is the building.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/confidential-computing-tee-vs-pcc/";
+          
+        },
+      },{id: "post-at-uai-2026-my-pipeline-was-far-too-sure-of-itself",
         
           title: "At UAI 2026: My Pipeline Was Far Too Sure of Itself",
         
@@ -226,6 +237,16 @@ ninja.data = [{
           description: "확률과 인과 추론을 다루는 학회에 앉아 있다가, 그동안 LLM과 에이전트로 만들어 온 판단이 얼마나 heuristic하고 단호했는지 새삼 깨달았다. &#39;모른다&#39;고 말할 근거가 없는 파이프라인에 대한 메모.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/uai-2026-uncertainty/";
+            },},{id: "ko-기밀-컴퓨팅-tee와-pcc-부품과-시스템-사이",
+          title: '기밀 컴퓨팅: TEE와 PCC, 부품과 시스템 사이',
+          description: "TEE를 쓰면 기밀 AI 서비스가 되는 걸까요. 클라우드 기밀 컴퓨팅이 지켜 주는 범위와 지켜 주지 못하는 범위를 짚고, Apple Private Cloud Compute(PCC)가 TEE 위에 무엇을 더 쌓았는지, 그리고 2026년 6월 PCC가 Google Cloud의 TDX와 Blackwell 기밀 GPU 위로 옮겨 가면서 드러난 &#39;하드웨어는 바닥, 신뢰는 시스템&#39;이라는 흐름을 정리했습니다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/confidential-computing-tee-vs-pcc/";
+            },},{id: "ko-제로-트러스트-시스템에서-하드웨어로",
+          title: '제로 트러스트: 시스템에서 하드웨어로',
+          description: "제로 트러스트는 &#39;네트워크에 연결된 장치&#39;에서 멈춥니다. 그 안쪽, 로봇 제어기가 관절에 보내는 지령 하나하나는 여전히 CRC만 믿고 움직입니다. pick-and-place 로봇을 예로, ZTA의 판단과 집행 지점을 장치 안으로 끌어내릴 때 무엇이 달라지는지(접근의 의미, 판단 주기, 부품 신원, 정책 집행, 안전과 Fail Safe)를 정리했습니다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/zero-trust-into-hardware/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
