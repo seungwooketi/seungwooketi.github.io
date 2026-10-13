@@ -90,11 +90,11 @@ home: true
 <div id="blog-ko" style="display:none">
 
   <header class="bp-hero">
-    <div class="bp-eyebrow">글과 노트 · 금승우</div>
-    <h1 class="bp-hero-title">산업 AI와 신뢰할 수 있는 시스템에 대한 기록.</h1>
-    <p class="bp-hero-lead">산업 파운데이션 모델, 에이전틱 AI 보안, 그리고 그 아래를 받치는 데이터 인프라에 대한 연구 노트.</p>
+    <div class="bp-eyebrow">금승우의 글과 노트</div>
+    <h1 class="bp-hero-title">산업 AI와 신뢰할 수 있는 시스템에 관한 기록</h1>
+    <p class="bp-hero-lead">산업 파운데이션 모델, 에이전틱 AI 보안, 그리고 이를 뒷받침하는 데이터 인프라에 관한 연구 노트</p>
     <div class="bp-hero-links">
-      <a class="bp-btn" href="{{ '/about/' | relative_url }}">소개 &amp; 연구 →</a>
+      <a class="bp-btn" href="{{ '/about/' | relative_url }}">소개와 연구 →</a>
       <a class="bp-btn" href="https://www.datasec.work" target="_blank" rel="noopener">연구센터 홈페이지 ↗</a>
       <a class="bp-chip" href="mailto:seungwoo.kum@gmail.com">이메일</a>
       <a class="bp-chip" href="https://github.com/seungwooketi">GitHub</a>
@@ -113,14 +113,14 @@ home: true
 <h2 class="bp-featured-title">{{ ko_featured.title }}</h2>
 <p class="bp-featured-desc">{{ ko_featured.description }}</p>
 {% assign f_read = ko_featured.content | number_of_words | divided_by: 180 | plus: 1 %}
-<div class="bp-meta">{{ f_read }}분 분량 &nbsp;·&nbsp; {{ ko_featured.date | date: "%Y년 %m월 %d일" }}</div>
+<div class="bp-meta">{{ f_read }}분 분량 &nbsp;|&nbsp; {{ ko_featured.date | date: "%Y년 %m월 %d일" }}</div>
 </div>
 {% if ko_featured.thumbnail %}
 <div class="bp-featured-thumb"><img src="{{ ko_featured.thumbnail | relative_url }}" alt="{{ ko_featured.title | escape }}"></div>
 {% endif %}
 </a>
 {% else %}
-<div class="bp-empty-notice">한국어 포스트를 준비 중입니다.</div>
+<div class="bp-empty-notice">한국어 글을 준비하고 있습니다.</div>
 {% endif %}
 
   <div class="bp-sec">
@@ -149,12 +149,12 @@ home: true
     {% endfor %}
   </ul>
 
-  <div class="bp-sec bp-sec-plain"><span class="bp-sec-eyebrow">이 사이트의 다른 곳</span></div>
+  <div class="bp-sec bp-sec-plain"><span class="bp-sec-eyebrow">사이트 둘러보기</span></div>
   <div class="bp-explore">
-    <a class="bp-ex" href="{{ '/about/' | relative_url }}"><span class="bp-ex-n">01</span><span class="bp-ex-t">소개</span><span class="bp-ex-d">역할 · 연구 · 관심사</span></a>
+    <a class="bp-ex" href="{{ '/about/' | relative_url }}"><span class="bp-ex-n">01</span><span class="bp-ex-t">소개</span><span class="bp-ex-d">역할, 연구, 관심 분야</span></a>
     <a class="bp-ex" href="{{ '/publications/' | relative_url }}"><span class="bp-ex-n">02</span><span class="bp-ex-t">논문</span><span class="bp-ex-d">연도별 목록</span></a>
     <a class="bp-ex" href="{{ '/projects/' | relative_url }}"><span class="bp-ex-n">03</span><span class="bp-ex-t">프로젝트</span><span class="bp-ex-d">주요 R&amp;D</span></a>
-    <a class="bp-ex" href="{{ '/cv/' | relative_url }}"><span class="bp-ex-n">04</span><span class="bp-ex-t">CV</span><span class="bp-ex-d">경력 · 학력</span></a>
+    <a class="bp-ex" href="{{ '/cv/' | relative_url }}"><span class="bp-ex-n">04</span><span class="bp-ex-t">CV</span><span class="bp-ex-d">경력, 학력</span></a>
   </div>
 
 </div><!-- #blog-ko -->
