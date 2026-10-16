@@ -102,7 +102,7 @@ home: true
     </div>
   </header>
 
-{% assign ko_posts = site.ko | where_exp: "post", "post.published != false" | sort: "date" | reverse %}
+{% assign ko_posts = site.ko | where_exp: "post", "post.published != false" | where_exp: "post", "post.date <= site.time" | sort: "date" | reverse %}
 {% assign ko_featured = ko_posts | first %}
 
 {% if ko_featured %}
