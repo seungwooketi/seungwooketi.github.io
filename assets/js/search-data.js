@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-confidential-computing-tee-vs-pcc-component-vs-system",
+        },{id: "post-zero-trust-from-the-system-down-into-the-hardware",
+        
+          title: "Zero Trust: From the System Down into the Hardware",
+        
+        description: "Zero trust stops at the &quot;network-connected device.&quot; Inside it, every command a robot controller sends to a joint still rides on a CRC and an implicit assumption. Using a pick-and-place robot as the example, what changes when you push ZTA&#39;s decision and enforcement points down into the machine - the meaning of access, the decision cycle, component identity, policy enforcement, and how security has to coexist with safety and fail-safe behavior.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/zero-trust-into-hardware/";
+          
+        },
+      },{id: "post-confidential-computing-tee-vs-pcc-component-vs-system",
         
           title: "Confidential Computing: TEE vs. PCC, Component vs. System",
         
