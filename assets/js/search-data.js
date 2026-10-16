@@ -215,27 +215,27 @@ ninja.data = [{
               window.location.href = "/blog/ko/industrial-ai-visibility/";
             },},{id: "ko-산업-ai를-위한-industrial-data-lake-구상",
           title: '산업 AI를 위한 Industrial Data Lake 구상',
-          description: "데이터와 모델을 기업의 자산으로 보호하면서도 산업 AI 모델을 개발할 수 있게 하는 Industrial Data Lake 구상. 섹터 파운데이션 모델, 이해관계자 구조와 비즈니스 모델, 독일과 유럽 IPCEI-AI의 시사점, 그리고 시스템 안에 넣어야 할 데이터 보안 기능을 정리했다.",
+          description: "데이터와 모델을 기업의 자산으로 보호하면서도 산업 AI 모델을 개발할 수 있게 하는 Industrial Data Lake 구상. 섹터 파운데이션 모델, 이해관계자 구조와 비즈니스 모델, 독일과 유럽 IPCEI-AI의 시사점, 그리고 시스템 안에 넣어야 할 데이터 보안 기능을 정리해 보았습니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/industrial-ai-data-factory/";
             },},{id: "ko-허용된-통로로-새는-산업-정보-생성형-에이전틱-ai의-보안-문제",
           title: '허용된 통로로 새는 산업 정보: 생성형, 에이전틱 AI의 보안 문제',
-          description: "산업 파운데이션 모델과 에이전틱 AI는 공정 관리를 바꿔 놓을 수 있지만, 정보 보호 측면에서는 기존과 다른 종류의 구멍을 낸다. 허용된 접근 경로로 들어와 자연스럽게 정보를 흘리는 문제, 생각해 볼 수 있는 공격 유형, 그리고 사이버 보안에 AI의 관점을 더한 새로운 대응 패러다임을 정리했다.",
+          description: "산업 파운데이션 모델과 에이전틱 AI는 공정 관리를 바꿔 놓을 수 있지만, 정보 보호 측면에서는 기존과 다른 종류의 구멍을 낸다. 허용된 접근 경로로 들어와 자연스럽게 정보를 흘리는 문제, 생각해 볼 수 있는 공격 유형, 그리고 사이버 보안에 AI의 관점을 더한 새로운 대응 패러다임을 정리해 보았습니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/industrial-ai-information-protection/";
             },},{id: "ko-신뢰-실행-환경-tee-안에서-ai-돌리기",
           title: '신뢰 실행 환경(TEE) 안에서 AI 돌리기',
-          description: "교과서적인 설명보다는 현장 감각으로 정리했다. AI 모델을 신뢰 실행 환경(TEE) 안에서 돌리려는 이유(가중치와 데이터를 호스트로부터 지키기), 지금의 TEE가 AI 앞에서 삐걱대는 지점(너무 작은 엔클레이브 메모리, CPU에 갇힌 신뢰, 값비싼 CPU↔GPU 전송), 그리고 최근 연구 토픽까지 다룬다. 기밀 GPU 추론에 왜 Hopper급 데이터센터 GPU가 필요한지, Jetson Thor의 Blackwell로는 왜 안 되는지도 짚었다.",
+          description: "교과서적인 설명보다는 현장 감각으로 정리해 보았습니다. AI 모델을 신뢰 실행 환경(TEE) 안에서 돌리려는 이유(가중치와 데이터를 호스트로부터 지키기), 지금의 TEE가 AI 앞에서 삐걱대는 지점(너무 작은 엔클레이브 메모리, CPU에 갇힌 신뢰, 값비싼 CPU↔GPU 전송), 그리고 최근 연구 토픽까지 다룹니다. 기밀 GPU 추론에 왜 Hopper급 데이터센터 GPU가 필요한지, Jetson Thor의 Blackwell로는 왜 안 되는지도 짚어 보았습니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/trusted-execution-environments/";
             },},{id: "ko-지식베이스-하나-만드는데-세-번을-엎었다",
           title: '지식베이스 하나 만드는데 세 번을 엎었다',
-          description: "연구과제를 하면서 쌓인 문서들 위에 지식베이스를 올려 보려 했다. 세 번 엎고 나서야 알았다. 어려운 건 추출이 아니었다. 변경이고, 비용이고, 모르는 걸 모른다고 말하게 하는 일이었다.",
+          description: "연구과제를 하면서 쌓인 문서들 위에 지식베이스를 올려 보려 했습니다. 세 번 엎고 나서야 알게 됐는데요, 어려운 건 추출이 아니었습니다. 변경이고, 비용이고, 모르는 걸 모른다고 말하게 하는 일이었던 것 같아요.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/knowledge-base-three-failures/";
             },},{id: "ko-백서-ai-안전성과-보안",
           title: '백서: AI 안전성과 보안',
-          description: "에이전틱 시대의 AI 안전성과 보안을 다룬 기술 백서. 기계적 해석가능성, 자동화된 레드티밍, 동적 평가, 에이전트 행위 제한, 기업 기밀성, 그리고 EU, 미국, 한국의 거버넌스 동향까지 다룬다. 자유롭게 내려받을 수 있다 (CC BY-NC 4.0).",
+          description: "에이전틱 시대의 AI 안전성과 보안을 다룬 기술 백서. 기계적 해석가능성, 자동화된 레드티밍, 동적 평가, 에이전트 행위 제한, 기업 기밀성, 그리고 EU, 미국, 한국의 거버넌스 동향까지 다룬다. 자유롭게 내려받을 수 있습니다 (CC BY-NC 4.0).",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/ai-safety-security-white-paper/";
             },},{id: "ko-국제공동연구-생각보다-문턱이-낮습니다-자료-공유",
@@ -245,22 +245,22 @@ ninja.data = [{
               window.location.href = "/blog/ko/international-joint-research/";
             },},{id: "ko-uai-2026에서-내-파이프라인이-너무-단호했다는-걸-깨닫다",
           title: 'UAI 2026에서, 내 파이프라인이 너무 단호했다는 걸 깨닫다',
-          description: "확률과 인과 추론을 다루는 학회에 앉아 있다가, 그동안 LLM과 에이전트로 만들어 온 판단이 얼마나 heuristic하고 단호했는지 새삼 깨달았다. &#39;모른다&#39;고 말할 근거가 없는 파이프라인에 대한 메모.",
+          description: "확률과 인과 추론을 다루는 학회에 앉아 있다가, 그동안 LLM과 에이전트로 만들어 온 판단이 얼마나 heuristic하고 단호했는지 새삼 깨달았습니다. &#39;모른다&#39;고 말할 근거가 없는 파이프라인에 대한 메모입니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/uai-2026-uncertainty/";
             },},{id: "ko-기밀-컴퓨팅-tee와-pcc-부품과-시스템-사이",
           title: '기밀 컴퓨팅: TEE와 PCC, 부품과 시스템 사이',
-          description: "TEE를 쓰면 기밀 AI 서비스가 되는 걸까요. 클라우드 기밀 컴퓨팅이 지켜 주는 범위와 지켜 주지 못하는 범위를 짚고, Apple Private Cloud Compute(PCC)가 TEE 위에 무엇을 더 쌓았는지, 그리고 2026년 6월 PCC가 Google Cloud의 TDX와 Blackwell 기밀 GPU 위로 옮겨 가면서 드러난 &#39;하드웨어는 바닥, 신뢰는 시스템&#39;이라는 흐름을 정리했습니다.",
+          description: "TEE를 쓰면 기밀 AI 서비스가 되는 걸까요. 클라우드 기밀 컴퓨팅이 지켜 주는 범위와 지켜 주지 못하는 범위를 짚고, Apple Private Cloud Compute(PCC)가 TEE 위에 무엇을 더 쌓았는지, 그리고 2026년 6월 PCC가 Google Cloud의 TDX와 Blackwell 기밀 GPU 위로 옮겨 가면서 드러난 &#39;하드웨어는 바닥, 신뢰는 시스템&#39;이라는 흐름을 정리해 보았습니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/confidential-computing-tee-vs-pcc/";
             },},{id: "ko-제로-트러스트-시스템에서-하드웨어로",
           title: '제로 트러스트: 시스템에서 하드웨어로',
-          description: "제로 트러스트는 &#39;네트워크에 연결된 장치&#39;에서 멈춥니다. 그 안쪽, 로봇 제어기가 관절에 보내는 지령 하나하나는 여전히 CRC만 믿고 움직입니다. pick-and-place 로봇을 예로, ZTA의 판단과 집행 지점을 장치 안으로 끌어내릴 때 무엇이 달라지는지(접근의 의미, 판단 주기, 부품 신원, 정책 집행, 안전과 Fail Safe)를 정리했습니다.",
+          description: "제로 트러스트는 &#39;네트워크에 연결된 장치&#39;에서 멈춥니다. 그 안쪽, 로봇 제어기가 관절에 보내는 지령 하나하나는 여전히 CRC만 믿는 전제가 적용될 수 있습니다. pick-and-place 로봇을 예로, ZTA의 판단과 집행 지점을 장치 안으로 끌어내릴 때 무엇이 달라지는지(접근의 의미, 판단 주기, 부품 신원, 정책 집행, 안전과 Fail Safe)를 정리해 보았습니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/zero-trust-into-hardware/";
             },},{id: "ko-데이터-주권-데이터-댐에서-데이터-스페이스와-컨소시엄-학습으로",
           title: '데이터 주권: 데이터 댐에서 데이터 스페이스와 컨소시엄 학습으로',
-          description: "데이터를 한곳에 모으던 데이터 댐 방식에서, 데이터는 소유자에게 두고 계약이나 모델이 오가는 방식으로 무게가 옮겨 가고 있습니다. GAIA-X의 역사, Catena-X와 Manufacturing-X 같은 산업 데이터 스페이스, 이를 인프라와 산업 AI 투자로 묶는 IPCEI, 그리고 가중치만 공유하는 AI Alliance의 Project Tapestry를 정리했습니다.",
+          description: "데이터를 한곳에 모으던 데이터 댐 방식에서, 데이터는 소유자에게 두고 계약이나 모델이 오가는 방식으로 무게가 옮겨 가고 있습니다. GAIA-X의 역사, Catena-X와 Manufacturing-X 같은 산업 데이터 스페이스, 이를 인프라와 산업 AI 투자로 묶는 IPCEI, 그리고 가중치만 공유하는 AI Alliance의 Project Tapestry를 정리해 보았습니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/industrial-data-sovereignty/";
             },},{id: "news-posted-a-new-update-on-linkedin",
