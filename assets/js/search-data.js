@@ -258,6 +258,11 @@ ninja.data = [{
           description: "제로 트러스트는 &#39;네트워크에 연결된 장치&#39;에서 멈춥니다. 그 안쪽, 로봇 제어기가 관절에 보내는 지령 하나하나는 여전히 CRC만 믿고 움직입니다. pick-and-place 로봇을 예로, ZTA의 판단과 집행 지점을 장치 안으로 끌어내릴 때 무엇이 달라지는지(접근의 의미, 판단 주기, 부품 신원, 정책 집행, 안전과 Fail Safe)를 정리했습니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/zero-trust-into-hardware/";
+            },},{id: "ko-데이터-주권-데이터-댐에서-데이터-스페이스와-컨소시엄-학습으로",
+          title: '데이터 주권: 데이터 댐에서 데이터 스페이스와 컨소시엄 학습으로',
+          description: "데이터를 한곳에 모으던 데이터 댐 방식에서, 데이터는 소유자에게 두고 계약이나 모델이 오가는 방식으로 무게가 옮겨 가고 있습니다. GAIA-X의 역사, Catena-X와 Manufacturing-X 같은 산업 데이터 스페이스, 이를 인프라와 산업 AI 투자로 묶는 IPCEI, 그리고 가중치만 공유하는 AI Alliance의 Project Tapestry를 정리했습니다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/industrial-data-sovereignty/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
