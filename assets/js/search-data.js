@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-zero-trust-from-the-system-down-into-the-hardware",
+        },{id: "post-data-sovereignty-from-data-dams-to-data-spaces-and-consortium-training",
+        
+          title: "Data Sovereignty: From Data Dams to Data Spaces and Consortium Training",
+        
+        description: "Industrial data policy is moving away from pooling data in one place and toward leaving it with its owners, so that contracts or models travel instead. A look at the history of GAIA-X, industrial data spaces such as Catena-X and Manufacturing-X, the IPCEIs that tie them to cloud and AI investment, and the AI Alliance&#39;s Project Tapestry, where only weights are shared.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/industrial-data-sovereignty/";
+          
+        },
+      },{id: "post-zero-trust-from-the-system-down-into-the-hardware",
         
           title: "Zero Trust: From the System Down into the Hardware",
         
