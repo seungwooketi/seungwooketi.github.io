@@ -84,26 +84,26 @@ toc:
 짚기 시작했습니다. 산업 AI의 정보 보호를 설계할 때 참고할 만한 기준들을 몇 가지로
 묶어 보았습니다.
 
-**개인정보, 데이터 보호**: 개인정보보호위원회의 [「생성형 인공지능(AI)
-개발·활용을 위한 개인정보 처리 안내서」(2025.8)](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410)는
+**개인정보, 데이터 보호**: 개인정보보호위원회의 ["생성형 인공지능(AI)
+개발, 활용을 위한 개인정보 처리 안내서"(2025.8)](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410)는
 생성형 AI의 생애주기(목적 설정 → 전략 수립 → 학습/개발 → 적용/관리)별로
 개인정보 이슈와 안전조치를 정리했는데, 특히 **AI 에이전트, 지식증류(distillation), 머신
 언러닝** 같은 최신 쟁점을 포함합니다. 이 글에서 말한 에이전트의 ERP 연계 유출,
-증류 공격과 직접 겹치는 지점이죠. 같은 기관의 [「AI 프라이버시 리스크
-관리모델」(2024.12)](https://www.data.go.kr/data/15142410/fileData.do)은 한
+증류 공격과 직접 겹치는 지점이죠. 같은 기관의 ["AI 프라이버시 리스크
+관리모델"(2024.12)](https://www.data.go.kr/data/15142410/fileData.do)은 한
 걸음 더 들어가, 입출력 필터링, 차분 프라이버시, 미세조정 같은 기술적 안전조치와
 학습데이터 출처/이력 관리, AI 레드팀 같은 관리적 안전조치를 리스크 유형별로
 짝지어 제시합니다. 본문에서 다룬 워터마킹, 비가역 학습, 제로트러스트와 같은 결의
 통제들이라고 생각합니다.
 
-**보안 위협 관점**: 국가정보원의 [「챗GPT 등 생성형 AI 활용 보안
-가이드라인」(2023.6)](https://nsp.nanet.go.kr/plan/subject/detail.do?nationalPlanControlNo=PLAN0000039282)은
+**보안 위협 관점**: 국가정보원의 ["챗GPT 등 생성형 AI 활용 보안
+가이드라인"(2023.6)](https://nsp.nanet.go.kr/plan/subject/detail.do?nationalPlanControlNo=PLAN0000039282)은
 데이터 유출, 프롬프트를 통한 모델 악용, 플러그인/API 취약점 등을 위협으로
 명시하고 사용, 구축 단계의 보안대책을 제시합니다. "허용된 통로로 새는" 대화형
 유출과 프롬프트 조작을 정면으로 다룬 국내 초기 문서라고 볼 수 있습니다.
 
 **신뢰성, 거버넌스 표준**: 개별 기법을 넘어 "체계적 대응"으로 가려면 관리체계
-표준의 뒷받침이 필요할 것 같아요. TTA의 [AI 신뢰성 검·인증(CAT)](https://tta-trustworthy-ai.gitbook.io/cat)은
+표준의 뒷받침이 필요할 것 같아요. TTA의 [AI 신뢰성 검, 인증(CAT)](https://tta-trustworthy-ai.gitbook.io/cat)은
 ISO/IEC 42001(AI 경영시스템), 23894(AI 위험관리), 24028(신뢰성) 같은 국제표준을
 기준으로 위험관리와 완화조치를 검증합니다. 로봇처럼 물리 제어가 얽힌 영역에서는
 TTA [지능형 로봇 표준화(PG413)](https://committee.tta.or.kr/standard/general.jsp?commit_code=PG413)와
@@ -132,10 +132,10 @@ TTA [지능형 로봇 표준화(PG413)](https://committee.tta.or.kr/standard/gen
 
 ## 참고 문헌
 
-1. 개인정보보호위원회, [「생성형 인공지능(AI) 개발·활용을 위한 개인정보 처리 안내서」](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410), 2025. 8.
-2. 개인정보보호위원회, [「AI 프라이버시 리스크 관리모델」](https://www.data.go.kr/data/15142410/fileData.do), 2024. 12.
-3. 국가정보원, 국가보안기술연구소, [「챗GPT 등 생성형 AI 활용 보안 가이드라인」](https://nsp.nanet.go.kr/plan/subject/detail.do?nationalPlanControlNo=PLAN0000039282), 2023. 6.
-4. 한국정보통신기술협회(TTA), [「인공지능 신뢰성 검·인증(CAT) 가이드」](https://tta-trustworthy-ai.gitbook.io/cat) , ISO/IEC 42001, 23894, 24028 기반.
+1. 개인정보보호위원회, ["생성형 인공지능(AI) 개발, 활용을 위한 개인정보 처리 안내서"](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410), 2025. 8.
+2. 개인정보보호위원회, ["AI 프라이버시 리스크 관리모델"](https://www.data.go.kr/data/15142410/fileData.do), 2024. 12.
+3. 국가정보원, 국가보안기술연구소, ["챗GPT 등 생성형 AI 활용 보안 가이드라인"](https://nsp.nanet.go.kr/plan/subject/detail.do?nationalPlanControlNo=PLAN0000039282), 2023. 6.
+4. 한국정보통신기술협회(TTA), ["인공지능 신뢰성 검, 인증(CAT) 가이드"](https://tta-trustworthy-ai.gitbook.io/cat) , ISO/IEC 42001, 23894, 24028 기반.
 5. 한국정보통신기술협회(TTA), [지능형 로봇 표준화 위원회(PG413)](https://committee.tta.or.kr/standard/general.jsp?commit_code=PG413).
 6. 한국로봇산업진흥원(KIRIA), [실외이동로봇 운행안전인증](https://www.kiria.org/portal/cert/portalCertEstiSafe.do).
 7. OWASP, [Top 10 for LLM Applications (2025)](https://genai.owasp.org/llm-top-10/).

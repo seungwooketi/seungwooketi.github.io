@@ -2,7 +2,7 @@
 layout: post
 title: "An Industrial Data Lake for Industrial AI"
 date: 2026-06-29 14:00:00+0900
-description: A sketch of an Industrial Data Lake — a way to build industrial AI while keeping data and models protected as corporate assets. It covers the conflicting requirements industry faces, agentic AI as an answer, a stakeholder-and-business-model structure, what Germany and Europe's IPCEI-AI suggests, and the security functions the system has to carry.
+description: A sketch of an Industrial Data Lake - a way to build industrial AI while keeping data and models protected as corporate assets. It covers the conflicting requirements industry faces, agentic AI as an answer, a stakeholder-and-business-model structure, what Germany and Europe's IPCEI-AI suggests, and the security functions the system has to carry.
 tags: industrial-AI industrial-data-lake foundation-model agentic-AI multi-agent data-security AI-BOM trustworthy-AI
 thumbnail: assets/img/industrial-ai-data-factory-thumb.png
 og_image: /assets/img/industrial-ai-data-factory-thumb.png
@@ -18,14 +18,14 @@ toc:
 ## The problem
 
 The appetite for industrial foundation models keeps growing. Every shop floor
-has the same quiet wish — "if only there were a good base model tuned to _our_
+has the same quiet wish - "if only there were a good base model tuned to _our_
 process." But the moment you try to build one, industry runs straight into a
 pair of **conflicting requirements**.
 
 On one side is the fear of leaking a data asset. In consumer AI, data is fuel:
 the more you have, the better. On a factory floor, data _is_ the competitive
 edge. "Hold it in a 300°C chamber for two hours, then laser-cut at 90% power,
-12 mm/s, with air blowing" — a single line of process parameters like that is
+12 mm/s, with air blowing" - a single line of process parameters like that is
 knowledge a company spent years accumulating. On the other side is a [**floor-
 lifting**]({{ '/blog/2026/foundation-ai-for-industry/' | relative_url }}) effect I
 noted in an earlier post. Once a good foundation model is out, the performance
@@ -35,7 +35,7 @@ good foundation model, yet nobody wants to share the data and models it would
 take to build one.
 
 A third pressure stacks on top. As AI gets more capable, it also gets more
-complex to assemble and run — which makes it steadily harder for an industrial
+complex to assemble and run - which makes it steadily harder for an industrial
 company to develop and operate AI on its own. So the real question becomes: **how
 should data and AI models actually be operated?** That is where this sketch
 starts.
@@ -53,16 +53,16 @@ to the right instrument.
 
 The foundation model can then be put to work in two ways.
 
-- **Internalize it through fine-tuning** — fine-tune a specific industry's
+- **Internalize it through fine-tuning** - fine-tune a specific industry's
   context directly into the foundation model, so the knowledge is baked into the
   weights.
-- **Attach it as a tool** — connect interpretation tools grounded in specific
+- **Attach it as a tool** - connect interpretation tools grounded in specific
   industrial knowledge, and pull that knowledge in from the outside as needed.
 
 A consumer picks between the two depending on the situation, and the trade-off is
 clear. Internalizing knowledge in the model costs a lot to train and keeps
 costing to maintain afterward. Bolting tools onto an existing foundation model,
-by contrast, allows flexible responses through those tools — but demands a much
+by contrast, allows flexible responses through those tools - but demands a much
 wider set of management techniques to keep them in order.
 
 | Approach                                       | Strength                                           | Cost to weigh                                   |
@@ -78,7 +78,7 @@ technique for the moment on the fly.
 Now put that agent and foundation model on top of a system that makes data and
 models _tradable without ever disclosing them_. What follows is that system,
 organized under the name **Industrial Data Lake**. It is still a bundle of ideas
-at the planning stage — closer to "this shape might work" than a settled design.
+at the planning stage - closer to "this shape might work" than a settled design.
 
 ## What we're building
 
@@ -86,10 +86,10 @@ Stated plainly, the goal is this: secure the data needed to apply robots and AI
 across the industries, and bring it all the way to a form you can
 train on directly. The system provides roughly three things.
 
-- **Data acquisition** — collect raw data coming off the industries.
-- **AI-ready data** — process raw data into a form you can feed into training
+- **Data acquisition** - collect raw data coming off the industries.
+- **AI-ready data** - process raw data into a form you can feed into training
   right away.
-- **Training infrastructure** — provide the compute (GPUs and so on) needed to
+- **Training infrastructure** - provide the compute (GPUs and so on) needed to
   train.
 
 One question left open here is whether the system should also own the model-
@@ -116,14 +116,14 @@ feed in their own private data (for a fee), get feedback, and walk away with a
 specialized model.
 
 The crux is that **nowhere along this chain is the original data or model
-disclosed as-is**. What gets traded is usage rights and outputs — never the asset
+disclosed as-is**. What gets traded is usage rights and outputs - never the asset
 itself.
 
 ## The processing flow
 
 The path from data to a specialized model is cut into container-sized stages.
 Because each stage is an independent container, a supplier can take part in the
-chain without handing over its whole asset — data or software.
+chain without handing over its whole asset - data or software.
 
 <div style="max-width: 560px; margin: 1.5rem auto;">
 <svg viewBox="0 0 620 972" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" role="img" aria-label="Industrial Data Lake processing flow: data supplier to raw data to processed data to sector foundation model to company-specific model to AI consumer. The software supplier provides containers and the AI consumer provides company data.">
@@ -144,9 +144,9 @@ chain without handing over its whole asset — data or software.
   </g>
   <g font-size="13" fill="#475569" text-anchor="middle">
     <rect x="148" y="139" width="54" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="155">provides</text>
-    <rect x="88" y="307" width="174" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="323">Processing SW · container</text>
-    <rect x="82" y="475" width="186" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="491">Training module · container</text>
-    <rect x="66" y="643" width="218" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="659">Optimization module · container</text>
+    <rect x="88" y="307" width="174" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="323">Processing SW, container</text>
+    <rect x="82" y="475" width="186" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="491">Training module, container</text>
+    <rect x="66" y="643" width="218" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="659">Optimization module, container</text>
     <rect x="116" y="811" width="118" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="175" y="827">specialized model</text>
     <rect x="278" y="377" width="58" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="307" y="393">provides</text>
     <rect x="316" y="817" width="84" height="22" rx="5" fill="#FCFCFF" opacity="0.92"/><text x="358" y="833">company data</text>
@@ -229,7 +229,7 @@ quantitative "how safe is this" attached to an asset as it flows down the chain.
 **Manifest-based training-pipeline management (AI Manifest / AI-BOM).** Record,
 as a spec, which techniques were applied at each stage and what the data/model
 quality was, so you can **trace which data a model came from and how it was
-processed.** Various metrics — incompleteness, prompt safety, and so on — get
+processed.** Various metrics - incompleteness, prompt safety, and so on - get
 folded in, and when a model version changes, that change history is tracked and
 managed too. How far to pull in the S-BOM concept from software supply chains is
 left as a question to weigh further.
@@ -244,7 +244,7 @@ usage rights and outputs instead of originals, the public role is drawn at the
 sector foundation model, and the provenance and safety of assets are traced
 end-to-end with an AI-BOM.
 
-Plenty of question marks remain — whether the system should own the training
+Plenty of question marks remain - whether the system should own the training
 tools, how far to fold in S-BOM, how to pin down the scope of the
-industries and robot-AI deployment. Even so, the one axis is clear — _make AI
-while keeping the assets protected_ — and the rest can be stacked on top of that.
+industries and robot-AI deployment. Even so, the one axis is clear - _make AI
+while keeping the assets protected_ - and the rest can be stacked on top of that.

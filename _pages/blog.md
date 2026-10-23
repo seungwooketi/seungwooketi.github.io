@@ -5,7 +5,7 @@ permalink: /
 home: true
 ---
 
-{% comment %} Unified blog — EN/KO toggle {% endcomment %}
+{% comment %} Unified blog - EN/KO toggle {% endcomment %}
 
 <div class="bp-blog">
 
@@ -19,9 +19,9 @@ home: true
 <div id="blog-en">
 
   <header class="bp-hero">
-    <div class="bp-eyebrow">Writing &amp; Notes · Seungwoo Kum</div>
+    <div class="bp-eyebrow">Writing &amp; Notes, Seungwoo Kum</div>
     <h1 class="bp-hero-title">Notes on industrial AI, edge intelligence, and trustworthy systems.</h1>
-    <p class="bp-hero-lead">Research writing from the Director of the AI Data &amp; Security Research Center at KETI — foundation models for industry, agentic-AI security, and the data infrastructure underneath.</p>
+    <p class="bp-hero-lead">Research writing from the Director of the AI Data &amp; Security Research Center at KETI - foundation models for industry, agentic-AI security, and the data infrastructure underneath.</p>
     <div class="bp-hero-links">
       <a class="bp-btn" href="{{ '/about/' | relative_url }}">About &amp; research →</a>
       <a class="bp-btn" href="https://www.datasec.work/en/" target="_blank" rel="noopener">Research Center ↗</a>
@@ -42,7 +42,7 @@ home: true
 <h2 class="bp-featured-title">{{ en_featured.title }}</h2>
 <p class="bp-featured-desc">{{ en_featured.description }}</p>
 {% assign f_read = en_featured.content | number_of_words | divided_by: 180 | plus: 1 %}
-<div class="bp-meta">{{ f_read }} min read &nbsp;·&nbsp; {{ en_featured.date | date: "%B %d, %Y" }}</div>
+<div class="bp-meta">{{ f_read }} min read &nbsp;, &nbsp; {{ en_featured.date | date: "%B %d, %Y" }}</div>
 </div>
 {% if en_featured.thumbnail %}
 <div class="bp-featured-thumb"><img src="{{ en_featured.thumbnail | relative_url }}" alt="{{ en_featured.title | escape }}"></div>

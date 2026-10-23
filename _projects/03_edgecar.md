@@ -1,6 +1,6 @@
 ---
 layout: page
-title: EdgeCar — Edge AI for Autonomous Vehicles
+title: EdgeCar - Edge AI for Autonomous Vehicles
 description: Edge AI computing platform for real-time perception and decision-making in connected vehicles
 img: assets/img/projects/edgecar_ota.png
 importance: 3
@@ -15,8 +15,8 @@ category: completed
 
 - Real-time object detection and tracking optimized for in-vehicle hardware
 - Secure V2X (vehicle-to-everything) data communication
-- Edge–cloud offloading strategies for dynamic driving scenarios
+- Edge-cloud offloading strategies for dynamic driving scenarios
 
 **Funding:** IITP  
-**Period:** 2020 – 2023  
+**Period:** 2020 - 2023  
 **Role:** Partner lead

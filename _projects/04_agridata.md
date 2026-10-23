@@ -1,7 +1,7 @@
 ---
 layout: page
-title: AGRIDATA — Smart-Greenhouse AI Data Platform
-description: Big-data platform for smart-greenhouse production-environment management — data curation, quality, and AI analytics
+title: AGRIDATA - Smart-Greenhouse AI Data Platform
+description: Big-data platform for smart-greenhouse production-environment management - data curation, quality, and AI analytics
 img: assets/img/projects/agridata_concept.png
 importance: 4
 category: completed
@@ -19,7 +19,7 @@ University**, with **KETI** and **Daliworks** as co-research institutions.
 
 **Highlights**
 
-- A **full-lifecycle agricultural data platform** — multi-source ingestion (self-collected, platform, and public data), storage, and automatic metadata generation
+- A **full-lifecycle agricultural data platform** - multi-source ingestion (self-collected, platform, and public data), storage, and automatic metadata generation
 - **Eight data-quality-improvement modules** plus a formal quality-metric scheme (syntactic, semantic, and range accuracy, and risk-of-inaccuracy)
 - **Multi-source data alignment** to reconcile differing sampling periods and types without distorting the originals
 - **Cloud integration** on a Naver Data Box / Connected-Server architecture, feeding decision-support and farming-execution (FES) services
@@ -27,11 +27,11 @@ University**, with **KETI** and **Daliworks** as co-research institutions.
 **KETI's major contributions** (KETI was the co-research institution for the data platform)
 
 - Greenhouse **data-processing modules** with performance evaluation, a **dual-database data catalog**, and quality criteria for training-data construction
-- A **data quality-measurement scheme** — syntactic, semantic, and range accuracy plus a risk-of-inaccuracy index — to validate data before analysis
+- A **data quality-measurement scheme** - syntactic, semantic, and range accuracy plus a risk-of-inaccuracy index - to validate data before analysis
 - **Multi-source data alignment** and **Naver Data Box cloud integration**, enabling model inference and data processing within the platform's access constraints
 
 {% include figure.liquid loading="lazy" path="assets/img/projects/agridata_keti.png" class="img-fluid rounded z-depth-1" zoomable=true caption="KETI contribution (Year 1): greenhouse data-processing modules and performance evaluation, a dual-database data catalog, and quality criteria for training-data construction." %}
 
 **Funding:** Ministry of Agriculture, Food and Rural Affairs / IITP  
-**Period:** 2021 – 2023  
+**Period:** 2021 - 2023  
 **Role:** Co-PI (KETI)

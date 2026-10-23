@@ -4,7 +4,7 @@ title: about
 permalink: /about/
 nav: true
 nav_order: 0
-subtitle: "Director, <a href='https://www.keti.re.kr' target='_blank'>AI Data & Security Research Center</a> · Korea Electronics Technology Institute (KETI)"
+subtitle: "Director, <a href='https://www.keti.re.kr' target='_blank'>AI Data & Security Research Center</a>, Korea Electronics Technology Institute (KETI)"
 
 profile:
   align: right
@@ -25,7 +25,7 @@ social: true
 
 I am the Director of the **AI Data & Security Research Center** at the [Korea Electronics Technology Institute (KETI)](https://www.keti.re.kr), where I lead research on AI data infrastructure, security, and edge AI systems.
 
-My work bridges fundamental AI research and practical deployment — from designing **data pipelines for agricultural and industrial applications** to building **secure edge AI architectures** for autonomous vehicles and IoT environments. I also coordinate international collaborative research with partners in Europe, Spain, Czech Republic, and Canada.
+My work bridges fundamental AI research and practical deployment - from designing **data pipelines for agricultural and industrial applications** to building **secure edge AI architectures** for autonomous vehicles and IoT environments. I also coordinate international collaborative research with partners in Europe, Spain, Czech Republic, and Canada.
 
 **Research Interests**
 
@@ -37,6 +37,6 @@ My work bridges fundamental AI research and practical deployment — from design
 
 **Current Focus**
 
-I am currently leading new initiatives in **industrial AI agent technology** (2026–) and **Korea-Spain AI collaboration**, while continuing to develop AI talent through the national AI workforce development program.
+I am currently leading new initiatives in **industrial AI agent technology** (2026-) and **Korea-Spain AI collaboration**, while continuing to develop AI talent through the national AI workforce development program.
 
 Feel free to reach out if you are interested in collaboration or joint research.

@@ -146,7 +146,7 @@ The pipeline I ended up with looks like this:
 
 ```mermaid
 flowchart TD
-    A["Source document<br/>(PDF · HWP)"] --> B["Text extraction<br/>(pypdf / OCR fallback)"]
+    A["Source document<br/>(PDF, HWP)"] --> B["Text extraction<br/>(pypdf / OCR fallback)"]
     B --> C["LLM extraction<br/>+ JSON schema"]
     C --> D["Deterministic post-rules<br/>(name normalization,<br/>unit sanity)"]
     D --> E["Validation<br/>(required fields,<br/>consortium totals)"]
@@ -155,7 +155,7 @@ flowchart TD
     F --> H["Markdown view<br/>(read-only, regenerated)"]
 ```
 
-<p class="text-center"><small><em>Drag to pan · scroll to zoom</em></small></p>
+<p class="text-center"><small><em>Drag to pan, scroll to zoom</em></small></p>
 
 The two boxes on the right of the LLM are the load-bearing ones. The LLM
 will make plausible-sounding mistakes - the post-rules and the validator
