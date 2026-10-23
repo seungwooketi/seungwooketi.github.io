@@ -115,7 +115,7 @@ others keep going; there's nothing for a failure to cascade through. Earlier
 designs died in part because classification called extraction directly, so
 anything that jammed jammed everything.
 
-{% include figure.liquid loading="eager" path="assets/img/kb-ledger-architecture.png" class="img-fluid rounded z-depth-1" alt="An isometric diagram: a central ledger slab surrounded by four blocks — classify, extract, link, and a human review screen — each joined to the ledger, with a corrections loop running back from review" %}
+{% include figure.liquid loading="eager" path="assets/img/kb-ledger-architecture.png" class="img-fluid rounded z-depth-1" alt="An isometric diagram: a central ledger slab surrounded by four blocks - classify, extract, link, and a human review screen - each joined to the ledger, with a corrections loop running back from review" %}
 
 <p class="text-center"><small><em>Every stage talks to the ledger, never directly to another stage - and corrections made at review feed back into the procedures themselves.</em></small></p>
 

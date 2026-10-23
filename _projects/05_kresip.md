@@ -13,7 +13,7 @@ _AI 기반 스마트팜 정밀농업 플랫폼 기술개발_). The platform span
 field data collection, deep-learning analysis, and cloud-edge service deployment -
 validated on real farms in both countries.
 
-{% include figure.liquid loading="eager" path="assets/img/projects/kresip_architecture.png" class="img-fluid rounded z-depth-1" zoomable=true caption="Platform architecture: field data collection → deep-learning analysis and model deployment → cloud–edge service for smart-farm decision support." %}
+{% include figure.liquid loading="eager" path="assets/img/projects/kresip_architecture.png" class="img-fluid rounded z-depth-1" zoomable=true caption="Platform architecture: field data collection → deep-learning analysis and model deployment → cloud - edge service for smart-farm decision support." %}
 
 **Highlights**
 
@@ -27,7 +27,7 @@ validated on real farms in both countries.
 - **Korea:** KETI (lead), Sejong University, Daliworks, Naretrend, and Kyungpook National University (consigned)
 - **Spain:** CT Ingenieros, Bodegas Bohórquez, and the University of Salamanca
 
-{% include figure.liquid loading="lazy" path="assets/img/projects/kresip_collaboration.png" class="img-fluid rounded z-depth-1" zoomable=true caption="Korea–Spain collaboration structure: shared use-cases and work packages across the two consortia, with jointly developed field hardware." %}
+{% include figure.liquid loading="lazy" path="assets/img/projects/kresip_collaboration.png" class="img-fluid rounded z-depth-1" zoomable=true caption="Korea - Spain collaboration structure: shared use-cases and work packages across the two consortia, with jointly developed field hardware." %}
 
 **What we built**
 
