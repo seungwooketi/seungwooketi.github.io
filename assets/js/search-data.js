@@ -92,7 +92,7 @@ ninja.data = [{
         
           title: "White Paper: Advancing AI Safety and Security",
         
-        description: "A technical white paper on AI safety and security in the agentic era — mechanistic interpretability, automated red-teaming, dynamic evaluation, agentic action-restriction, enterprise confidentiality, and the governance landscape across the EU, the US, and Korea. Free to download (CC BY-NC 4.0).",
+        description: "A technical white paper on AI safety and security in the agentic era - mechanistic interpretability, automated red-teaming, dynamic evaluation, agentic action-restriction, enterprise confidentiality, and the governance landscape across the EU, the US, and Korea. Free to download (CC BY-NC 4.0).",
         section: "Posts",
         handler: () => {
           
@@ -103,7 +103,7 @@ ninja.data = [{
         
           title: "Three Failures Before a Knowledge Base That Held",
         
-        description: "I wanted a knowledge base over the documents my research projects generate — proposals, agreements, reports, trip records. It took three abandoned designs to learn that the hard part was never extraction. It was change, cost, and knowing what you don&#39;t know.",
+        description: "I wanted a knowledge base over the documents my research projects generate - proposals, agreements, reports, trip records. It took three abandoned designs to learn that the hard part was never extraction. It was change, cost, and knowing what you don&#39;t know.",
         section: "Posts",
         handler: () => {
           
@@ -114,7 +114,7 @@ ninja.data = [{
         
           title: "Running AI Inside a Trusted Execution Environment",
         
-        description: "Less a tutorial, more a field report — why you&#39;d run an AI model inside a Trusted Execution Environment (to keep weights and data out of the host&#39;s reach), why today&#39;s TEEs strain under it (tiny enclave memory, CPU-only trust, costly CPU↔GPU transfers), and recent research directions, including why confidential GPU inference needs a Hopper-class data-center GPU and why Jetson Thor&#39;s Blackwell doesn&#39;t qualify.",
+        description: "Less a tutorial, more a field report - why you&#39;d run an AI model inside a Trusted Execution Environment (to keep weights and data out of the host&#39;s reach), why today&#39;s TEEs strain under it (tiny enclave memory, CPU-only trust, costly CPU↔GPU transfers), and recent research directions, including why confidential GPU inference needs a Hopper-class data-center GPU and why Jetson Thor&#39;s Blackwell doesn&#39;t qualify.",
         section: "Posts",
         handler: () => {
           
@@ -123,7 +123,7 @@ ninja.data = [{
         },
       },{id: "post-leaking-through-an-authorized-door-the-security-problem-of-generative-and-agentic-ai",
         
-          title: "Leaking Through an Authorized Door — the Security Problem of Generative and Agentic...",
+          title: "Leaking Through an Authorized Door - the Security Problem of Generative and Agentic...",
         
         description: "Industrial foundation models and agentic AI can transform process management, but they punch a different kind of hole in information protection. This is about information that leaks through a legitimate access route, the attacks worth thinking about, the standards and guidelines that speak to them, and a defensive paradigm that brings an AI point of view into cybersecurity.",
         section: "Posts",
@@ -136,7 +136,7 @@ ninja.data = [{
         
           title: "An Industrial Data Lake for Industrial AI",
         
-        description: "A sketch of an Industrial Data Lake — a way to build industrial AI while keeping data and models protected as corporate assets. It covers the conflicting requirements industry faces, agentic AI as an answer, a stakeholder-and-business-model structure, what Germany and Europe&#39;s IPCEI-AI suggests, and the security functions the system has to carry.",
+        description: "A sketch of an Industrial Data Lake - a way to build industrial AI while keeping data and models protected as corporate assets. It covers the conflicting requirements industry faces, agentic AI as an answer, a stakeholder-and-business-model structure, what Germany and Europe&#39;s IPCEI-AI suggests, and the security functions the system has to carry.",
         section: "Posts",
         handler: () => {
           
@@ -147,7 +147,7 @@ ninja.data = [{
         
           title: "Industrial AI and its visibility",
         
-        description: "Commercial AI is already astonishingly good — so do we even need a separate industrial AI model? A look at three constraints (protecting information, cost, and sustainability) and why the thing that ultimately holds it all together is AI visibility.",
+        description: "Commercial AI is already astonishingly good - so do we even need a separate industrial AI model? A look at three constraints (protecting information, cost, and sustainability) and why the thing that ultimately holds it all together is AI visibility.",
         section: "Posts",
         handler: () => {
           
@@ -158,7 +158,7 @@ ninja.data = [{
         
           title: "What an Industrial Foundation Model Should Be",
         
-        description: "The phrase &#39;industrial foundation model&#39; turns up in every R&amp;D program now. But to earn the word &#39;foundation,&#39; such a model shouldn&#39;t be an omniscient know-it-all — it should be the bedrock that domain knowledge gets built on.",
+        description: "The phrase &#39;industrial foundation model&#39; turns up in every R&amp;D program now. But to earn the word &#39;foundation,&#39; such a model shouldn&#39;t be an omniscient know-it-all - it should be the bedrock that domain knowledge gets built on.",
         section: "Posts",
         handler: () => {
           
@@ -278,23 +278,23 @@ ninja.data = [{
           title: 'Posted a new update on LinkedIn.',
           description: "",
           section: "News",},{id: "projects-edgecar-edge-ai-for-autonomous-vehicles",
-          title: 'EdgeCar — Edge AI for Autonomous Vehicles',
+          title: 'EdgeCar - Edge AI for Autonomous Vehicles',
           description: "Edge AI computing platform for real-time perception and decision-making in connected vehicles",
           section: "Projects",handler: () => {
               window.location.href = "/projects/03_edgecar/";
             },},{id: "projects-agridata-smart-greenhouse-ai-data-platform",
-          title: 'AGRIDATA — Smart-Greenhouse AI Data Platform',
-          description: "Big-data platform for smart-greenhouse production-environment management — data curation, quality, and AI analytics",
+          title: 'AGRIDATA - Smart-Greenhouse AI Data Platform',
+          description: "Big-data platform for smart-greenhouse production-environment management - data curation, quality, and AI analytics",
           section: "Projects",handler: () => {
               window.location.href = "/projects/04_agridata/";
             },},{id: "projects-kresip-korea-spain-smart-farm-ai-platform",
-          title: 'KRESIP — Korea–Spain Smart-Farm AI Platform',
+          title: 'KRESIP - Korea-Spain Smart-Farm AI Platform',
           description: "AI-based precision-agriculture platform jointly developed by Korea and Spain",
           section: "Projects",handler: () => {
               window.location.href = "/projects/05_kresip/";
             },},{id: "projects-vibes-smart-livestock-cloud-edge-ai-platform",
-          title: 'VIBES — Smart-Livestock Cloud–Edge AI Platform',
-          description: "Hierarchical cloud–edge platform and embedded intelligent services for smart livestock farming (Korea–Czech joint R&amp;D)",
+          title: 'VIBES - Smart-Livestock Cloud-Edge AI Platform',
+          description: "Hierarchical cloud-edge platform and embedded intelligent services for smart livestock farming (Korea-Czech joint R&amp;D)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/06_vibes/";
             },},{id: "projects-generative-ai-talent-development-program",
