@@ -21,10 +21,10 @@ home: true
   <header class="bp-hero">
     <div class="bp-eyebrow">Writing &amp; Notes, Seungwoo Kum</div>
     <h1 class="bp-hero-title">Notes on industrial AI, edge intelligence, and trustworthy systems.</h1>
-    <p class="bp-hero-lead">Research writing from the Director of the AI Data &amp; Security Research Center at KETI - foundation models for industry, agentic-AI security, and the data infrastructure underneath.</p>
+    <p class="bp-hero-lead">Research writing from the Director of the <a href="https://www.datasec.work/en/" target="_blank" rel="noopener">AI Data and Security Research Center at KETI</a> - foundation models for industry, agentic-AI security, and the data infrastructure underneath.</p>
     <div class="bp-hero-links">
       <a class="bp-btn" href="{{ '/about/' | relative_url }}">About &amp; research →</a>
-      <a class="bp-btn" href="https://www.datasec.work/en/" target="_blank" rel="noopener">Research Center ↗</a>
+      <a class="bp-btn" href="https://www.datasec.work/en/" target="_blank" rel="noopener">KETI AI Data and Security Research Center ↗</a>
       <a class="bp-chip" href="mailto:seungwoo.kum@gmail.com">Email</a>
       <a class="bp-chip" href="https://github.com/seungwooketi">GitHub</a>
       <a class="bp-chip" href="https://scholar.google.com/citations?user=8DEsYMsAAAAJ">Scholar</a>
@@ -92,10 +92,10 @@ home: true
   <header class="bp-hero">
     <div class="bp-eyebrow">금승우의 글과 노트</div>
     <h1 class="bp-hero-title">산업 AI와 신뢰할 수 있는 시스템에 관한 기록</h1>
-    <p class="bp-hero-lead">산업 파운데이션 모델, 에이전틱 AI 보안, 그리고 이를 뒷받침하는 데이터 인프라에 관한 연구 노트</p>
+    <p class="bp-hero-lead">한국전자기술연구원(KETI) 인공지능데이터·보안연구센터 센터장 금승우의 연구 노트. 산업 파운데이션 모델, 에이전틱 AI 보안, 그리고 이를 뒷받침하는 데이터 인프라를 다룹니다.</p>
     <div class="bp-hero-links">
       <a class="bp-btn" href="{{ '/about/' | relative_url }}">소개와 연구 →</a>
-      <a class="bp-btn" href="https://www.datasec.work/ko/" target="_blank" rel="noopener">연구센터 홈페이지 ↗</a>
+      <a class="bp-btn" href="https://www.datasec.work/ko/" target="_blank" rel="noopener">KETI 인공지능데이터·보안연구센터 ↗</a>
       <a class="bp-chip" href="mailto:seungwoo.kum@gmail.com">이메일</a>
       <a class="bp-chip" href="https://github.com/seungwooketi">GitHub</a>
       <a class="bp-chip" href="https://scholar.google.com/citations?user=8DEsYMsAAAAJ">Scholar</a>

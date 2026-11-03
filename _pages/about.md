@@ -4,7 +4,7 @@ title: about
 permalink: /about/
 nav: true
 nav_order: 0
-subtitle: "Director, <a href='https://www.keti.re.kr' target='_blank'>AI Data & Security Research Center</a>, Korea Electronics Technology Institute (KETI)"
+subtitle: "Director, <a href='https://www.datasec.work/en/' target='_blank'>AI Data and Security Research Center</a>, <a href='https://www.keti.re.kr' target='_blank'>Korea Electronics Technology Institute (KETI)</a>"
 
 profile:
   align: right
@@ -23,7 +23,7 @@ selected_projects: true
 social: true
 ---
 
-I am the Director of the **AI Data & Security Research Center** at the [Korea Electronics Technology Institute (KETI)](https://www.keti.re.kr), where I lead research on AI data infrastructure, security, and edge AI systems.
+I am the Director of the [**AI Data and Security Research Center**](https://www.datasec.work/en/) (KETI 인공지능데이터·보안연구센터) at the [Korea Electronics Technology Institute (KETI)](https://www.keti.re.kr), where I lead research on AI data infrastructure, security, and edge AI systems.
 
 My work bridges fundamental AI research and practical deployment - from designing **data pipelines for agricultural and industrial applications** to building **secure edge AI architectures** for autonomous vehicles and IoT environments. I also coordinate international collaborative research with partners in Europe, Spain, Czech Republic, and Canada.
 
