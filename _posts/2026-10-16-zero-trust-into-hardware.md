@@ -171,6 +171,8 @@ The principles of zero trust don't change. What changes is the unit they apply t
 
 ## References
 
+These topics connect to the work of the [AI Data and Security Research Center at KETI](https://www.datasec.work/en/), which I lead. In the [AEGIS-RM project](https://www.datasec.work/en/research/aegis-rm/), which started in August 2026, we are working with our partner institutions on zero-trust security monitoring and anomaly detection across the robot system.
+
 [^nist207]: NIST, [SP 800-207 Zero Trust Architecture](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf) (2020-08); DoD CIO, [Zero Trust for Operational Technology](https://dodcio.defense.gov/Portals/0/Documents/Library/ZT-OperationalTechnologyActivitiesOutcomes.pdf) (2025-11)
 
 [^butka]: Butka, Bobda, [The Future of Zero-Trust Secured Hardware](https://link.springer.com/article/10.1007/s41635-026-00185-1), Journal of Hardware and Systems Security (2026)

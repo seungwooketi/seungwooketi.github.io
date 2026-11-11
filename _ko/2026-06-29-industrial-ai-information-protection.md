@@ -130,6 +130,8 @@ TTA [지능형 로봇 표준화(PG413)](https://committee.tta.or.kr/standard/gen
 위협으로만 보던 시야에서 벗어나, AI가 정보를 다루고 흘리는 방식 자체를 보안의
 대상으로 끌어안아 보는 것도 의미가 있을 듯 합니다.
 
+이 글에서 다룬 주제는 제가 센터장을 맡고 있는 [KETI 인공지능데이터·보안연구센터](https://www.datasec.work/ko/)의 연구와도 이어집니다. 2026년 8월 시작한 [AEGIS-RM 과제](https://www.datasec.work/ko/research/aegis-rm/)에서 공동연구기관들과 함께 공장 로봇의 모델에 담긴 제조 노하우를 탈취와 오작동으로부터 지키는 기술을 개발하고 있습니다.
+
 ## 참고 문헌
 
 1. 개인정보보호위원회, ["생성형 인공지능(AI) 개발, 활용을 위한 개인정보 처리 안내서"](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410), 2025. 8.

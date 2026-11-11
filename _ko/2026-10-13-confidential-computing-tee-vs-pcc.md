@@ -129,6 +129,8 @@ TEE가 하드웨어로 '못 보게' 만드는 기술이라면, PCC는 그 사실
 
 ## 참고 문헌
 
+이 글에서 다룬 주제는 제가 센터장을 맡고 있는 [KETI 인공지능데이터·보안연구센터](https://www.datasec.work/ko/)의 연구와도 이어집니다. 2026년 8월 시작한 [AEGIS-RM 과제](https://www.datasec.work/ko/research/aegis-rm/)에서 공동연구기관들과 함께 로봇 AI를 엣지의 TEE에서 안전하게 실행하는 기술을 개발하고 있습니다.
+
 [^ccc]: Confidential Computing Consortium, [A Technical Analysis of Confidential Computing v1.3](https://confidentialcomputing.io/wp-content/uploads/sites/10/2023/03/CCC-A-Technical-Analysis-of-Confidential-Computing-v1.3_unlocked.pdf)
 
 [^gcp]: Google Cloud, [Confidential VM release notes](https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/release-notes); NVIDIA, [Azure confidential VM with H100 GA](https://blogs.nvidia.com/blog/azure-confidential-vm-h100-general-availability)

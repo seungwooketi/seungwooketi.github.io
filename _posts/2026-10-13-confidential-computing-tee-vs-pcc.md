@@ -127,6 +127,8 @@ If a TEE is the technology that keeps others from _seeing_, PCC is the system th
 
 ## References
 
+These topics connect to the work of the [AI Data and Security Research Center at KETI](https://www.datasec.work/en/), which I lead. In the [AEGIS-RM project](https://www.datasec.work/en/research/aegis-rm/), which started in August 2026, we are working with our partner institutions on trusted, confidential execution of robot AI on TEEs at the edge.
+
 [^ccc]: Confidential Computing Consortium, [A Technical Analysis of Confidential Computing v1.3](https://confidentialcomputing.io/wp-content/uploads/sites/10/2023/03/CCC-A-Technical-Analysis-of-Confidential-Computing-v1.3_unlocked.pdf)
 
 [^gcp]: Google Cloud, [Confidential VM release notes](https://docs.cloud.google.com/confidential-computing/confidential-vm/docs/release-notes); NVIDIA, [Azure confidential VM with H100 GA](https://blogs.nvidia.com/blog/azure-confidential-vm-h100-general-availability)

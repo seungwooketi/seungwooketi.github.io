@@ -173,6 +173,8 @@ flowchart TB
 
 ## 참고 문헌
 
+이 글에서 다룬 주제는 제가 센터장을 맡고 있는 [KETI 인공지능데이터·보안연구센터](https://www.datasec.work/ko/)의 연구와도 이어집니다. 2026년 8월 시작한 [AEGIS-RM 과제](https://www.datasec.work/ko/research/aegis-rm/)에서 공동연구기관들과 함께 로봇 시스템 전반의 제로 트러스트 보안관제와 이상동작 탐지 기술을 개발하고 있습니다.
+
 [^nist207]: NIST, [SP 800-207 Zero Trust Architecture](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-207.pdf) (2020-08); DoD CIO, [Zero Trust for Operational Technology](https://dodcio.defense.gov/Portals/0/Documents/Library/ZT-OperationalTechnologyActivitiesOutcomes.pdf) (2025-11)
 
 [^butka]: Butka, Bobda, [The Future of Zero-Trust Secured Hardware](https://link.springer.com/article/10.1007/s41635-026-00185-1), Journal of Hardware and Systems Security (2026)

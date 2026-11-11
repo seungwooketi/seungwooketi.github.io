@@ -185,6 +185,8 @@ protection will only grow in importance - and the demand for TEEs will keep
 rising with it. What a TEE offers is one more tool, this one rooted in hardware,
 for protecting AI data while it's in use.
 
+These topics connect to the work of the [AI Data and Security Research Center at KETI](https://www.datasec.work/en/), which I lead. In the [AEGIS-RM project](https://www.datasec.work/en/research/aegis-rm/), which started in August 2026, we are working with our partner institutions on trusted, confidential execution of robot AI on TEEs at the edge.
+
 ## References
 
 1. Florian Tramèr and Dan Boneh, [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287), ICLR 2019 - keeps a DNN's sensitive work inside a CPU TEE while offloading the heavy linear layers to a faster, untrusted co-processor; an early take on the CPU-TEE ↔ GPU split.

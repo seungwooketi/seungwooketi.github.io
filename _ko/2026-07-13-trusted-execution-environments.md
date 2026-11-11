@@ -78,6 +78,8 @@ TEE는 AI를 위해 설계된 기술이 아닙니다. 컴퓨팅 보안 기술로
 
 아직 어느 것도 완벽한 대안을 제시하지는 못하지만, AI 운용에서 모델 보안에 대한 요구는 분명하다고 생각합니다. 산업 현장의 AI 적용이 갈수록 빨라지는 흐름을 보면, 앞으로 AI 정보보호는 점점 더 중요해질 것이고 TEE에 대한 요구도 그만큼 커질 것 같아요. TEE는 '쓰이는 중'인 AI 데이터를 지키는 하드웨어 보안 도구를 하나 더 보태 줄 수 있을 것으로 봅니다.
 
+이 글에서 다룬 주제는 제가 센터장을 맡고 있는 [KETI 인공지능데이터·보안연구센터](https://www.datasec.work/ko/)의 연구와도 이어집니다. 2026년 8월 시작한 [AEGIS-RM 과제](https://www.datasec.work/ko/research/aegis-rm/)에서 공동연구기관들과 함께 로봇 AI를 엣지의 TEE에서 안전하게 실행하는 기술을 개발하고 있습니다.
+
 ## 참고 문헌
 
 1. Florian Tramèr, Dan Boneh, [Slalom: Fast, Verifiable and Private Execution of Neural Networks in Trusted Hardware](https://arxiv.org/abs/1806.03287), ICLR 2019: 민감한 연산은 CPU TEE 안에 두고, 무거운 선형 계층은 더 빠르지만 믿을 수 없는 보조 프로세서로 넘기는 방식. CPU-TEE ↔ GPU 분할의 초기 사례다.

@@ -185,6 +185,8 @@ response to this new paradigm.** Cybersecurity has to step out of the frame that
 sees AI only as an external threat, and take in the very way AI handles and leaks
 information as an object of security.
 
+These topics connect to the work of the [AI Data and Security Research Center at KETI](https://www.datasec.work/en/), which I lead. In the [AEGIS-RM project](https://www.datasec.work/en/research/aegis-rm/), which started in August 2026, we are working with our partner institutions on protecting the manufacturing know-how inside factory robot models from theft and misuse.
+
 ## References
 
 1. Personal Information Protection Commission (PIPC), [Guide to Personal Data Processing for the Development and Use of Generative AI](https://www.pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11410), Aug 2025 (Korean).
