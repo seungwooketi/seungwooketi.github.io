@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-data-sovereignty-from-data-dams-to-data-spaces-and-consortium-training",
+        },{id: "post-notes-from-acm-ccs-2026-agentic-ai-security-moves-outside-the-model",
+        
+          title: "Notes from ACM CCS 2026: Agentic AI Security Moves Outside the Model",
+        
+        description: "Field notes from ACM CCS 2026 in The Hague. Across the agentic AI security talks, the weight is shifting from defenses inside the model to deterministic control at the system level, plus a few things I noticed about the conference itself.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/ccs-2026-notes/";
+          
+        },
+      },{id: "post-data-sovereignty-from-data-dams-to-data-spaces-and-consortium-training",
         
           title: "Data Sovereignty: From Data Dams to Data Spaces and Consortium Training",
         
@@ -274,6 +285,11 @@ ninja.data = [{
           description: "데이터를 한곳에 모으던 데이터 댐 방식에서, 데이터는 소유자에게 두고 계약이나 모델이 오가는 방식으로 무게가 옮겨 가고 있습니다. GAIA-X의 역사, Catena-X와 Manufacturing-X 같은 산업 데이터 스페이스, 이를 인프라와 산업 AI 투자로 묶는 IPCEI, 그리고 가중치만 공유하는 AI Alliance의 Project Tapestry를 정리해 보았습니다.",
           section: "Ko",handler: () => {
               window.location.href = "/blog/ko/industrial-data-sovereignty/";
+            },},{id: "ko-acm-ccs-2026-현장에서-에이전틱-ai-보안은-모델-밖으로",
+          title: 'ACM CCS 2026 현장에서: 에이전틱 AI 보안은 모델 밖으로',
+          description: "헤이그에서 열리는 ACM CCS 2026에 참석하며 적어 둔 단상입니다. 에이전틱 AI 보안의 무게가 모델 내부 방어에서 시스템 수준의 결정론적 통제로 옮겨 가는 흐름과, 학회 현장에서 본 몇 가지 풍경을 정리했습니다.",
+          section: "Ko",handler: () => {
+              window.location.href = "/blog/ko/ccs-2026-notes/";
             },},{id: "news-posted-a-new-update-on-linkedin",
           title: 'Posted a new update on LinkedIn.',
           description: "",
